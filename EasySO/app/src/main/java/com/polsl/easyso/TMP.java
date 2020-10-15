@@ -1,8 +1,5 @@
 package com.polsl.easyso;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 import android.widget.Toast;
 
 import com.polsl.easyso.services.QuizServices;
@@ -15,13 +12,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class TMP {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+    public static void main(String[] args) {
         QuizServices retrofitClient = RetrofitClientFacade.getRetrofitInstance().create(QuizServices.class);
 
         System.out.println("xd-start");
@@ -41,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void loadDataList(List<QuizCategoryDTO> quizesList) {
+    private static void loadDataList(List<QuizCategoryDTO> quizesList) {
         //todo;
 
         for (QuizCategoryDTO q: quizesList) {
