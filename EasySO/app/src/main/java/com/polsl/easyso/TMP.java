@@ -14,7 +14,7 @@ import retrofit2.Response;
 
 public class TMP {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         QuizServices retrofitClient = RetrofitClientFacade.getRetrofitInstance().create(QuizServices.class);
 
         System.out.println("xd-start");
@@ -40,5 +40,5 @@ public class TMP {
         for (QuizCategoryDTO q: quizesList) {
             System.out.println(q.getName() + " " + q.getQuizezCount());
         }
-    }
+    }*/
 }
