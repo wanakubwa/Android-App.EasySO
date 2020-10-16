@@ -1,6 +1,7 @@
 package com.polsl.easyso.adapters;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -25,7 +26,7 @@ public class QuizCategoryAdapter extends RecyclerView.Adapter<QuizCategoryViewIt
     public QuizCategoryViewItem onCreateViewHolder(ViewGroup parent,
                                                    int viewType) {
         // Stworzenie nowego calego elementu z listy.
-        TextView v = (TextView) LayoutInflater.from(parent.getContext())
+        View v =  LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.quiz_category_list_item, parent, false);
 
         QuizCategoryViewItem vh = new QuizCategoryViewItem(v);
@@ -37,7 +38,7 @@ public class QuizCategoryAdapter extends RecyclerView.Adapter<QuizCategoryViewIt
     public void onBindViewHolder(QuizCategoryViewItem holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.textView.setText(quizzesCollection.get(position).getName());
+        holder.refresh(quizzesCollection.get(position));
     }
 
     @Override
