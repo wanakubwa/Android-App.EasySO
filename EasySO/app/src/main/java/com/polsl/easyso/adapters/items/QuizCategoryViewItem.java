@@ -6,6 +6,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.polsl.easyso.activities.MainActivity;
 import com.polsl.easyso.R;
 import com.polsl.easyso.services.dto.QuizCategoryDTO;
 
@@ -35,5 +36,11 @@ public class QuizCategoryViewItem extends RecyclerView.ViewHolder {
     {
         quizCategoryLabelText = (TextView) itemView.findViewById(R.id.quiz_category_item_label);
         quizCountText = (TextView) itemView.findViewById(R.id.quiz_category_item_count);
+
+        itemView.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                MainActivity.getInstace().onQuizCategoryClicked(cachedQuizCategory);
+            }
+        });
     }
 }

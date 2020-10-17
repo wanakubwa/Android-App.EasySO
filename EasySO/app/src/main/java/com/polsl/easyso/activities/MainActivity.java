@@ -1,13 +1,13 @@
-package com.polsl.easyso;
+package com.polsl.easyso.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.gridlayout.widget.GridLayout;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.polsl.easyso.R;
 import com.polsl.easyso.adapters.QuizCategoryAdapter;
 import com.polsl.easyso.services.QuizServices;
 import com.polsl.easyso.services.RetrofitClientFacade;
@@ -21,12 +21,26 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static MainActivity instance;
     private RecyclerView recyclerView;
+
+    public static MainActivity getInstace()
+    {
+        return instance;
+    }
+
+    public void onQuizCategoryClicked(QuizCategoryDTO quizCategoryItem)
+    {
+        Intent intent = new Intent(this, TopicsActivity.class);
+        intent.putExtra("categoryObj", quizCategoryItem.getName());
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        instance = this;
 
         recyclerView = (RecyclerView) findViewById(R.id.quizzes_labels_recycle_view);
         recyclerView.setHasFixedSize(true);

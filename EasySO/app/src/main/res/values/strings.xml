@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EasySO</string>
+    <string name="title_activity_topics">TopicsActivity</string>
 </resources>
