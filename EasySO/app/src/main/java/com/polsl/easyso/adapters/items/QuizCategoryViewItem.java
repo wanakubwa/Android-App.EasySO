@@ -12,26 +12,28 @@ import com.polsl.easyso.services.dto.QuizCategoryDTO;
 // Klasa zawierajaca przepis na stworzenie jednego elementu na widoku w liscie.
 public class QuizCategoryViewItem extends RecyclerView.ViewHolder {
 
-    private View cachedViewElement;
-
     private QuizCategoryDTO cachedQuizCategory;
-    private TextView textView;
+
+    private TextView quizCategoryLabelText;
+    private TextView quizCountText;
 
     public QuizCategoryViewItem(@NonNull View currentViewElement) {
         super(currentViewElement);
 
-        cachedViewElement = currentViewElement;
-        refrehViewElements();
+        refreshViewFields();
     }
 
-    public void refresh(@NonNull QuizCategoryDTO currentQuizCategory)
+    public void refreshView(@NonNull QuizCategoryDTO currentQuizCategory)
     {
         cachedQuizCategory = currentQuizCategory;
-        textView.setText(currentQuizCategory.getName());
+
+        quizCategoryLabelText.setText(currentQuizCategory.getName());
+        quizCountText.setText(currentQuizCategory.getQuizezCount().toString());
     }
 
-    private void refrehViewElements()
+    private void refreshViewFields()
     {
-        textView = (TextView) cachedViewElement.findViewById(R.id.quiz_category_item_text_view);
+        quizCategoryLabelText = (TextView) itemView.findViewById(R.id.quiz_category_item_label);
+        quizCountText = (TextView) itemView.findViewById(R.id.quiz_category_item_count);
     }
 }

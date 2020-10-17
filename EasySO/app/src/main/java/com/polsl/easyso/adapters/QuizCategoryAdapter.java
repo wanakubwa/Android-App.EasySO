@@ -3,7 +3,6 @@ package com.polsl.easyso.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,7 +37,7 @@ public class QuizCategoryAdapter extends RecyclerView.Adapter<QuizCategoryViewIt
     public void onBindViewHolder(QuizCategoryViewItem holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.refresh(quizzesCollection.get(position));
+        holder.refreshView(quizzesCollection.get(position));
     }
 
     @Override
