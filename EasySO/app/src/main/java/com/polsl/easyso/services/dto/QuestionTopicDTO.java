@@ -3,7 +3,7 @@ package com.polsl.easyso.services.dto;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class QuestionCategoryDTO {
+public class QuestionTopicDTO {
 
     @Expose
     @SerializedName("name")
@@ -13,12 +13,12 @@ public class QuestionCategoryDTO {
     @SerializedName("numberOfQuestions")
     private Integer questionsCount;
 
-    public QuestionCategoryDTO(String label, Integer questionsCount) {
+    public QuestionTopicDTO(String label, Integer questionsCount) {
         this.label = label;
         this.questionsCount = questionsCount;
     }
 
-    public QuestionCategoryDTO() {
+    public QuestionTopicDTO() {
     }
 
     public String getLabel() {

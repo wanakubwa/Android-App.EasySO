@@ -1,5 +1,6 @@
 package com.polsl.easyso.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -9,6 +10,7 @@ import android.widget.Toast;
 
 import com.polsl.easyso.R;
 import com.polsl.easyso.adapters.QuizCategoryAdapter;
+import com.polsl.easyso.constants.Constants;
 import com.polsl.easyso.services.QuizServices;
 import com.polsl.easyso.services.RetrofitClientFacade;
 import com.polsl.easyso.services.dto.QuizCategoryDTO;
@@ -24,15 +26,15 @@ public class MainActivity extends AppCompatActivity {
     private static MainActivity instance;
     private RecyclerView recyclerView;
 
-    public static MainActivity getInstace()
+    public static MainActivity getInstance()
     {
         return instance;
     }
 
-    public void onQuizCategoryClicked(QuizCategoryDTO quizCategoryItem)
+    public void onQuizCategoryClicked(@NonNull QuizCategoryDTO quizCategoryItem)
     {
         Intent intent = new Intent(this, TopicsActivity.class);
-        intent.putExtra("categoryObj", quizCategoryItem.getName());
+        intent.putExtra(Constants.QUIZ_CATEGORY_INTENT_NAME, quizCategoryItem);
         startActivity(intent);
     }
 

@@ -8,4 +8,16 @@
     tools:context=".activities.TopicsActivity"
     tools:showIn="@layout/activity_topics">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/quizzes_topics_recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:paddingLeft="25sp"
+        android:paddingTop="25sp"
+        android:paddingRight="25sp"
+        android:paddingBottom="25sp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="1"></androidx.recyclerview.widget.RecyclerView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

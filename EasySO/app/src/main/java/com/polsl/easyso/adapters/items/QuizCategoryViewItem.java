@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.polsl.easyso.activities.MainActivity;
 import com.polsl.easyso.R;
+import com.polsl.easyso.activities.TopicsActivity;
 import com.polsl.easyso.services.dto.QuizCategoryDTO;
 
 // Klasa zawierajaca przepis na stworzenie jednego elementu na widoku w liscie.
@@ -39,8 +40,8 @@ public class QuizCategoryViewItem extends RecyclerView.ViewHolder {
 
         itemView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                MainActivity.getInstace().onQuizCategoryClicked(cachedQuizCategory);
-            }
+                MainActivity.getInstance().onQuizCategoryClicked(cachedQuizCategory);
+        }
         });
     }
 }
