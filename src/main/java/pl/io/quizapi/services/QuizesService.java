@@ -12,6 +12,7 @@ import pl.io.quizapi.dao.dtos.QuizLabelDTO;
 import pl.io.quizapi.dao.entities.Answer;
 import pl.io.quizapi.dao.entities.Question;
 import pl.io.quizapi.dao.entities.Quiz;
+import pl.io.quizapi.dao.helper.Mapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,25 +24,25 @@ public class QuizesService {
     private QuizesRepository quizesRepo;
     private QuestionsRepository questionsRepo;
     private AnswersRepository answersRepo;
-
+    private Mapper mapper;
 
     @Autowired
-    public QuizesService(QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository answersRepo) {
+    public QuizesService(Mapper mapper, QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository answersRepo) {
         this.quizesRepo = quizesRepo;
         this.questionsRepo = questionsRepo;
         this.answersRepo = answersRepo;
+        this.mapper = mapper;
     }
 
     public Optional<Quiz> findById(Long id) {
         return quizesRepo.findById(id);
     }
 
-    public QuizLabelDTO findByName(String name) {
-        Quiz quiz = quizesRepo.findByName(name).get();
+    public QuizDTO findByName(String name) {
+        Quiz quiz = quizesRepo.findByName(name).orElse(null);
 
         if (quiz != null) {
-            QuizLabelDTO dto = new QuizLabelDTO(quiz.getName(), quiz.getQuestions().size());
-            return dto;
+            return mapper.mapQuizToDTO(quiz);
         } else {
             return null;
         }
@@ -59,32 +60,25 @@ public class QuizesService {
     }
 
     public QuizDTO findQuizByName(String name) {
-        Quiz quiz = quizesRepo.findByName(name).get();
+        Quiz quiz = quizesRepo.findByName(name).orElse(null);
 
         if (quiz != null) {
-            QuizDTO quizDTO = mapQuizToDTO(quiz);
-            return quizDTO;
+            return mapper.mapQuizToDTO(quiz);
         } else {
             return null;
         }
     }
 
-    public List<QuizDTO> getAll() {
+    public List<QuizDTO> getAllQuizzes() {
         List<Quiz> quizzes = (List<Quiz>) quizesRepo.findAll();
         List<QuizDTO> quizDTOS = new ArrayList<>();
 
         for (Quiz q : quizzes) {
-            quizDTOS.add(mapQuizToDTO(q));
+            quizDTOS.add(mapper.mapQuizToDTO(q));
         }
 
         return quizDTOS;
     }
-
-
-    public Iterable<Quiz> findAll() {
-        return quizesRepo.findAll();
-    }
-
 
     public void saveQuiz(QuizDTO quiz) {
         Quiz mappedQuiz = new Quiz(quiz.getName());
@@ -94,30 +88,6 @@ public class QuizesService {
 
     public void deleteById(Long id) {
         quizesRepo.deleteById(id);
-    }
-
-    private QuizDTO mapQuizToDTO(Quiz quiz) {
-        List<QuestionDTO> questions = new ArrayList<>();
-
-        for (Question q : quiz.getQuestions()) {
-            questions.add(mapQuestionToDTO(q));
-        }
-
-        return new QuizDTO(quiz.getName(), questions);
-    }
-
-    private QuestionDTO mapQuestionToDTO(Question question) {
-        List<AnswerDTO> answers = new ArrayList<>();
-
-        for (Answer a : question.getAnswers()) {
-            answers.add(mapAnswerToDTO(a));
-        }
-
-        return new QuestionDTO(question.getQuestionText(), answers);
-    }
-
-    private AnswerDTO mapAnswerToDTO(Answer answer) {
-        return new AnswerDTO(answer.getAnswerText(), answer.getResult());
     }
 
     private void saveQuestions(List<QuestionDTO> questions, Quiz quiz) {

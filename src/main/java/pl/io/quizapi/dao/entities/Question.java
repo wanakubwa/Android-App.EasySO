@@ -23,6 +23,19 @@ public class Question implements Serializable {
     @JsonIgnore
     private Quiz quiz;
 
+    public Question() {
+    }
+
+    public Question(String questionText,Quiz quiz) {
+        this.questionText = questionText;
+        this.quiz = quiz;
+    }
+
+    public Question(String questionText, List<Answer> answers, Quiz quiz) {
+        this.questionText = questionText;
+        this.answers = answers;
+        this.quiz = quiz;
+    }
 
     public List<Answer> getAnswers() {
         return answers;
@@ -32,43 +45,35 @@ public class Question implements Serializable {
         this.answers = answers;
     }
 
-    public Question() {
-    }
-
-    public Question(String questionText,Quiz quiz) {
-        this.questionText = questionText;
-        this.quiz = quiz;
-    }
-
     public Question(String questionText,Quiz quiz,List<Answer> answers) {
         this.questionText = questionText;
         this.quiz = quiz;
         this.answers = answers;
     }
 
-    public Quiz getQuiz() {
-        return quiz;
-    }
-
-    public void setQuiz(Quiz quiz) {
-        this.quiz = quiz;
-    }
-
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getQuestionText() {
         return questionText;
     }
 
+    public Quiz getQuiz() {
+        return quiz;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public void setQuestionText(String questionText) {
         this.questionText = questionText;
     }
+
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
+    }
+
 
 }

@@ -1,5 +1,6 @@
 package pl.io.quizapi.dao.dtos;
 
+
 import java.util.List;
 
 public class QuizDTO {
@@ -13,6 +14,8 @@ public class QuizDTO {
         this.name = name;
         this.questions = questions;
     }
+
+
 
     public String getName() {
         return name;
