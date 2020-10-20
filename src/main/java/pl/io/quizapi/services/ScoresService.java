@@ -15,39 +15,35 @@ import java.util.List;
 public class ScoresService {
 
     private ScoresRepository scoresRepo;
-    private QuizesRepository quizesRepo;
+    private QuizesRepository quizzesRepo;
 
     @Autowired
-    public ScoresService(ScoresRepository scoresRepo, QuizesRepository quizesRepo) {
+    public ScoresService(ScoresRepository scoresRepo, QuizesRepository quizzesRepo) {
         this.scoresRepo = scoresRepo;
-        this.quizesRepo = quizesRepo;
+        this.quizzesRepo = quizzesRepo;
     }
 
     public List<ScoreDTO> getAllScores() {
-        List<Score> scores = (List<Score>) scoresRepo.findAll();
+        List<Score> scores = (ArrayList<Score>) scoresRepo.findAll();
         List<ScoreDTO> scoreDTOS = new ArrayList<>();
 
         for (Score s : scores) {
-            scoreDTOS.add(mapScoreToDTO(s));
+            ScoreDTO scoreDTO = new ScoreDTO(s.getUsername(), s.getScore(), s.getQuizName());
+            scoreDTOS.add(scoreDTO);
         }
+
         return scoreDTOS;
     }
 
     public boolean addScore(ScoreDTO scoreDTO) {
-        Quiz quiz = quizesRepo.findByName(scoreDTO.getQuizName()).orElse(null);
+        Quiz quiz = quizzesRepo.findByName(scoreDTO.getQuizName()).orElse(null);
 
         if (quiz != null) {
-            scoresRepo.save(new Score(scoreDTO.getUsername(), scoreDTO.getScore(), scoreDTO.getUsername(), quiz));
+            Score score = new Score(scoreDTO.getUsername(), scoreDTO.getScore(), scoreDTO.getUsername(), quiz);
+            scoresRepo.save(score);
             return true;
         } else {
             return false;
         }
-    }
-
-
-    private ScoreDTO mapScoreToDTO(Score score) {
-        ScoreDTO scoreDTO = new ScoreDTO(score.getUsername(), score.getScore(), score.getQuizName());
-
-        return scoreDTO;
     }
 }
