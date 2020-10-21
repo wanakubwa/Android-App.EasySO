@@ -33,7 +33,7 @@ public class QuizTopicViewItem extends RecyclerView.ViewHolder {
 
     private void refreshViewFields()
     {
-        questionTopicLabelText = (TextView) itemView.findViewById(R.id.quiz_topic_item_label);
+        questionTopicLabelText = (TextView) itemView.findViewById(R.id.list_item_topic_label);
         questionsCountText = (TextView) itemView.findViewById(R.id.quiz_topic_questions_count);
 
         itemView.setOnClickListener(new View.OnClickListener() {
