@@ -3,7 +3,9 @@ package com.polsl.easyso.services.dto;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class QuestionTopicDTO {
+import java.io.Serializable;
+
+public class QuestionTopicDTO implements Serializable {
 
     @Expose
     @SerializedName("name")

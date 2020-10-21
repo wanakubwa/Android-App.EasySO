@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".activities.resolveActivity.QuizResolveActivity"
+            android:label="QUIZY"
+            android:parentActivityName=".activities.TopicsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.TopicsActivity" />
+        </activity>
+        <activity
             android:name=".activities.TopicsActivity"
             android:parentActivityName=".activities.MainActivity">
 
@@ -20,7 +29,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
         </activity>
-
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

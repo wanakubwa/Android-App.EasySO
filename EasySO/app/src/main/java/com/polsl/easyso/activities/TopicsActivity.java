@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.polsl.easyso.R;
+import com.polsl.easyso.activities.resolveActivity.QuizResolveActivity;
 import com.polsl.easyso.adapters.QuizTopicAdapter;
 import com.polsl.easyso.constants.Constants;
 import com.polsl.easyso.services.QuizServices;
@@ -40,6 +41,10 @@ public class TopicsActivity extends AppCompatActivity {
             Toast.makeText(TopicsActivity.this, "No questions in topic: \n" + topicDTO.getLabel(), Toast.LENGTH_SHORT).show();
             return;
         }
+
+        Intent intent = new Intent(this, QuizResolveActivity.class);
+        intent.putExtra(Constants.QUIZ_TOPIC_INTENT_NAME, topicDTO);
+        startActivity(intent);
     }
 
     @Override
