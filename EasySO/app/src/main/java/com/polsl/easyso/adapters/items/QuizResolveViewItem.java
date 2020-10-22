@@ -1,9 +1,9 @@
 package com.polsl.easyso.adapters.items;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -56,7 +56,7 @@ public class QuizResolveViewItem extends RecyclerView.ViewHolder implements OnAn
 
     @Override
     public void onAnswerSelectedHandler(int answerId) {
-        //todo;
+        QuizResolveActivity.getInstance().onAnswerSelected(cachedQuestion.getId(), answerId);
     }
 
     private void refreshViewFields()
@@ -89,23 +89,24 @@ public class QuizResolveViewItem extends RecyclerView.ViewHolder implements OnAn
 
     public class AnswerViewItem {
 
-        private View viewItem;
+        private View answerViewItem;
         private OnAnswerSelectedCallback answerSelectedCallback;
         private AnswerDTO cachedAnswer;
 
         private TextView answerLabel;
         private LinearLayout answerParent;
+        private CheckBox answerCheckBox;
 
-        public AnswerViewItem(View viewItem, OnAnswerSelectedCallback answerSelectedCallback, AnswerDTO cachedAnswer) {
-            this.viewItem = viewItem;
+        public AnswerViewItem(View answerViewItem, OnAnswerSelectedCallback answerSelectedCallback, AnswerDTO cachedAnswer) {
+            this.answerViewItem = answerViewItem;
             this.answerSelectedCallback = answerSelectedCallback;
             this.cachedAnswer = cachedAnswer;
 
             bindViewFields();
         }
 
-        public void setViewItem(View viewItem) {
-            this.viewItem = viewItem;
+        public void setAnswerViewItem(View answerViewItem) {
+            this.answerViewItem = answerViewItem;
         }
 
         public void setAnswerSelectedCallback(OnAnswerSelectedCallback answerSelectedCallback) {
@@ -119,8 +120,9 @@ public class QuizResolveViewItem extends RecyclerView.ViewHolder implements OnAn
         public void refreshView(AnswerDTO answer) {
             setCachedAnswer(answer);
 
-            answerLabel.setText(cachedAnswer.getAnswerText().trim());
+            refreshStateVisualization();
 
+            answerLabel.setText(cachedAnswer.getAnswerText().trim());
             answerParent.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     onAnswerSelectedHandler(cachedAnswer.getId());
@@ -128,10 +130,39 @@ public class QuizResolveViewItem extends RecyclerView.ViewHolder implements OnAn
             });
         }
 
+        private void refreshStateVisualization() {
+            answerCheckBox.setChecked(cachedAnswer.getIsUserSelect());
+
+            switch(cachedAnswer.getCurrentStatus()){
+                case CORRECT:
+                    setCorrectState();
+                    break;
+                case INCORRECT:
+                    setInCorrectState();
+                    break;
+                    default:
+                        setDefaultState();
+                        break;
+            }
+        }
+
+        private void setDefaultState(){
+            answerLabel.setTextColor(QuizResolveActivity.getInstance().getColor(R.color.colorText));
+        }
+
+        private void setCorrectState(){
+            answerLabel.setTextColor(QuizResolveActivity.getInstance().getColor(R.color.colorPositiveAccent));
+        }
+
+        private void setInCorrectState(){
+            answerLabel.setTextColor(QuizResolveActivity.getInstance().getColor(R.color.colorAccent));
+        }
+
         private void bindViewFields()
         {
-            answerLabel = (TextView) viewItem.findViewById(R.id.answer_label_text);
-            answerParent = (LinearLayout) viewItem.findViewById(R.id.answer_element_parent);
+            answerLabel = (TextView) answerViewItem.findViewById(R.id.answer_label_text);
+            answerParent = (LinearLayout) answerViewItem.findViewById(R.id.answer_element_parent);
+            answerCheckBox = (CheckBox) answerViewItem.findViewById(R.id.answer_check_box);
         }
     }
 }

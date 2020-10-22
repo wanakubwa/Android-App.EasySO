@@ -3,6 +3,7 @@ package com.polsl.easyso.services.dto.question;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionDTO {
@@ -23,6 +24,18 @@ public class QuestionDTO {
         this.id = id;
         this.questionText = questionText;
         this.answers = answers;
+    }
+
+    public QuestionDTO(QuestionDTO source)
+    {
+        this.id = source.getId();
+        this.questionText = source.getQuestionText();
+
+        this.answers = new ArrayList<>();
+        for(AnswerDTO answer : source.getAnswers())
+        {
+            this.answers.add(new AnswerDTO(answer));
+        }
     }
 
     public QuestionDTO() {
@@ -50,5 +63,19 @@ public class QuestionDTO {
 
     public void setAnswers(List<AnswerDTO> answers) {
         this.answers = answers;
+    }
+
+    public AnswerDTO getAnswerById(int answerId) {
+
+        AnswerDTO output = null;
+
+        for(AnswerDTO answer : answers){
+            if(answer.getId() == answerId){
+                output = answer;
+                break;
+            }
+        }
+
+        return output;
     }
 }
