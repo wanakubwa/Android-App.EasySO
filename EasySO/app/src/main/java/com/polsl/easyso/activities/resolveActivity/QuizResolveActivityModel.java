@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.Surface;
 import android.widget.Toast;
 
+import com.polsl.easyso.activities.resolveActivity.callbacks.OnModelInitializedCallback;
 import com.polsl.easyso.constants.Constants;
 import com.polsl.easyso.services.QuizServices;
 import com.polsl.easyso.services.RetrofitClientFacade;
@@ -12,6 +13,7 @@ import com.polsl.easyso.services.dto.QuestionTopicDTO;
 import com.polsl.easyso.services.dto.QuizCategoryDTO;
 import com.polsl.easyso.services.dto.question.QuestionDTO;
 import com.polsl.easyso.services.dto.question.QuizDTO;
+import com.polsl.easyso.services.exceptions.ApiException;
 
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
@@ -24,16 +26,16 @@ import retrofit2.Response;
 public class QuizResolveActivityModel {
 
     private QuestionTopicDTO currentTopic;
-    private QuizResolveActivity viewController;
 
     private List<QuestionDTO> allQuestionsCollection = new ArrayList<>();
+    private OnModelInitializedCallback onModelInitializedHandler;
 
-    public QuizResolveActivityModel() {
+    public QuizResolveActivityModel(QuestionTopicDTO currentTopic) {
+        this.currentTopic = currentTopic;
     }
 
-    public QuizResolveActivityModel(QuestionTopicDTO currentTopic, QuizResolveActivity viewController) {
-        this.currentTopic = currentTopic;
-        this.viewController = viewController;
+    public void setOnModelInitializedHandler(OnModelInitializedCallback onModelInitializedHandler) {
+        this.onModelInitializedHandler = onModelInitializedHandler;
     }
 
     public QuestionTopicDTO getCurrentTopic() {
@@ -44,8 +46,7 @@ public class QuizResolveActivityModel {
         this.currentTopic = currentTopic;
     }
 
-    public void initialize()
-    {
+    public void initialize() {
         QuizServices retrofitClient = RetrofitClientFacade.getRetrofitInstance().create(QuizServices.class);
         final Call<QuizDTO> currentQuiz = retrofitClient.getQuizForTopic(currentTopic.getLabel());
         currentQuiz.enqueue(new Callback<QuizDTO>() {
@@ -53,11 +54,11 @@ public class QuizResolveActivityModel {
             @Override
             public void onResponse(Call<QuizDTO> call, Response<QuizDTO> response) {
                 allQuestionsCollection = response.body().getQuestionsCollection();
+                onModelInitializedHandler.OnInitializedSuccess();
             }
 
             @Override
             public void onFailure(Call<QuizDTO> call, Throwable throwable) {
-                Toast.makeText(viewController, "Unable to load from server!", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -68,7 +69,8 @@ public class QuizResolveActivityModel {
 
         if(allQuestionsCollection.size() < 1)
         {
-            throw new InvalidParameterException();
+            return output;
+            //throw new InvalidParameterException();
         }
 
         // todo; tak wiem !!!!!!!!

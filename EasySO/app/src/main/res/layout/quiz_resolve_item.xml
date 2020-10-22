@@ -21,11 +21,9 @@
             android:id="@+id/question_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLength="24"
-            android:maxLines="1"
             android:text="Simple question text?"
             android:textColor="@color/colorText"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <Space
             android:layout_width="match_parent"
