@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClientFacade {
 
-    private static final String BASE_URL = "https://quiz-api1337.herokuapp.com";
+    private static final String BASE_URL = "https://quiz-polsl-api.herokuapp.com";
 
     private static Retrofit retrofit;
 

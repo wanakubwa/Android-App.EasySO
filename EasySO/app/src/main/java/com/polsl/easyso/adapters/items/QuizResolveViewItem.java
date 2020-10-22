@@ -82,6 +82,7 @@ public class QuizResolveViewItem extends RecyclerView.ViewHolder implements OnAn
             View v =  LayoutInflater.from(itemView.getContext())
                     .inflate(R.layout.quiz_resolve_answer_element, parent, false);
 
+            answersParent.addView(v);
             answersViewCollection.add(new AnswerViewItem(v, this, answer));
         }
     }
@@ -118,19 +119,19 @@ public class QuizResolveViewItem extends RecyclerView.ViewHolder implements OnAn
         public void refreshView(AnswerDTO answer) {
             setCachedAnswer(answer);
 
-            //answerLabel.setText(cachedAnswer.getAnswerText());
+            answerLabel.setText(cachedAnswer.getAnswerText().trim());
 
-//            answerParent.setOnClickListener(new View.OnClickListener() {
-//                public void onClick(View v) {
-//                    onAnswerSelectedHandler(cachedAnswer.getId());
-//                }
-//            });
+            answerParent.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    onAnswerSelectedHandler(cachedAnswer.getId());
+                }
+            });
         }
 
         private void bindViewFields()
         {
-            answerLabel = (TextView) itemView.findViewById(R.id.answer_label_text);
-            answerParent = (LinearLayout) itemView.findViewById(R.id.answer_element_parent);
+            answerLabel = (TextView) viewItem.findViewById(R.id.answer_label_text);
+            answerParent = (LinearLayout) viewItem.findViewById(R.id.answer_element_parent);
         }
     }
 }

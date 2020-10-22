@@ -23,8 +23,7 @@ public class QuizTopicViewItem extends RecyclerView.ViewHolder {
         refreshViewFields();
     }
 
-    public void refreshView(@NonNull QuestionTopicDTO currentQuestionTopic)
-    {
+    public void refreshView(@NonNull QuestionTopicDTO currentQuestionTopic) {
         cachedQuestionTopic = currentQuestionTopic;
 
         questionTopicLabelText.setText(cachedQuestionTopic.getLabel());
