@@ -78,6 +78,10 @@ public class AnswerDTO {
         isCorrect = correct;
     }
 
+    public boolean isUserCheckCorrect(){
+        return isUserSelect == isCorrect;
+    }
+
     public enum Status{
         NONE,
         CORRECT,

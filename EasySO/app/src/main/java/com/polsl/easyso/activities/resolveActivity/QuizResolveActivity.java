@@ -2,7 +2,10 @@ package com.polsl.easyso.activities.resolveActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.polsl.easyso.R;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelCollectionChangedListener;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelInitializedListener;
@@ -10,6 +13,7 @@ import com.polsl.easyso.adapters.QuizResolveAdapter;
 import com.polsl.easyso.constants.Constants;
 import com.polsl.easyso.services.dto.QuestionTopicDTO;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,6 +37,7 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
         recyclerView.setHasFixedSize(true);
 
         initialize();
+        initializeBottomToolBar();
     }
 
     public static QuizResolveActivity getInstance() {
@@ -45,7 +50,7 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
             model.updateQuestionAnswerStatus(questionId, answerId);
             questionsAdapter.notifyDataSetChanged();
         } catch (InvalidParameterException ex){
-
+            //todo;
         }
     }
 
@@ -58,7 +63,9 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
 
     @Override
     public void onCollectionChanged() {
-        //todo;
+        if(questionsAdapter != null){
+            questionsAdapter.setQuestionsCollection(model.getCurrentVisibleQuestions());
+        }
     }
 
     // ########## Callbacks - END ###########
@@ -80,5 +87,23 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
     {
         questionsAdapter = new QuizResolveAdapter(model.getRandomQuestionsAmmount(2));
         recyclerView.setAdapter(questionsAdapter);
+    }
+
+    private void initializeBottomToolBar(){
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.quiz_resolve_bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.quiz_resolve_bottom_navigation_action_check:
+                        model.validateDisplayedQuestions();
+                        break;
+                    case R.id.quiz_resolve_bottom_navigation_action_roll:
+                        model.refreshCurrentQuestions(2);
+                        break;
+                }
+                return true;
+            }
+        });
     }
 }

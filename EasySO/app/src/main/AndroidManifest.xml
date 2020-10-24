@@ -14,8 +14,7 @@
         <activity
             android:name=".activities.resolveActivity.QuizResolveActivity"
             android:label="QUIZY"
-            android:parentActivityName=".activities.TopicsActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:parentActivityName=".activities.TopicsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.TopicsActivity" />

@@ -12,6 +12,7 @@ import com.polsl.easyso.services.dto.question.QuizDTO;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -72,28 +73,45 @@ public class QuizResolveActivityModel {
         });
     }
 
-    public List<QuestionDTO> getRandomQuestionsAmmount(int ammount)
-    {
+    // Ta metoda jest po prostu okropna.
+    public List<QuestionDTO> getRandomQuestionsAmmount(int ammount) {
         currentVisibleQuestions.clear();
-
-        if(allQuestionsCollection.size() < 1)
-        {
-            return currentVisibleQuestions;
-            //throw new InvalidParameterException();
-        }
-
-        // todo; tak wiem !!!!!!!!
-        for(int i =0; i < ammount; i++)
-        {
-            // Glebokie kopiowanie oryginalnych elementow.
-            currentVisibleQuestions.add(new QuestionDTO(allQuestionsCollection.get(i)));
-        }
-
+        currentVisibleQuestions = getRandomQuestions(ammount);
         return currentVisibleQuestions;
     }
 
-    public void updateQuestionAnswerStatus(int questionId, int answerId)
-    {
+    public void refreshCurrentQuestions(int ammount) {
+        currentVisibleQuestions.clear();
+        currentVisibleQuestions = getRandomQuestions(ammount);
+        onModelCollectionChanged.onCollectionChanged();
+    }
+
+    private List<QuestionDTO> getRandomQuestions(int ammount){
+
+        Random rand = new Random();
+        List<QuestionDTO> randomQuestions = new ArrayList<>();
+
+        List<Integer> avaibleIndexes = new ArrayList<>();
+        for(int i =0; i< allQuestionsCollection.size(); i++){
+            avaibleIndexes.add(i);
+        }
+
+        for(int i = 0; i < ammount; i++) {
+            if(avaibleIndexes.size() < 1){
+                break;
+            }
+
+            int ranodmIndex = rand.nextInt(avaibleIndexes.size());
+
+            // Glebokie kopiowanie oryginalnych elementow.
+            randomQuestions.add(new QuestionDTO(allQuestionsCollection.get(avaibleIndexes.get(ranodmIndex))));
+            avaibleIndexes.remove(ranodmIndex);
+        }
+
+        return randomQuestions;
+    }
+
+    public void updateQuestionAnswerStatus(int questionId, int answerId) {
         QuestionDTO currentVisibleQuestion = getDisplayedQuestionById(questionId);
         if(currentVisibleQuestion == null){
             throw new InvalidParameterException();
@@ -119,5 +137,20 @@ public class QuizResolveActivityModel {
         }
 
         return output;
+    }
+
+    public void validateDisplayedQuestions(){
+        for(QuestionDTO question : currentVisibleQuestions){
+            for(AnswerDTO answer : question.getAnswers()){
+                if(answer.isUserCheckCorrect() == true){
+                    answer.setCurrentStatus(AnswerDTO.Status.CORRECT);
+                }
+                else{
+                    answer.setCurrentStatus(AnswerDTO.Status.INCORRECT);
+                }
+            }
+        }
+
+        onModelCollectionChanged.onCollectionChanged();
     }
 }

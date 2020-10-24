@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/quiz_resolve_bottom_navigation_action_check"
+        android:title="Sprawdź"
+        android:icon="@drawable/ic_baseline_score_24" />
+    <item android:id="@+id/quiz_resolve_bottom_navigation_action_roll"
+        android:title="Losuj"
+        android:icon="@drawable/ic_baseline_score_24" />
+</menu>

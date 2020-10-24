@@ -23,6 +23,11 @@ public class QuizResolveAdapter extends RecyclerView.Adapter<QuizResolveViewItem
         questionsCollection = questions;
     }
 
+    public void setQuestionsCollection(List<QuestionDTO> questionsCollection) {
+        this.questionsCollection = questionsCollection;
+        notifyDataSetChanged();
+    }
+
     @Override
     public QuizResolveViewItem onCreateViewHolder(ViewGroup parent,
                                                    int viewType) {
