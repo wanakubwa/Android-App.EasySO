@@ -1,7 +1,11 @@
 package com.polsl.easyso.activities;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -25,14 +29,13 @@ public class MainActivity extends AppCompatActivity {
 
     private static MainActivity instance;
     private RecyclerView recyclerView;
+    private DrawerLayout drawerLayout;
 
-    public static MainActivity getInstance()
-    {
+    public static MainActivity getInstance() {
         return instance;
     }
 
-    public void onQuizCategoryClicked(@NonNull QuizCategoryDTO quizCategoryItem)
-    {
+    public void onQuizCategoryClicked(@NonNull QuizCategoryDTO quizCategoryItem) {
         Intent intent = new Intent(this, TopicsActivity.class);
         intent.putExtra(Constants.QUIZ_CATEGORY_INTENT_NAME, quizCategoryItem);
         startActivity(intent);
@@ -44,14 +47,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         instance = this;
 
+        initializeNavigationMenu();
+
         recyclerView = (RecyclerView) findViewById(R.id.quizzes_labels_recycle_view);
         recyclerView.setHasFixedSize(true);
 
         InitializeQuizzesCategoriesView();
     }
 
-    private void InitializeQuizzesCategoriesView()
-    {
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    private void initializeNavigationMenu() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+    }
+
+    private void InitializeQuizzesCategoriesView() {
         QuizServices retrofitClient = RetrofitClientFacade.getRetrofitInstance().create(QuizServices.class);
 
         Call<List<QuizCategoryDTO>> allCategories = retrofitClient.getQuizzesCategories();
