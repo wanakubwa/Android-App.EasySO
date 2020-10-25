@@ -67,12 +67,37 @@ public class QuizResolveViewItem extends RecyclerView.ViewHolder implements OnAn
 
     private void createAnswersViewCollection()
     {
-        if(answersViewCollection.size() <1){
-            initializeAnswersCollection();
-        }
+        refreshAnswersCollection();
 
         for(int i =0; i < cachedQuestion.getAnswers().size(); i++) {
             answersViewCollection.get(i).refreshView(cachedQuestion.getAnswers().get(i));
+        }
+    }
+
+    private void refreshAnswersCollection() {
+        if(answersViewCollection.size() < 1){
+            initializeAnswersCollection();
+            return;
+        }
+
+        int answersDelta = answersViewCollection.size() - cachedQuestion.getAnswers().size();
+        if(answersDelta > 0) {
+            int cachedViewCollectionSize = answersViewCollection.size();
+            for(int i = answersViewCollection.size() -1; i >= cachedViewCollectionSize - answersDelta; i-- ) {
+                answersParent.removeViewAt(i);
+                answersViewCollection.remove(i);
+            }
+        }
+        else if (answersDelta < 0){
+            answersDelta = answersDelta * -1;
+
+            for(int i=0; i < answersDelta; i++){
+                View v =  LayoutInflater.from(itemView.getContext())
+                        .inflate(R.layout.quiz_resolve_answer_element, parent, false);
+
+                answersParent.addView(v);
+                answersViewCollection.add(new AnswerViewItem(v, this));
+            }
         }
     }
 
@@ -96,6 +121,13 @@ public class QuizResolveViewItem extends RecyclerView.ViewHolder implements OnAn
         private TextView answerLabel;
         private LinearLayout answerParent;
         private CheckBox answerCheckBox;
+
+        public AnswerViewItem(View answerViewItem, OnAnswerSelectedCallback answerSelectedCallback) {
+            this.answerViewItem = answerViewItem;
+            this.answerSelectedCallback = answerSelectedCallback;
+
+            bindViewFields();
+        }
 
         public AnswerViewItem(View answerViewItem, OnAnswerSelectedCallback answerSelectedCallback, AnswerDTO cachedAnswer) {
             this.answerViewItem = answerViewItem;
