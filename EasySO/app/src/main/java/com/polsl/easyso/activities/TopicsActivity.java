@@ -29,6 +29,7 @@ public class TopicsActivity extends AppCompatActivity {
     private static TopicsActivity instance;
 
     private RecyclerView recyclerView;
+    private QuizCategoryDTO currentQuizCategory;
 
     public static TopicsActivity getInstance() {
         return instance;
@@ -61,12 +62,12 @@ public class TopicsActivity extends AppCompatActivity {
 
     private void refreshView()
     {
-        //todo; do modelu to wszytsko z dolu.
+        //todo; do modelu to wszytsko z dolu. Leci tu null bo nie ma w intecie juz tego obj.
         Intent intent = getIntent();
-        QuizCategoryDTO quizCategory = (QuizCategoryDTO) intent.getSerializableExtra(Constants.QUIZ_CATEGORY_INTENT_NAME);
+        currentQuizCategory = (QuizCategoryDTO) intent.getSerializableExtra(Constants.QUIZ_CATEGORY_INTENT_NAME);
 
         QuizServices retrofitClient = RetrofitClientFacade.getRetrofitInstance().create(QuizServices.class);
-        Call<List<QuestionTopicDTO>> allCategories = retrofitClient.getTopicsForQuizCategoryLabel(quizCategory.getName());
+        Call<List<QuestionTopicDTO>> allCategories = retrofitClient.getTopicsForQuizCategoryLabel(currentQuizCategory.getName());
         allCategories.enqueue(new Callback<List<QuestionTopicDTO>>() {
 
             @Override
@@ -81,7 +82,7 @@ public class TopicsActivity extends AppCompatActivity {
             }
         });
 
-        Toast.makeText(this, quizCategory.getName(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, currentQuizCategory.getName(), Toast.LENGTH_SHORT).show();
     }
 
     private void showTopics(List<QuestionTopicDTO> topics)

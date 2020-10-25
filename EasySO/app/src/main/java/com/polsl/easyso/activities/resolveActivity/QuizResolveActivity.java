@@ -14,7 +14,10 @@ import com.polsl.easyso.constants.Constants;
 import com.polsl.easyso.services.dto.QuestionTopicDTO;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.OnLifecycleEvent;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.security.InvalidParameterException;
@@ -38,6 +41,13 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
 
         initialize();
         initializeBottomToolBar();
+        initializeActionBar();
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+    public void sendCurrentTopicToIntent() {
+        Intent intent = getIntent();
+        intent.putExtra(Constants.QUIZ_TOPIC_INTENT_NAME, model.getCurrentTopic());
     }
 
     public static QuizResolveActivity getInstance() {
@@ -69,6 +79,14 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
     }
 
     // ########## Callbacks - END ###########
+
+    private void initializeActionBar(){
+        ActionBar topActionBar = getSupportActionBar();
+        if(topActionBar != null){
+            topActionBar.setDisplayHomeAsUpEnabled(false);
+            topActionBar.setTitle(model.getCurrentTopic().getLabel().trim());
+        }
+    }
 
     private void initialize()
     {
