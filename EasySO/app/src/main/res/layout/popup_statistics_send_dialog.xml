@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    android:padding="35dp">
+
+    <TextView
+        android:id="@+id/popup_statistics_info_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:text="@string/popup_statistics_info"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/popup_statistics_score_info"
+            android:textColor="@color/colorText"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/popup_statistics_score_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:text="100000"
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp"
+            app:autoSizeMaxTextSize="18sp"
+            app:autoSizeMinTextSize="14sp" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_weight="1" />
+
+    <EditText
+        android:id="@+id/popup_statistics_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="@string/popup_statistics_insert_name"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorTextHint" />
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/popup_statistics_discard_btn"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:background="@color/colorPrimaryLight"
+            android:clickable="true"
+            android:text="@string/discard_btn"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/popup_statistics_accept_btn"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="5dp"
+            android:background="@color/colorPrimaryLight"
+            android:clickable="true"
+            android:text="@string/popup_statistics_send_btn"
+            android:textColor="@color/colorPositiveAccent"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
