@@ -6,4 +6,5 @@
     <color name="colorAccent">#e94560</color>
     <color name="colorPositiveAccent">#03c4a1</color>
     <color name="colorText">#ececec</color>
+    <color name="colorTextHint">#80ECECEC</color>
 </resources>

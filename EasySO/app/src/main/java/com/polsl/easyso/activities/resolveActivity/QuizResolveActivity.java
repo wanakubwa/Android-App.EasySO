@@ -13,6 +13,7 @@ import com.polsl.easyso.activities.resolveActivity.listeners.OnModelInitializedL
 import com.polsl.easyso.activities.resolveActivity.listeners.OnStatisticsChangedListener;
 import com.polsl.easyso.adapters.QuizResolveAdapter;
 import com.polsl.easyso.constants.Constants;
+import com.polsl.easyso.dialogs.StatisticsSendPopUpDialog;
 import com.polsl.easyso.services.dto.QuestionTopicDTO;
 
 import androidx.annotation.NonNull;
@@ -36,6 +37,10 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
     private TextView correctAnswersCountText;
     private TextView scoreCountText;
 
+    public int getScoreValue(){
+        return model.getStatistics().getScore();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,10 +59,15 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
         refreshStatisticsSection();
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-    public void sendCurrentTopicToIntent() {
-        Intent intent = getIntent();
-        intent.putExtra(Constants.QUIZ_TOPIC_INTENT_NAME, model.getCurrentTopic());
+    @Override
+    public void onBackPressed() {
+        if(model.getStatistics().getScore() == 0){
+            super.onBackPressed();
+            return;
+        }
+
+        StatisticsSendPopUpDialog popup = new StatisticsSendPopUpDialog(this);
+        popup.show();
     }
 
     public static QuizResolveActivity getInstance() {
@@ -119,8 +129,6 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
         model.setOnModelCollectionChanged(this);
         model.setOnStatisticsChanged(this);
         model.initialize();
-
-        //Toast.makeText(this, "Unable to load from server!", Toast.LENGTH_SHORT).show();
     }
 
     private void refreshView()

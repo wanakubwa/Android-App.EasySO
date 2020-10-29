@@ -64,7 +64,7 @@ public class TopicsActivity extends AppCompatActivity {
 
     private void refreshView()
     {
-        //todo; do modelu to wszytsko z dolu. Leci tu null bo nie ma w intecie juz tego obj.
+        //todo; do modelu to wszytsko z dolu.
         Intent intent = getIntent();
         currentQuizCategory = (QuizCategoryDTO) intent.getSerializableExtra(Constants.QUIZ_CATEGORY_INTENT_NAME);
 
