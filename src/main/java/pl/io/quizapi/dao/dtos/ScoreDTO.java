@@ -6,16 +6,14 @@ public class ScoreDTO {
 
     private Integer score;
 
-    private String quizName;
-
     public ScoreDTO(){
 
     }
 
-    public ScoreDTO(String username, Integer score, String quizName) {
+    public ScoreDTO(String username, Integer score) {
         this.username = username;
         this.score = score;
-        this.quizName = quizName;
+
     }
 
     public String getUsername() {
@@ -34,11 +32,4 @@ public class ScoreDTO {
         this.score = score;
     }
 
-    public String getQuizName() {
-        return quizName;
-    }
-
-    public void setQuizName(String quizName) {
-        this.quizName = quizName;
-    }
 }

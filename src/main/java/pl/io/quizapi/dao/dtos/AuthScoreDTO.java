@@ -1,33 +1,20 @@
-package pl.io.quizapi.dao.entities;
+package pl.io.quizapi.dao.dtos;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "score")
-public class Score {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class AuthScoreDTO {
 
     private String username;
 
     private Integer score;
 
-    public Score() {
+    private String authKey;
+
+    public AuthScoreDTO() {
     }
 
-    public Score(String username, Integer score) {
+    public AuthScoreDTO(String username, Integer score, String authKey) {
         this.username = username;
         this.score = score;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+        this.authKey = authKey;
     }
 
     public String getUsername() {
@@ -46,4 +33,11 @@ public class Score {
         this.score = score;
     }
 
+    public String getAuthKey() {
+        return authKey;
+    }
+
+    public void setAuthKey(String authKey) {
+        this.authKey = authKey;
+    }
 }

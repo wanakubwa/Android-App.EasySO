@@ -4,13 +4,12 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.io.quizapi.dao.AnswersRepository;
+import pl.io.quizapi.dao.CategoriesRepository;
 import pl.io.quizapi.dao.QuestionsRepository;
 import pl.io.quizapi.dao.QuizesRepository;
-import pl.io.quizapi.dao.dtos.AnswerDTO;
-import pl.io.quizapi.dao.dtos.QuestionDTO;
-import pl.io.quizapi.dao.dtos.QuizDTO;
-import pl.io.quizapi.dao.dtos.QuizLabelDTO;
+import pl.io.quizapi.dao.dtos.*;
 import pl.io.quizapi.dao.entities.Answer;
+import pl.io.quizapi.dao.entities.Category;
 import pl.io.quizapi.dao.entities.Question;
 import pl.io.quizapi.dao.entities.Quiz;
 
@@ -23,14 +22,16 @@ public class QuizesService {
     private QuizesRepository quizzesRepo;
     private QuestionsRepository questionsRepo;
     private AnswersRepository answersRepo;
+    private CategoriesRepository categoriesRepos;
     private ModelMapper modelMapper;
 
     @Autowired
-    public QuizesService(ModelMapper modelMapper, QuizesRepository quizzesRepo, QuestionsRepository questionsRepo, AnswersRepository answersRepo) {
+    public QuizesService(ModelMapper modelMapper, QuizesRepository quizzesRepo, QuestionsRepository questionsRepo, AnswersRepository answersRepo, CategoriesRepository categoriesRepos) {
         this.quizzesRepo = quizzesRepo;
         this.questionsRepo = questionsRepo;
         this.answersRepo = answersRepo;
         this.modelMapper = modelMapper;
+        this.categoriesRepos = categoriesRepos;
     }
 
     public QuizDTO findByName(String name) {
@@ -48,7 +49,7 @@ public class QuizesService {
         List<QuizLabelDTO> labels = new ArrayList<>();
 
         for (Quiz q : quizzes) {
-            QuizLabelDTO quizLabelDTO = new QuizLabelDTO(q.getName(),q.getQuestions().size());
+            QuizLabelDTO quizLabelDTO = new QuizLabelDTO(q.getName(), q.getQuestions().size());
             labels.add(quizLabelDTO);
         }
 
@@ -64,6 +65,13 @@ public class QuizesService {
         }
 
         return quizDTOS;
+    }
+
+    public Category saveCategory(CategoryDTO category) {
+        Category categoryEntity = new Category(category.getName());
+        categoriesRepos.save(categoryEntity);
+
+        return categoryEntity;
     }
 
     public void saveQuiz(QuizDTO quiz) {

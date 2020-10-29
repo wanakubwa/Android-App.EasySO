@@ -23,9 +23,6 @@ public class Quiz implements Serializable {
     @JsonIgnore
     private Category category;
 
-    @OneToMany(mappedBy = "quiz", fetch = FetchType.LAZY)
-    private List<Score> scores;
-
     public Quiz() {
     }
 
@@ -53,7 +50,6 @@ public class Quiz implements Serializable {
         this.name = name;
         this.questions = questions;
         this.category = category;
-        this.scores = scores;
     }
 
     public Long getId() {
@@ -72,10 +68,6 @@ public class Quiz implements Serializable {
         return questions;
     }
 
-    public List<Score> getScores() {
-        return scores;
-    }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -92,7 +84,4 @@ public class Quiz implements Serializable {
         this.category = category;
     }
 
-    public void setScores(List<Score> scores) {
-        this.scores = scores;
-    }
 }

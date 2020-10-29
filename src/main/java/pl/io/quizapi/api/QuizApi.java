@@ -4,16 +4,14 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.io.quizapi.dao.dtos.CategoryDTO;
-import pl.io.quizapi.dao.dtos.QuizDTO;
-import pl.io.quizapi.dao.dtos.QuizLabelDTO;
-import pl.io.quizapi.dao.dtos.ScoreDTO;
+import pl.io.quizapi.dao.dtos.*;
 import pl.io.quizapi.services.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin
 public class QuizApi {
 
     private QuizesService quizesService;
@@ -21,6 +19,7 @@ public class QuizApi {
     private AnswersService answersService;
     private CategoriesService categoriesService;
     private ScoresService scoresService;
+    private final String AUTH = "382ffd9e8ce93285d03433e955e179d5";
 
     private ModelMapper modelMapper;
 
@@ -65,19 +64,22 @@ public class QuizApi {
     }
 
     @PostMapping("/score")
-    public ResponseEntity addScore(@RequestBody ScoreDTO score) {
-        boolean actionResult = scoresService.addScore(score);
-        if (actionResult) {
+    public ResponseEntity addScore(@RequestBody AuthScoreDTO score) {
+
+        if (score.getAuthKey().equals(this.AUTH)) {
+            ScoreDTO scoreDTO = new ScoreDTO(score.getUsername(), score.getScore());
+            scoresService.addScore(scoreDTO);
+
             return ResponseEntity.ok().build();
         } else {
-            return ResponseEntity.status(404).build();
+            return ResponseEntity.status(403).build();
         }
     }
 
     @PostMapping("/quiz")
     public ResponseEntity addQuiz(@RequestBody QuizDTO quiz) {
         quizesService.saveQuiz(quiz);
-        return ResponseEntity.ok("success");
+        return ResponseEntity.ok().build();
     }
 
 

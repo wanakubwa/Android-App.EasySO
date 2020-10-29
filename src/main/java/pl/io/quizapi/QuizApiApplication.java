@@ -85,8 +85,8 @@ public class QuizApiApplication {
             Answer a34 = new Answer(" jest obrazem pochodnym", true, question8);
 
 
-            Score score0 = new Score("y0menik1337", 20, quiz.getName(), quiz);
-            Score score1 = new Score("y0menik1337", 29, quiz.getName(), quiz);
+            Score score0 = new Score("Malik Montana", 20);
+            Score score1 = new Score("Elon Musk", 29);
 
 
             categoriesRepo.save(windows);

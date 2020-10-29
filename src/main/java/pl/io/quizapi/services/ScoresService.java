@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import pl.io.quizapi.dao.QuizesRepository;
 import pl.io.quizapi.dao.ScoresRepository;
 import pl.io.quizapi.dao.dtos.ScoreDTO;
-import pl.io.quizapi.dao.entities.Quiz;
 import pl.io.quizapi.dao.entities.Score;
 
 import java.util.ArrayList;
@@ -28,22 +27,23 @@ public class ScoresService {
         List<ScoreDTO> scoreDTOS = new ArrayList<>();
 
         for (Score s : scores) {
-            ScoreDTO scoreDTO = new ScoreDTO(s.getUsername(), s.getScore(), s.getQuizName());
+            ScoreDTO scoreDTO = new ScoreDTO(s.getUsername(), s.getScore());
             scoreDTOS.add(scoreDTO);
         }
 
         return scoreDTOS;
     }
 
-    public boolean addScore(ScoreDTO scoreDTO) {
-        Quiz quiz = quizzesRepo.findByName(scoreDTO.getQuizName()).orElse(null);
+    public void addScore(ScoreDTO scoreDTO) {
 
-        if (quiz != null) {
-            Score score = new Score(scoreDTO.getUsername(), scoreDTO.getScore(), scoreDTO.getUsername(), quiz);
-            scoresRepo.save(score);
-            return true;
+        Score score = scoresRepo.findByUsername(scoreDTO.getUsername());
+
+        if (score == null) {
+            scoresRepo.save(new Score(scoreDTO.getUsername(), scoreDTO.getScore()));
         } else {
-            return false;
+            int currentScore = score.getScore() + scoreDTO.getScore();
+            score.setScore(currentScore);
+            scoresRepo.save(score);
         }
     }
 }
