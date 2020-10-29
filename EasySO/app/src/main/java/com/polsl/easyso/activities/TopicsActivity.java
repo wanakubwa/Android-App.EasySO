@@ -13,6 +13,7 @@ import com.polsl.easyso.services.dto.QuestionTopicDTO;
 import com.polsl.easyso.services.dto.QuizCategoryDTO;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -58,6 +59,7 @@ public class TopicsActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         refreshView();
+        initializeActionBar();
     }
 
     private void refreshView()
@@ -90,5 +92,13 @@ public class TopicsActivity extends AppCompatActivity {
         // Tworzenie adaptera.
         QuizTopicAdapter adapter = new QuizTopicAdapter(topics);
         recyclerView.setAdapter(adapter);
+    }
+
+    private void initializeActionBar(){
+        ActionBar topActionBar = getSupportActionBar();
+        if(topActionBar != null){
+            topActionBar.setDisplayHomeAsUpEnabled(true);
+            topActionBar.setTitle(currentQuizCategory.getName().trim());
+        }
     }
 }
