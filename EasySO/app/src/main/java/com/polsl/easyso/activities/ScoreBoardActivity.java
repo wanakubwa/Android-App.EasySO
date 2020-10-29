@@ -22,10 +22,16 @@ import android.widget.Toast;
 
 import com.polsl.easyso.R;
 import com.polsl.easyso.adapters.ScoreAdapter;
+import com.polsl.easyso.services.RetrofitClientFacade;
+import com.polsl.easyso.services.ScoreServices;
 import com.polsl.easyso.services.dto.score.ScoreDTO;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ScoreBoardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -42,19 +48,10 @@ public class ScoreBoardActivity extends AppCompatActivity implements NavigationV
 
         recyclerView = findViewById(R.id.scores_recycler_view);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
-
-        List<ScoreDTO> scoresList = new ArrayList<>();
-
-        scoresList.add(new ScoreDTO("Elun Musk1337", 1));
-        scoresList.add(new ScoreDTO("Borixon", 5));
-        scoresList.add(new ScoreDTO("Alibaba", 4));
-
-
-        adapter = new ScoreAdapter(scoresList);
-        recyclerView.setAdapter(adapter);
 
         initializeNavigationMenu();
+
+        handleApiCall();
     }
 
     @Override
@@ -83,6 +80,31 @@ public class ScoreBoardActivity extends AppCompatActivity implements NavigationV
         } else {
             super.onBackPressed();
         }
+    }
+
+    private void handleApiCall() {
+
+        ScoreServices call = RetrofitClientFacade.getRetrofitInstance().create(ScoreServices.class);
+
+        Call<List<ScoreDTO>> getAllScores = call.getAllScores();
+        getAllScores.enqueue(new Callback<List<ScoreDTO>>() {
+            @Override
+            public void onResponse(Call<List<ScoreDTO>> call, Response<List<ScoreDTO>> response) {
+                handleResponse(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<List<ScoreDTO>> call, Throwable t) {
+                Toast.makeText(ScoreBoardActivity.this,
+                        "Failed to fetch data. Check your internet connection.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void handleResponse(List<ScoreDTO> body) {
+        adapter = new ScoreAdapter(body);
+        recyclerView.setAdapter(adapter);
     }
 
     private void initializeNavigationMenu() {
