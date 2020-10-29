@@ -2,5 +2,9 @@
     <string name="app_name">EasySO</string>
     <string name="title_activity_topics">TopicsActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <string name="statistics_questions_label">Pytań</string>
+    <string name="statistics_correct_label">Poprawne odpowiedzi</string>
+    <string name="statistics_score_label">Punkty</string>
 </resources>

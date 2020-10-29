@@ -3,12 +3,14 @@ package com.polsl.easyso.activities.resolveActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.polsl.easyso.R;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelCollectionChangedListener;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelInitializedListener;
+import com.polsl.easyso.activities.resolveActivity.listeners.OnStatisticsChangedListener;
 import com.polsl.easyso.adapters.QuizResolveAdapter;
 import com.polsl.easyso.constants.Constants;
 import com.polsl.easyso.services.dto.QuestionTopicDTO;
@@ -22,13 +24,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.security.InvalidParameterException;
 
-public class QuizResolveActivity extends AppCompatActivity implements OnModelInitializedListener, OnModelCollectionChangedListener {
+public class QuizResolveActivity extends AppCompatActivity implements OnModelInitializedListener, OnModelCollectionChangedListener, OnStatisticsChangedListener {
 
     private static QuizResolveActivity instance;
     private QuizResolveActivityModel model;
 
     private RecyclerView recyclerView;
     private QuizResolveAdapter questionsAdapter;
+
+    private TextView questionsCountText;
+    private TextView correctAnswersCountText;
+    private TextView scoreCountText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +44,14 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
 
         recyclerView = (RecyclerView) findViewById(R.id.quiz_questions_list);
         recyclerView.setHasFixedSize(true);
+        questionsCountText = (TextView) findViewById(R.id.statistics_questions_count);
+        correctAnswersCountText = (TextView) findViewById(R.id.statistics_correct_answers_count);
+        scoreCountText = (TextView) findViewById(R.id.statistics_points_count);
 
         initialize();
         initializeBottomToolBar();
         initializeActionBar();
+        refreshStatisticsSection();
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
@@ -78,7 +88,18 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
         }
     }
 
+    @Override
+    public void onStatisticsChanged() {
+        refreshStatisticsSection();
+    }
+
     // ########## Callbacks - END ###########
+
+    private void refreshStatisticsSection(){
+        questionsCountText.setText(String.valueOf(model.getStatistics().getSumOfQuestions()));
+        correctAnswersCountText.setText(String.valueOf(model.getStatistics().getSumOfCorrectAnswers()));
+        scoreCountText.setText(String.valueOf(model.getStatistics().getScore()));
+    }
 
     private void initializeActionBar(){
         ActionBar topActionBar = getSupportActionBar();
@@ -96,6 +117,7 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
         model = new QuizResolveActivityModel(currentTopic);
         model.setOnModelInitializedHandler(this);
         model.setOnModelCollectionChanged(this);
+        model.setOnStatisticsChanged(this);
         model.initialize();
 
         //Toast.makeText(this, "Unable to load from server!", Toast.LENGTH_SHORT).show();

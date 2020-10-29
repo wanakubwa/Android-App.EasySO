@@ -1,7 +1,9 @@
 package com.polsl.easyso.activities.resolveActivity;
 
+import com.polsl.easyso.activities.resolveActivity.components.StatisticsComponent;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelCollectionChangedListener;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelInitializedListener;
+import com.polsl.easyso.activities.resolveActivity.listeners.OnStatisticsChangedListener;
 import com.polsl.easyso.services.QuizServices;
 import com.polsl.easyso.services.RetrofitClientFacade;
 import com.polsl.easyso.services.dto.QuestionTopicDTO;
@@ -23,9 +25,12 @@ public class QuizResolveActivityModel {
     private QuestionTopicDTO currentTopic;
     private OnModelInitializedListener onModelInitializedHandler;
     private OnModelCollectionChangedListener onModelCollectionChanged;
+    private OnStatisticsChangedListener onStatisticsChangedHandler;
 
     private List<QuestionDTO> allQuestionsCollection = new ArrayList<>();
     private List<QuestionDTO> currentVisibleQuestions = new ArrayList<>();
+
+    private StatisticsComponent statistics;
 
     public QuizResolveActivityModel(QuestionTopicDTO currentTopic) {
         this.currentTopic = currentTopic;
@@ -33,6 +38,10 @@ public class QuizResolveActivityModel {
 
     public void setOnModelCollectionChanged(OnModelCollectionChangedListener onModelCollectionChanged) {
         this.onModelCollectionChanged = onModelCollectionChanged;
+    }
+
+    public void setOnStatisticsChanged(OnStatisticsChangedListener onStatisticsChangedListener) {
+        this.onStatisticsChangedHandler = onStatisticsChangedListener;
     }
 
     public void setOnModelInitializedHandler(OnModelInitializedListener onModelInitializedHandler) {
@@ -48,6 +57,10 @@ public class QuizResolveActivityModel {
 
     }
 
+    public StatisticsComponent getStatistics() {
+        return statistics;
+    }
+
     public QuestionTopicDTO getCurrentTopic() {
         return currentTopic;
     }
@@ -57,6 +70,8 @@ public class QuizResolveActivityModel {
     }
 
     public void initialize() {
+        statistics = new StatisticsComponent();
+
         QuizServices retrofitClient = RetrofitClientFacade.getRetrofitInstance().create(QuizServices.class);
         final Call<QuizDTO> currentQuiz = retrofitClient.getQuizForTopic(currentTopic.getLabel());
         currentQuiz.enqueue(new Callback<QuizDTO>() {
@@ -140,8 +155,14 @@ public class QuizResolveActivityModel {
     }
 
     public void validateDisplayedQuestions(){
+        boolean canCheckStatistics = true;
+
         for(QuestionDTO question : currentVisibleQuestions){
-            for(AnswerDTO answer : question.getAnswers()){
+            for(AnswerDTO answer : question.getAnswers()) {
+                if(answer.getCurrentStatus() != AnswerDTO.Status.NONE){
+                    canCheckStatistics = false;
+                }
+
                 if(answer.isUserCheckCorrect() == true){
                     answer.setCurrentStatus(AnswerDTO.Status.CORRECT);
                 }
@@ -151,6 +172,27 @@ public class QuizResolveActivityModel {
             }
         }
 
+        if(canCheckStatistics == true){
+            tryUpdateStatisticsData();
+        }
+
         onModelCollectionChanged.onCollectionChanged();
+    }
+
+    private void tryUpdateStatisticsData() {
+        for(QuestionDTO question : currentVisibleQuestions){
+            for(AnswerDTO answer : question.getAnswers()) {
+                if(answer.getCurrentStatus() == AnswerDTO.Status.CORRECT){
+                    statistics.increaseCorrectAnswer();
+                }
+                else{
+                    statistics.increaseInCorrectAnswers();
+                }
+            }
+
+            statistics.increaseQuestions();
+        }
+
+        onStatisticsChangedHandler.onStatisticsChanged();
     }
 }
