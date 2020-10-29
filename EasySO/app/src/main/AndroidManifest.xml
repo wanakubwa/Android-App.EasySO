@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".activities.ScoreBoardActivity"
+            android:label="SCORES"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".activities.resolveActivity.QuizResolveActivity"
             android:label="QUIZY"
             android:parentActivityName=".activities.TopicsActivity">
