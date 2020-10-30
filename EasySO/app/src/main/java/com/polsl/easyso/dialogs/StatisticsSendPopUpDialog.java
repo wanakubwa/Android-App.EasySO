@@ -12,8 +12,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.polsl.easyso.R;
+import com.polsl.easyso.activities.MainActivity;
 import com.polsl.easyso.activities.TopicsActivity;
 import com.polsl.easyso.activities.resolveActivity.QuizResolveActivity;
+import com.polsl.easyso.constants.Constants;
+import com.polsl.easyso.services.QuizServices;
+import com.polsl.easyso.services.RetrofitClientFacade;
+import com.polsl.easyso.services.dto.score.ScorePostDTO;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class StatisticsSendPopUpDialog extends Dialog {
 
@@ -67,15 +76,26 @@ public class StatisticsSendPopUpDialog extends Dialog {
     }
 
     private void onAcceptHandler(){
-        //todo;
-
         String name = nickNameInputField.getText().toString();
         if(name.isEmpty() == true){
             Toast.makeText(getContext(), R.string.popup_statistics_empty_nick_alert, Toast.LENGTH_SHORT).show();
             return;
         }
 
-        Toast.makeText(getContext(), nickNameInputField.getText(), Toast.LENGTH_SHORT).show();
-        onDiscardHandler();
+        ScorePostDTO scorePostDTO = new ScorePostDTO(nickNameInputField.getText().toString(), QuizResolveActivity.getInstance().getScoreValue(), Constants.APPLICATION_WEB_SERVICE_KEY);
+        RetrofitClientFacade.getRetrofitInstance().create(QuizServices.class).setScore(scorePostDTO).enqueue(new Callback<ScorePostDTO>() {
+            @Override
+            public void onResponse(Call<ScorePostDTO> call, Response<ScorePostDTO> response) {
+
+                if(response.isSuccessful()) {
+                    onDiscardHandler();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ScorePostDTO> call, Throwable t) {
+                onDiscardHandler();
+            }
+        });
     }
 }

@@ -1,4 +1,4 @@
-package com.polsl.easyso.services.exceptions;
+package com.polsl.easyso.exceptions;
 
 public class ApiException extends Exception {
 
