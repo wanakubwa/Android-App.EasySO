@@ -21,6 +21,9 @@
     <string name="popup_statistics_score_info">Zebrane punkty:</string>
     <string name="popup_statistics_empty_nick_alert">Wpisana nazwa nie może być pusta!</string>
 
+    <string name="quiz_resolve_test_fragment_option">Quiz</string>
+    <string name="quiz_resolve_tmp_fragment_option">Opcja</string>
+
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

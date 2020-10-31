@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.polsl.easyso.R;
+import com.polsl.easyso.activities.resolveActivity.fragments.QuizTestFragement;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelCollectionChangedListener;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelInitializedListener;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnStatisticsChangedListener;
@@ -15,31 +16,25 @@ import com.polsl.easyso.adapters.QuizResolveAdapter;
 import com.polsl.easyso.constants.Constants;
 import com.polsl.easyso.dialogs.StatisticsSendPopUpDialog;
 import com.polsl.easyso.services.dto.QuestionTopicDTO;
+import com.polsl.easyso.services.dto.question.QuestionDTO;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.security.InvalidParameterException;
+import java.util.List;
 
 public class QuizResolveActivity extends AppCompatActivity implements OnModelInitializedListener, OnModelCollectionChangedListener, OnStatisticsChangedListener {
 
     private static QuizResolveActivity instance;
     private QuizResolveActivityModel model;
-
-    private RecyclerView recyclerView;
-    private QuizResolveAdapter questionsAdapter;
-
-    private TextView questionsCountText;
-    private TextView correctAnswersCountText;
-    private TextView scoreCountText;
-
-    public int getScoreValue(){
-        return model.getStatistics().getScore();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,16 +42,8 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
         setContentView(R.layout.activity_quiz_resolve2);
         instance = this;
 
-        recyclerView = (RecyclerView) findViewById(R.id.quiz_questions_list);
-        recyclerView.setHasFixedSize(true);
-        questionsCountText = (TextView) findViewById(R.id.statistics_questions_count);
-        correctAnswersCountText = (TextView) findViewById(R.id.statistics_correct_answers_count);
-        scoreCountText = (TextView) findViewById(R.id.statistics_points_count);
-
         initialize();
-        initializeBottomToolBar();
         initializeActionBar();
-        refreshStatisticsSection();
     }
 
     @Override
@@ -75,40 +62,74 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
     }
 
     public void onAnswerSelected(int questionId, int answerId) {
-
         try{
             model.updateQuestionAnswerStatus(questionId, answerId);
-            questionsAdapter.notifyDataSetChanged();
+            onCollectionChanged();
         } catch (InvalidParameterException ex){
             //todo;
         }
+    }
+
+    public void validateSelectedAnswers() {
+        model.validateDisplayedQuestions();
+    }
+
+    public void refreshDiaplayedQuestions(int ammount){
+        model.refreshCurrentQuestions(ammount);
+    }
+
+    public int getStatisticsSumOfQuestions(){
+        return model.getStatistics().getSumOfQuestions();
+    }
+
+    public int getSumOfCorrectAnswers(){
+        return model.getStatistics().getSumOfCorrectAnswers();
+    }
+
+    public List<QuestionDTO> getRandomQuestions(int ammount) {
+        return model.getRandomQuestionsAmmount(ammount);
+    }
+
+    public List<QuestionDTO> getCurrentQuestions() {
+        return model.getCurrentVisibleQuestions();
+    }
+
+    public int getScoreValue(){
+        return model.getStatistics().getScore();
     }
 
     // ########## Callbacks - START ###########
 
     @Override
     public void onInitializedSuccess() {
-        refreshView();
+        // Ustawienie domyslnego fragementu.
+        setFragment(new QuizTestFragement());
     }
 
     @Override
     public void onCollectionChanged() {
-        if(questionsAdapter != null){
-            questionsAdapter.setQuestionsCollection(model.getCurrentVisibleQuestions());
+        QuizTestFragement fragement = (QuizTestFragement) getSupportFragmentManager().findFragmentById(R.id.quiz_resolve_activity_fragment_parent);
+        if(fragement != null) {
+            fragement.refreshDisplayedQuestions();
         }
     }
 
     @Override
     public void onStatisticsChanged() {
-        refreshStatisticsSection();
+        QuizTestFragement fragement = (QuizTestFragement) getSupportFragmentManager().findFragmentById(R.id.quiz_resolve_activity_fragment_parent);
+        if(fragement != null) {
+            fragement.refreshStatisticsSection();
+        }
     }
 
     // ########## Callbacks - END ###########
 
-    private void refreshStatisticsSection(){
-        questionsCountText.setText(String.valueOf(model.getStatistics().getSumOfQuestions()));
-        correctAnswersCountText.setText(String.valueOf(model.getStatistics().getSumOfCorrectAnswers()));
-        scoreCountText.setText(String.valueOf(model.getStatistics().getScore()));
+    private void setFragment(Fragment toAddFragement){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        transaction.replace(R.id.quiz_resolve_activity_fragment_parent, toAddFragement);
+        transaction.commit();
     }
 
     private void initializeActionBar(){
@@ -129,29 +150,5 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
         model.setOnModelCollectionChanged(this);
         model.setOnStatisticsChanged(this);
         model.initialize();
-    }
-
-    private void refreshView()
-    {
-        questionsAdapter = new QuizResolveAdapter(model.getRandomQuestionsAmmount(2));
-        recyclerView.setAdapter(questionsAdapter);
-    }
-
-    private void initializeBottomToolBar(){
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.quiz_resolve_bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.quiz_resolve_bottom_navigation_action_check:
-                        model.validateDisplayedQuestions();
-                        break;
-                    case R.id.quiz_resolve_bottom_navigation_action_roll:
-                        model.refreshCurrentQuestions(2);
-                        break;
-                }
-                return true;
-            }
-        });
     }
 }
