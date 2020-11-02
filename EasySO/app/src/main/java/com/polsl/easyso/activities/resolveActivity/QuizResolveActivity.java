@@ -2,31 +2,22 @@ package com.polsl.easyso.activities.resolveActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.polsl.easyso.R;
+import com.polsl.easyso.activities.resolveActivity.fragments.QuizResolveFragmentBase;
 import com.polsl.easyso.activities.resolveActivity.fragments.QuizTestFragement;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelCollectionChangedListener;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelInitializedListener;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnStatisticsChangedListener;
-import com.polsl.easyso.adapters.QuizResolveAdapter;
 import com.polsl.easyso.constants.Constants;
 import com.polsl.easyso.dialogs.StatisticsSendPopUpDialog;
 import com.polsl.easyso.services.dto.QuestionTopicDTO;
 import com.polsl.easyso.services.dto.question.QuestionDTO;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.OnLifecycleEvent;
-import androidx.recyclerview.widget.RecyclerView;
 
 import java.security.InvalidParameterException;
 import java.util.List;
@@ -35,6 +26,9 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
 
     private static QuizResolveActivity instance;
     private QuizResolveActivityModel model;
+
+    private QuizResolveFragmentBase.TypeLabel defaultQuizFragmentType = QuizResolveFragmentBase.TypeLabel.TEST_MODE;
+    private QuizResolveFragmentBase currentFragement = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,7 +97,7 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
     @Override
     public void onInitializedSuccess() {
         // Ustawienie domyslnego fragementu.
-        setFragment(new QuizTestFragement());
+        trySetFragment(model.getQuizFragmentByTypeLabel(defaultQuizFragmentType));
     }
 
     @Override
@@ -124,7 +118,12 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
 
     // ########## Callbacks - END ###########
 
-    private void setFragment(Fragment toAddFragement){
+    private void trySetFragment(QuizResolveFragmentBase toAddFragement) {
+        if(toAddFragement == null){
+            return;
+        }
+        currentFragement = toAddFragement;
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 

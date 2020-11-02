@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -55,8 +54,8 @@ public class QuizTestFragement extends QuizResolveFragmentBase {
     }
 
     @Override
-    public FramentType getFragmentType() {
-        return FramentType.TEST_MODE;
+    public TypeLabel getFragmentType() {
+        return TypeLabel.TEST_MODE;
     }
 
     public void refreshStatisticsSection(){

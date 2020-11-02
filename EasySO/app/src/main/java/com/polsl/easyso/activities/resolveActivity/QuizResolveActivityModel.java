@@ -1,6 +1,8 @@
 package com.polsl.easyso.activities.resolveActivity;
 
 import com.polsl.easyso.activities.resolveActivity.components.StatisticsComponent;
+import com.polsl.easyso.activities.resolveActivity.fragments.QuizResolveFragmentBase;
+import com.polsl.easyso.activities.resolveActivity.fragments.QuizTestFragement;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelCollectionChangedListener;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelInitializedListener;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnStatisticsChangedListener;
@@ -29,11 +31,15 @@ public class QuizResolveActivityModel {
 
     private List<QuestionDTO> allQuestionsCollection = new ArrayList<>();
     private List<QuestionDTO> currentVisibleQuestions = new ArrayList<>();
+    private QuizResolveFragmentBase[] quizFragmentsCollection;
 
     private StatisticsComponent statistics;
 
     public QuizResolveActivityModel(QuestionTopicDTO currentTopic) {
         this.currentTopic = currentTopic;
+
+        // Inicjalizacja kolekcji fragmentow.
+        buildQuizFragmentsCollection();
     }
 
     public void setOnModelCollectionChanged(OnModelCollectionChangedListener onModelCollectionChanged) {
@@ -69,6 +75,17 @@ public class QuizResolveActivityModel {
         this.currentTopic = currentTopic;
     }
 
+    public QuizResolveFragmentBase getQuizFragmentByTypeLabel(QuizResolveFragmentBase.TypeLabel typeLabel) {
+        QuizResolveFragmentBase output = null;
+        for(QuizResolveFragmentBase fragmentBase : quizFragmentsCollection){
+            if(fragmentBase.getFragmentType() == typeLabel){
+                output = fragmentBase;
+            }
+        }
+
+        return output;
+    }
+
     public void initialize() {
         statistics = new StatisticsComponent();
 
@@ -99,6 +116,13 @@ public class QuizResolveActivityModel {
         currentVisibleQuestions.clear();
         currentVisibleQuestions = getRandomQuestions(ammount);
         onModelCollectionChanged.onCollectionChanged();
+    }
+
+    // Definicje wszytskich fragmentow na widoku.
+    private void buildQuizFragmentsCollection() {
+        quizFragmentsCollection = new QuizResolveFragmentBase[]{
+                new QuizTestFragement()
+        };
     }
 
     private List<QuestionDTO> getRandomQuestions(int ammount){

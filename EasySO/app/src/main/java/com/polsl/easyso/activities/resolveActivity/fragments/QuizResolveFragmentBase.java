@@ -5,7 +5,6 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.polsl.easyso.R;
 import com.polsl.easyso.activities.resolveActivity.QuizResolveActivity;
 
 public abstract class QuizResolveFragmentBase extends Fragment {
@@ -21,13 +20,13 @@ public abstract class QuizResolveFragmentBase extends Fragment {
 
     public abstract String getOptionName();
 
-    public abstract FramentType getFragmentType();
+    public abstract TypeLabel getFragmentType();
 
     private void setParentActivity(QuizResolveActivity parent){
         this.parent = parent;
     }
 
-    public enum FramentType {
+    public enum TypeLabel {
         TEST_MODE
     }
 }
