@@ -2,6 +2,10 @@ package com.polsl.easyso.activities.resolveActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.polsl.easyso.R;
 import com.polsl.easyso.activities.resolveActivity.fragments.QuizResolveFragmentBase;
@@ -14,6 +18,7 @@ import com.polsl.easyso.dialogs.StatisticsSendPopUpDialog;
 import com.polsl.easyso.services.dto.QuestionTopicDTO;
 import com.polsl.easyso.services.dto.question.QuestionDTO;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -41,8 +46,32 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.dropdown_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.item1:
+                Toast.makeText(this, "Item 1 selected", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.item2:
+                Toast.makeText(this, "Item 2 selected", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.item3:
+                Toast.makeText(this, "Item 3 selected", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     public void onBackPressed() {
-        if(model.getStatistics().getScore() == 0){
+        if (model.getStatistics().getScore() == 0) {
             super.onBackPressed();
             return;
         }
@@ -56,10 +85,10 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
     }
 
     public void onAnswerSelected(int questionId, int answerId) {
-        try{
+        try {
             model.updateQuestionAnswerStatus(questionId, answerId);
             onCollectionChanged();
-        } catch (InvalidParameterException ex){
+        } catch (InvalidParameterException ex) {
             //todo;
         }
     }
@@ -68,15 +97,15 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
         model.validateDisplayedQuestions();
     }
 
-    public void refreshDiaplayedQuestions(int ammount){
+    public void refreshDiaplayedQuestions(int ammount) {
         model.refreshCurrentQuestions(ammount);
     }
 
-    public int getStatisticsSumOfQuestions(){
+    public int getStatisticsSumOfQuestions() {
         return model.getStatistics().getSumOfQuestions();
     }
 
-    public int getSumOfCorrectAnswers(){
+    public int getSumOfCorrectAnswers() {
         return model.getStatistics().getSumOfCorrectAnswers();
     }
 
@@ -88,7 +117,7 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
         return model.getCurrentVisibleQuestions();
     }
 
-    public int getScoreValue(){
+    public int getScoreValue() {
         return model.getStatistics().getScore();
     }
 
@@ -103,7 +132,7 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
     @Override
     public void onCollectionChanged() {
         QuizTestFragement fragement = (QuizTestFragement) getSupportFragmentManager().findFragmentById(R.id.quiz_resolve_activity_fragment_parent);
-        if(fragement != null) {
+        if (fragement != null) {
             fragement.refreshDisplayedQuestions();
         }
     }
@@ -111,7 +140,7 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
     @Override
     public void onStatisticsChanged() {
         QuizTestFragement fragement = (QuizTestFragement) getSupportFragmentManager().findFragmentById(R.id.quiz_resolve_activity_fragment_parent);
-        if(fragement != null) {
+        if (fragement != null) {
             fragement.refreshStatisticsSection();
         }
     }
@@ -119,7 +148,7 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
     // ########## Callbacks - END ###########
 
     private void trySetFragment(QuizResolveFragmentBase toAddFragement) {
-        if(toAddFragement == null){
+        if (toAddFragement == null) {
             return;
         }
         currentFragement = toAddFragement;
@@ -131,16 +160,15 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
         transaction.commit();
     }
 
-    private void initializeActionBar(){
+    private void initializeActionBar() {
         ActionBar topActionBar = getSupportActionBar();
-        if(topActionBar != null){
+        if (topActionBar != null) {
             topActionBar.setDisplayHomeAsUpEnabled(false);
             topActionBar.setTitle(model.getCurrentTopic().getLabel().trim());
         }
     }
 
-    private void initialize()
-    {
+    private void initialize() {
         Intent intent = getIntent();
         QuestionTopicDTO currentTopic = (QuestionTopicDTO) intent.getSerializableExtra(Constants.QUIZ_TOPIC_INTENT_NAME);
 
@@ -150,4 +178,6 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
         model.setOnStatisticsChanged(this);
         model.initialize();
     }
+
+
 }

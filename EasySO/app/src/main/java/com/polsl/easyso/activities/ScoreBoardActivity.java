@@ -16,8 +16,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.polsl.easyso.R;
@@ -38,8 +42,7 @@ public class ScoreBoardActivity extends AppCompatActivity implements NavigationV
     private DrawerLayout drawerLayout;
 
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
+    private ScoreAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +98,7 @@ public class ScoreBoardActivity extends AppCompatActivity implements NavigationV
 
             @Override
             public void onFailure(Call<List<ScoreDTO>> call, Throwable t) {
+
                 Toast.makeText(ScoreBoardActivity.this,
                         "Failed to fetch data. Check your internet connection.", Toast.LENGTH_SHORT).show();
             }
@@ -105,6 +109,30 @@ public class ScoreBoardActivity extends AppCompatActivity implements NavigationV
     private void handleResponse(List<ScoreDTO> body) {
         adapter = new ScoreAdapter(body);
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_menu, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+        return true;
     }
 
     private void initializeNavigationMenu() {
