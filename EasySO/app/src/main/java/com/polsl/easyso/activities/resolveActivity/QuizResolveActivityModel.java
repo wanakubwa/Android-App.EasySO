@@ -1,11 +1,13 @@
 package com.polsl.easyso.activities.resolveActivity;
 
 import com.polsl.easyso.activities.resolveActivity.components.StatisticsComponent;
+import com.polsl.easyso.activities.resolveActivity.fragments.QuizLearnFragment;
 import com.polsl.easyso.activities.resolveActivity.fragments.QuizResolveFragmentBase;
 import com.polsl.easyso.activities.resolveActivity.fragments.QuizTestFragement;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelCollectionChangedListener;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelInitializedListener;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnStatisticsChangedListener;
+import com.polsl.easyso.adapters.spinners.items.QuizResolveSpinnerItem;
 import com.polsl.easyso.services.QuizServices;
 import com.polsl.easyso.services.RetrofitClientFacade;
 import com.polsl.easyso.services.dto.QuestionTopicDTO;
@@ -42,6 +44,10 @@ public class QuizResolveActivityModel {
         buildQuizFragmentsCollection();
     }
 
+    public List<QuestionDTO> getAllQuestionsCollection() {
+        return allQuestionsCollection;
+    }
+
     public void setOnModelCollectionChanged(OnModelCollectionChangedListener onModelCollectionChanged) {
         this.onModelCollectionChanged = onModelCollectionChanged;
     }
@@ -69,6 +75,20 @@ public class QuizResolveActivityModel {
 
     public QuestionTopicDTO getCurrentTopic() {
         return currentTopic;
+    }
+
+    public QuizResolveFragmentBase[] getQuizFragmentsCollection(){
+        return quizFragmentsCollection;
+    }
+
+    public QuizResolveSpinnerItem[] getQuizResolveSpinnerItems(){
+        QuizResolveSpinnerItem[] output = new QuizResolveSpinnerItem[quizFragmentsCollection.length];
+
+        for (int i =0; i < quizFragmentsCollection.length; i++){
+            output[i] = new QuizResolveSpinnerItem(quizFragmentsCollection[i].getOptionName(), quizFragmentsCollection[i].getFragmentType());
+        }
+
+        return output;
     }
 
     public void setCurrentTopic(QuestionTopicDTO currentTopic) {
@@ -121,7 +141,8 @@ public class QuizResolveActivityModel {
     // Definicje wszytskich fragmentow na widoku.
     private void buildQuizFragmentsCollection() {
         quizFragmentsCollection = new QuizResolveFragmentBase[]{
-                new QuizTestFragement()
+                new QuizTestFragement(),
+                new QuizLearnFragment()
         };
     }
 

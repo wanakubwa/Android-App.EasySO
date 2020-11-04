@@ -27,6 +27,7 @@ public abstract class QuizResolveFragmentBase extends Fragment {
     }
 
     public enum TypeLabel {
-        TEST_MODE
+        TEST_MODE,
+        LEARN_MODE
     }
 }

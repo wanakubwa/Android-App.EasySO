@@ -54,19 +54,23 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        QuizResolveFragmentBase.TypeLabel choosedType = defaultQuizFragmentType;
+
         switch (item.getItemId()) {
-            case R.id.item1:
-                Toast.makeText(this, "Item 1 selected", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.item2:
-                Toast.makeText(this, "Item 2 selected", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.item3:
-                Toast.makeText(this, "Item 3 selected", Toast.LENGTH_SHORT).show();
-                return true;
+            case R.id.quiz_option:
+                choosedType = QuizResolveFragmentBase.TypeLabel.TEST_MODE;
+                break;
+            case R.id.learn_option:
+                model.getStatistics().reset();
+                choosedType = QuizResolveFragmentBase.TypeLabel.LEARN_MODE;
+                break;
             default:
                 return super.onOptionsItemSelected(item);
         }
+
+        trySetFragment(model.getQuizFragmentByTypeLabel(choosedType));
+        return true;
     }
 
     @Override
@@ -91,6 +95,10 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
         } catch (InvalidParameterException ex) {
             //todo;
         }
+    }
+
+    public List<QuestionDTO> getAllQuestions(){
+        return model.getAllQuestionsCollection();
     }
 
     public void validateSelectedAnswers() {

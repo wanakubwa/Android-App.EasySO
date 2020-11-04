@@ -50,7 +50,7 @@ public class QuizTestFragement extends QuizResolveFragmentBase {
 
     @Override
     public String getOptionName() {
-        return getResources().getString(R.string.quiz_resolve_test_fragment_option);
+        return "Quiz";
     }
 
     @Override
