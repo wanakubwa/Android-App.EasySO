@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/quiz_resolve_bottom_navigation_action_check"
         android:title="Sprawdź"
-        android:icon="@drawable/ic_baseline_score_24" />
+        android:icon="@drawable/ic_check_black_48dp" />
     <item android:id="@+id/quiz_resolve_bottom_navigation_action_roll"
         android:title="Losuj"
-        android:icon="@drawable/ic_baseline_score_24" />
+        android:icon="@drawable/ic_autorenew_black_48dp" />
 </menu>
