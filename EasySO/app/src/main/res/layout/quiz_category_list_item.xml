@@ -11,36 +11,50 @@
     app:cardElevation="4dp"
     app:contentPadding="4dp">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="14dp">
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/quiz_category_item_label"
             android:layout_width="205dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:maxLength="16"
             android:maxLines="1"
             android:text="Label"
             android:textColor="@color/colorText"
-            android:textSize="22sp"
-            app:autoSizeMaxTextSize="28sp"
-            app:autoSizeMinTextSize="14sp" />
+            android:textSize="22sp" />
 
-        <TextView
-            android:id="@+id/quiz_category_item_count"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/quiz_category_item_label"
-            android:layout_marginTop="2pt"
-            android:gravity="right"
-            android:text="Label"
-            android:textColor="#E94560"
-            android:textSize="18sp" />
+            android:layout_marginTop="10dp">
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="24sp"
+                android:layout_height="24sp"
+                android:layout_marginEnd="5sp"
+                android:layout_toStartOf="@+id/quiz_category_item_count"
+                android:visibility="visible"
+                app:srcCompat="@drawable/ic_school_black_48dp" />
+
+            <TextView
+                android:id="@+id/quiz_category_item_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5sp"
+                android:gravity="left"
+                android:minWidth="25sp"
+                android:text="99"
+                android:textColor="#E94560"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
 </androidx.cardview.widget.CardView>
 
 <!--<TextView-->
