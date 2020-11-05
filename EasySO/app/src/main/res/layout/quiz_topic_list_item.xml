@@ -44,10 +44,10 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:maxLines="1"
-                android:text="Questions:"
+                android:text="Pytania:"
                 android:textColor="@color/colorText"
                 android:textSize="18sp"
-                tools:text="Questions:" />
+                tools:text="Pytania:" />
 
             <Space
                 android:layout_width="10sp"
