@@ -20,7 +20,7 @@ jobs:
           java-version: 1.8
 
       - name: Generate Debug APK
-        run: ./gradlew clean assembleDebug
+        run: EasySO/./gradlew clean assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v1
