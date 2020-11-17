@@ -19,6 +19,10 @@ jobs:
         with:
           java-version: 1.8
 
+      - name: Make gradlew executable
+        working-directory: ./EasySO
+        run: chmod +x ./gradlew
+        
       - name: Generate Debug APK
         working-directory: ./EasySO
         run: ./gradlew clean assembleDebug
