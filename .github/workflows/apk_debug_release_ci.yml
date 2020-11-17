@@ -38,7 +38,7 @@ jobs:
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       
       - name: Create Release and Upload debug APK
-        uses: ShaunLWM/action-release-debugapk@master
+        uses: ShaunLWM/action-release-debugapk@main
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN  }}
           APP_FOLDER: EasySO/app
