@@ -38,7 +38,7 @@ jobs:
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       
       - name: Create Release and Upload debug APK
-        uses: underwindfall/create-release-with-debugapk@v1.2.4
+        uses: underwindfall/create-release-with-debugapk@v2.0.0
         env: 
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
         with:
