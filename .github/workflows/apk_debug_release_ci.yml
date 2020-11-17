@@ -37,7 +37,7 @@ jobs:
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       
-      - name: Create Release and Upload debug APK
+      - name: Releasing using Hub
         uses: ShaunLWM/action-release-debugapk@master
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN  }}
