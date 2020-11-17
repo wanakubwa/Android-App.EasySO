@@ -38,7 +38,7 @@ jobs:
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       
       - name: Releasing using Hub
-        uses: wanakubwa/action-release-apk@main
+        uses: wanakubwa/action-release-apk@master
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN  }}
           APP_FOLDER: EasySO/app
