@@ -42,4 +42,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN  }}
           APP_FOLDER: EasySO/app
-          RELEASE_TITLE: Release-Debug-${{ steps.get_version.outputs.VERSION }}
+          RELEASE_TITLE: Release-Debug-${{ github.event.release.tag_name }}
