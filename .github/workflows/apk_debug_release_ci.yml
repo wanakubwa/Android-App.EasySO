@@ -35,7 +35,7 @@ jobs:
 
       - name: Get the version
         id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+        run: echo ::set-output name=VERSION::${{ github.event_name }}
         
       - name: Get latest release version number
         id: get_version_from_action
@@ -46,4 +46,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN  }}
           APP_FOLDER: EasySO/app
-          RELEASE_TITLE: Release-Debug-${{ steps.get_version_from_action.outputs.version }}
+          RELEASE_TITLE: Release-Debug-${{ steps.get_version.outputs.VERSION }}
