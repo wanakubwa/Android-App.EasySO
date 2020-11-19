@@ -35,7 +35,7 @@ jobs:
 
       - name: Get the version
         id: get_version
-        run: echo ::set-output name=VERSION::${{ github.event_name }}
+        run: echo ::set-output name=VERSION::${{ github.event.number }}
         
       - name: Get latest release version number
         id: get_version_from_action
