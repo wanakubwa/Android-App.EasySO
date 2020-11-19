@@ -35,18 +35,11 @@ jobs:
 
       - name: Get the version
         id: get_version
-        run: echo ::set-output name=VERSION::${{ github.event.number }}
-        
-      - name: Get latest release version number
-        uses: olegtarasov/get-tag@v2
-        id: get_version_from_action
-        with:
-          tagRegex: "foobar-(.*)"  # Optional. Returns specified group text as tag name. Full tag string is returned if regex is not defined.
-          tagRegexGroup: 1 # Optional. Default is 1.
+        run: echo ::set-output name=VERSION::$(date +'%Y-%m-%d')
         
       - name: Releasing using Hub
         uses: wanakubwa/action-release-apk@master
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN  }}
           APP_FOLDER: EasySO/app
-          RELEASE_TITLE: Release-Debug-${{ steps.get_version_from_action.outputs.tag }}
+          RELEASE_TITLE: Release-Debug-${{ steps.get_version.outputs.VERSION }}
