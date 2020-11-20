@@ -36,10 +36,16 @@ jobs:
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::$(date +'%Y-%m-%d')
+
+      - name: Bump version and push tag
+        id: semantic_version
+        uses: hennejg/github-tag-action@v4.1.jh1
+        with:
+          github_token: ${{ secrets.GIT_TOKEN }}
         
       - name: Releasing using Hub
         uses: wanakubwa/action-release-apk@master
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN  }}
           APP_FOLDER: EasySO/app
-          RELEASE_TITLE: Release-Debug-${{ steps.get_version.outputs.VERSION }}
+          RELEASE_TITLE: Release-Debug-${{ steps.semantic_version.outputs.new_version }}
