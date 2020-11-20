@@ -42,6 +42,7 @@ jobs:
         uses: hennejg/github-tag-action@v4.1.jh1
         with:
           github_token: ${{ secrets.GIT_TOKEN }}
+          release_branches: build-debug-ci
         
       - name: Releasing using Hub
         uses: wanakubwa/action-release-apk@master
