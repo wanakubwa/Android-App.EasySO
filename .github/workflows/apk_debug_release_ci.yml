@@ -43,6 +43,7 @@ jobs:
         env:
          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
          WITH_V: true
+         build-debug-ci: true
 
       - name: Generate build number
         id: buildnumber
