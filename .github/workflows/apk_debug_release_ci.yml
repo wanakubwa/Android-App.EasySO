@@ -56,4 +56,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN  }}
           APP_FOLDER: EasySO/app
-          RELEASE_TITLE: Build Debug-${{ steps.tag_semantic.outputs.new_tag }}
+          RELEASE_TITLE: Build Debug-v.${{ steps.buildnumber.outputs.build_number }}
