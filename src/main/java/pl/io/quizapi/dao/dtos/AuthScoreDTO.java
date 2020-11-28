@@ -8,6 +8,7 @@ public class AuthScoreDTO {
 
     private String authKey;
 
+
     public AuthScoreDTO() {
     }
 
