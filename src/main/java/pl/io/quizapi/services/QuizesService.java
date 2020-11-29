@@ -104,5 +104,5 @@ public class QuizesService {
         quizzesRepo.save(mappedQuiz);
         saveQuestions(quiz.getQuiz().getQuestions(), mappedQuiz);
     }
-    }
+
 }

@@ -1,7 +1,6 @@
 package pl.io.quizapi.dao.entities;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "score")
