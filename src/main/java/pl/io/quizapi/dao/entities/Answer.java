@@ -1,6 +1,7 @@
 package pl.io.quizapi.dao.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
 import java.io.Serializable;

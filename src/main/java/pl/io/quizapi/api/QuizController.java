@@ -5,6 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.io.quizapi.dao.dtos.FullQuizDTO;
 import pl.io.quizapi.dao.dtos.QuizDTO;
+import pl.io.quizapi.dao.dtos.QuizLabelDTO;
+import pl.io.quizapi.services.CategoriesService;
 import pl.io.quizapi.services.QuizesService;
 
 import java.util.List;
@@ -14,6 +16,7 @@ import java.util.List;
 @CrossOrigin
 public class QuizController {
     private QuizesService quizesService;
+    private CategoriesService categoriesService;
 
     @Autowired
     public QuizController(QuizesService quizesService) {
@@ -27,6 +30,12 @@ public class QuizController {
 
     @GetMapping("/quiz/{name}")
     public QuizDTO findByName(@PathVariable String name) {
+        return quizesService.findByName(name);
+    }
+
+    @GetMapping("/quiz/{category}/{name}")
+    public QuizDTO findByName(@PathVariable String name, @PathVariable String category) {
+       List<QuizLabelDTO> retVal = categoriesService.getAllQuizzesFromCategory(category);
         return quizesService.findByName(name);
     }
 
