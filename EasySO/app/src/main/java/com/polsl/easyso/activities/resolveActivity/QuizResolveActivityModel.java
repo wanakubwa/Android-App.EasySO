@@ -165,6 +165,7 @@ public class QuizResolveActivityModel {
 
             // Glebokie kopiowanie oryginalnych elementow.
             randomQuestions.add(new QuestionDTO(allQuestionsCollection.get(avaibleIndexes.get(ranodmIndex))));
+            randomQuestions.get(i).shuffleAnswers();
             avaibleIndexes.remove(ranodmIndex);
         }
 
