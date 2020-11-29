@@ -6,10 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import pl.io.quizapi.dao.dtos.AnswerDTO;
 import pl.io.quizapi.dao.dtos.QuestionDTO;
-import pl.io.quizapi.dao.dtos.QuizLabelDTO;
 import pl.io.quizapi.dao.entities.Answer;
 import pl.io.quizapi.dao.entities.Question;
-import pl.io.quizapi.dao.entities.Quiz;
 
 @Configuration
 public class ApiConfig {
@@ -33,7 +31,6 @@ public class ApiConfig {
                 map().setUid(source.getId().intValue());
             }
         });
-
 
 
         return modelMapper;

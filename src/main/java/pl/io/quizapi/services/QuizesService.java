@@ -94,4 +94,14 @@ public class QuizesService {
             answersRepo.save(answer);
         }
     }
+
+    public void saveNewQuiz(FullQuizDTO quiz) {
+        Category category = new Category();
+        category.setName(quiz.getCategory());
+        categoriesRepos.save(category);
+
+        Quiz mappedQuiz = new Quiz(quiz.getQuiz().getName(), category);
+        quizzesRepo.save(mappedQuiz);
+        saveQuestions(quiz.getQuiz().getQuestions(), mappedQuiz);
+    }
 }
