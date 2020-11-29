@@ -34,7 +34,7 @@ public class QuizController {
     }
 
     @GetMapping("/quiz/{category}/{name}")
-    public QuizDTO findByName(@PathVariable String name, @PathVariable String category) {
+    public QuizDTO findByCategoryAndName(@PathVariable String name, @PathVariable String category) {
        List<QuizLabelDTO> retVal = categoriesService.getAllQuizzesFromCategory(category);
         return quizesService.findByName(name);
     }

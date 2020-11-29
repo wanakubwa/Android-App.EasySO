@@ -96,10 +96,20 @@ public class QuizesService {
     }
 
     public void saveNewQuiz(FullQuizDTO quiz) {
-        Category category = new Category();
-        category.setName(quiz.getCategory());
-        categoriesRepos.save(category);
+        List<Category> categories = (List<Category>) categoriesRepos.findAll();
+        String categoryName = quiz.getCategory();
 
+        for (Category c : categories) {
+            if (c.getName().equals(categoryName)) {
+                Quiz mappedQuiz = new Quiz(quiz.getQuiz().getName(), c);
+                quizzesRepo.save(mappedQuiz);
+                saveQuestions(quiz.getQuiz().getQuestions(), mappedQuiz);
+                return;
+            }
+        }
+
+        Category category = new Category(categoryName);
+        categoriesRepos.save(category);
         Quiz mappedQuiz = new Quiz(quiz.getQuiz().getName(), category);
         quizzesRepo.save(mappedQuiz);
         saveQuestions(quiz.getQuiz().getQuestions(), mappedQuiz);

@@ -13,7 +13,7 @@ public class Quiz implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
-
+    @Column(unique = true)
     private String name;
 
     @OneToMany(mappedBy = "quiz", fetch = FetchType.LAZY)
