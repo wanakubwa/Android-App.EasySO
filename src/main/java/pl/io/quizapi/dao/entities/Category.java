@@ -1,6 +1,7 @@
 package pl.io.quizapi.dao.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -13,7 +14,7 @@ public class Category {
     private String name;
 
 
-    @OneToMany(mappedBy = "category",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
     private List<Quiz> quizzes;
 
     public Category() {

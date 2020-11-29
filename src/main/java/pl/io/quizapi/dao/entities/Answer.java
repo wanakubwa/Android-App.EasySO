@@ -3,6 +3,7 @@ package pl.io.quizapi.dao.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
@@ -12,9 +13,7 @@ public class Answer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String answerText;
-
     private Boolean result;
 
     @ManyToOne(fetch = FetchType.LAZY)
