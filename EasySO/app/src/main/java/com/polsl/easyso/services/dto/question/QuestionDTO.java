@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class QuestionDTO {
 
@@ -77,5 +78,27 @@ public class QuestionDTO {
         }
 
         return output;
+    }
+
+    public void shuffleAnswers(){
+        for(int i =0; i < 3; i++){
+            shuffleList(answers);
+        }
+    }
+
+    private void shuffleList(List<AnswerDTO> a) {
+        int n = a.size();
+        Random random = new Random();
+        random.nextInt();
+        for (int i = 0; i < n; i++) {
+            int change = i + random.nextInt(n - i);
+            swap(a, i, change);
+        }
+    }
+
+    private void swap(List<AnswerDTO> a, int i, int change) {
+        AnswerDTO helper = a.get(i);
+        a.set(i, a.get(change));
+        a.set(change, helper);
     }
 }
