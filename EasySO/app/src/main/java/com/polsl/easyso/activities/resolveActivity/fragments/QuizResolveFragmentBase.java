@@ -18,6 +18,14 @@ public abstract class QuizResolveFragmentBase extends Fragment {
         setParentActivity((QuizResolveActivity) context);
     }
 
+    public void refreshDisplayedQuestions(){
+
+    }
+
+    public void refreshStatisticsSection(){
+
+    }
+
     public abstract String getOptionName();
 
     public abstract TypeLabel getFragmentType();
@@ -27,7 +35,8 @@ public abstract class QuizResolveFragmentBase extends Fragment {
     }
 
     public enum TypeLabel {
-        TEST_MODE,
-        LEARN_MODE
+        RANDOM_MODE,
+        LEARN_MODE,
+        TEST_MODE
     }
 }

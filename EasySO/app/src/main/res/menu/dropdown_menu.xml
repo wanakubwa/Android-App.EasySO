@@ -2,11 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/quiz_option"
-        android:title="@string/quiz_resolve_test_fragment_option"
+        android:id="@+id/random_option"
+        android:title="@string/quiz_resolve_random_fragment_option"
         app:showAsAction="never" />
     <item
         android:id="@+id/learn_option"
         android:title="@string/quiz_resolve_learn_fragment_option"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/test_option"
+        android:title="@string/quiz_resolve_test_fragment_option"
         app:showAsAction="never" />
 </menu>
