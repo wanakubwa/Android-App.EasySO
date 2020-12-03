@@ -22,7 +22,6 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreViewItem> implements
     private List<ScoreDTO> scoreCollection;
     private List<ScoreDTO> scoreCollectionFull = new ArrayList<>();
 
-
     public ScoreAdapter(List<ScoreDTO> scoreCollection) {
         this.scoreCollection = scoreCollection;
         this.scoreCollectionFull = new ArrayList<>(scoreCollection);
@@ -88,5 +87,4 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreViewItem> implements
             notifyDataSetChanged();
         }
     };
-
 }

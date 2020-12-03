@@ -15,7 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.polsl.easyso.R;
 import com.polsl.easyso.adapters.QuizResolveAdapter;
 
-public class QuizTestFragement extends QuizResolveFragmentBase {
+public class QuizRandomFragement extends QuizResolveFragmentBase {
 
     private RecyclerView recyclerView;
     private QuizResolveAdapter questionsAdapter;
@@ -55,15 +55,17 @@ public class QuizTestFragement extends QuizResolveFragmentBase {
 
     @Override
     public TypeLabel getFragmentType() {
-        return TypeLabel.TEST_MODE;
+        return TypeLabel.RANDOM_MODE;
     }
 
+    @Override
     public void refreshStatisticsSection(){
         questionsCountText.setText(String.valueOf(parent.getStatisticsSumOfQuestions()));
         correctAnswersCountText.setText(String.valueOf(parent.getSumOfCorrectAnswers()));
         scoreCountText.setText(String.valueOf(parent.getScoreValue()));
     }
 
+    @Override
     public void refreshDisplayedQuestions() {
         questionsAdapter.setQuestionsCollection(parent.getCurrentQuestions());
     }

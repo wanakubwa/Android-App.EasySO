@@ -3,7 +3,8 @@ package com.polsl.easyso.activities.resolveActivity;
 import com.polsl.easyso.activities.resolveActivity.components.StatisticsComponent;
 import com.polsl.easyso.activities.resolveActivity.fragments.QuizLearnFragment;
 import com.polsl.easyso.activities.resolveActivity.fragments.QuizResolveFragmentBase;
-import com.polsl.easyso.activities.resolveActivity.fragments.QuizTestFragement;
+import com.polsl.easyso.activities.resolveActivity.fragments.QuizRandomFragement;
+import com.polsl.easyso.activities.resolveActivity.fragments.QuizTestFragment;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelCollectionChangedListener;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelInitializedListener;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnStatisticsChangedListener;
@@ -17,6 +18,7 @@ import com.polsl.easyso.services.dto.question.QuizDTO;
 
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -33,6 +35,8 @@ public class QuizResolveActivityModel {
 
     private List<QuestionDTO> allQuestionsCollection = new ArrayList<>();
     private List<QuestionDTO> currentVisibleQuestions = new ArrayList<>();
+    private List<QuestionDTO> notDisplayedQuestions = new ArrayList<>();
+
     private QuizResolveFragmentBase[] quizFragmentsCollection;
 
     private StatisticsComponent statistics;
@@ -66,7 +70,6 @@ public class QuizResolveActivityModel {
 
     public void setCurrentVisibleQuestions(List<QuestionDTO> currentVisibleQuestions) {
         this.currentVisibleQuestions = currentVisibleQuestions;
-
     }
 
     public StatisticsComponent getStatistics() {
@@ -138,11 +141,34 @@ public class QuizResolveActivityModel {
         onModelCollectionChanged.onCollectionChanged();
     }
 
+    public void resetNotDisplayedQuestionsCollection(){
+        for(QuestionDTO q : allQuestionsCollection){
+            notDisplayedQuestions.add(new QuestionDTO(q));
+        }
+
+        shuffleQuestions(notDisplayedQuestions);
+    }
+
+    public QuestionDTO getNotDisplayedQuestion(){
+        if(notDisplayedQuestions.size() == 0){
+            //todo;
+            return null;
+        }
+
+        QuestionDTO question = notDisplayedQuestions.get(0);
+        notDisplayedQuestions.remove(0);
+        currentVisibleQuestions.clear();
+        currentVisibleQuestions.add(question);
+        onModelCollectionChanged.onCollectionChanged();
+        return question;
+    }
+
     // Definicje wszytskich fragmentow na widoku.
     private void buildQuizFragmentsCollection() {
         quizFragmentsCollection = new QuizResolveFragmentBase[]{
-                new QuizTestFragement(),
-                new QuizLearnFragment()
+                new QuizRandomFragement(),
+                new QuizLearnFragment(),
+                new QuizTestFragment()
         };
     }
 
@@ -240,5 +266,27 @@ public class QuizResolveActivityModel {
         }
 
         onStatisticsChangedHandler.onStatisticsChanged();
+    }
+
+    private void shuffleQuestions(List<QuestionDTO> collection){
+        for(int i =0; i < 5; i++){
+            shuffleList(collection);
+        }
+    }
+
+    private void shuffleList(List<QuestionDTO> q) {
+        int n = q.size();
+        Random random = new Random();
+        random.nextInt();
+        for (int i = 0; i < n; i++) {
+            int change = i + random.nextInt(n - i);
+            swap(q, i, change);
+        }
+    }
+
+    private void swap(List<QuestionDTO> q, int i, int change) {
+        QuestionDTO helper = q.get(i);
+        q.set(i, q.get(change));
+        q.set(change, helper);
     }
 }

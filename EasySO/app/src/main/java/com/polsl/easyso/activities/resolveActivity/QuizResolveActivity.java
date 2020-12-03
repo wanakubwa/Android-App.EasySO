@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.polsl.easyso.R;
 import com.polsl.easyso.activities.resolveActivity.fragments.QuizResolveFragmentBase;
-import com.polsl.easyso.activities.resolveActivity.fragments.QuizTestFragement;
+import com.polsl.easyso.activities.resolveActivity.fragments.QuizRandomFragement;
+import com.polsl.easyso.activities.resolveActivity.fragments.QuizTestFragment;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelCollectionChangedListener;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnModelInitializedListener;
 import com.polsl.easyso.activities.resolveActivity.listeners.OnStatisticsChangedListener;
@@ -32,7 +32,7 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
     private static QuizResolveActivity instance;
     private QuizResolveActivityModel model;
 
-    private QuizResolveFragmentBase.TypeLabel defaultQuizFragmentType = QuizResolveFragmentBase.TypeLabel.TEST_MODE;
+    private QuizResolveFragmentBase.TypeLabel defaultQuizFragmentType = QuizResolveFragmentBase.TypeLabel.RANDOM_MODE;
     private QuizResolveFragmentBase currentFragement = null;
 
     @Override
@@ -58,12 +58,17 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
         QuizResolveFragmentBase.TypeLabel choosedType = defaultQuizFragmentType;
 
         switch (item.getItemId()) {
-            case R.id.quiz_option:
-                choosedType = QuizResolveFragmentBase.TypeLabel.TEST_MODE;
+            case R.id.random_option:
+                choosedType = QuizResolveFragmentBase.TypeLabel.RANDOM_MODE;
                 break;
             case R.id.learn_option:
                 model.getStatistics().reset();
                 choosedType = QuizResolveFragmentBase.TypeLabel.LEARN_MODE;
+                break;
+            case R.id.test_option:
+                model.getStatistics().reset();
+                model.resetNotDisplayedQuestionsCollection();
+                choosedType = QuizResolveFragmentBase.TypeLabel.TEST_MODE;
                 break;
             default:
                 return super.onOptionsItemSelected(item);
@@ -82,6 +87,10 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
 
         StatisticsSendPopUpDialog popup = new StatisticsSendPopUpDialog(this);
         popup.show();
+    }
+
+    public QuestionDTO getNotDisplayedQuestion(){
+        return model.getNotDisplayedQuestion();
     }
 
     public static QuizResolveActivity getInstance() {
@@ -117,6 +126,10 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
         return model.getStatistics().getSumOfCorrectAnswers();
     }
 
+    public int getSumOfAnswers() {
+        return model.getStatistics().getSumOfAnswers();
+    }
+
     public List<QuestionDTO> getRandomQuestions(int ammount) {
         return model.getRandomQuestionsAmmount(ammount);
     }
@@ -139,15 +152,15 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
 
     @Override
     public void onCollectionChanged() {
-        QuizTestFragement fragement = (QuizTestFragement) getSupportFragmentManager().findFragmentById(R.id.quiz_resolve_activity_fragment_parent);
-        if (fragement != null) {
+        QuizResolveFragmentBase fragement = (QuizResolveFragmentBase) getSupportFragmentManager().findFragmentById(R.id.quiz_resolve_activity_fragment_parent);
+        if(fragement != null){
             fragement.refreshDisplayedQuestions();
         }
     }
 
     @Override
     public void onStatisticsChanged() {
-        QuizTestFragement fragement = (QuizTestFragement) getSupportFragmentManager().findFragmentById(R.id.quiz_resolve_activity_fragment_parent);
+        QuizResolveFragmentBase fragement = (QuizResolveFragmentBase) getSupportFragmentManager().findFragmentById(R.id.quiz_resolve_activity_fragment_parent);
         if (fragement != null) {
             fragement.refreshStatisticsSection();
         }
@@ -186,6 +199,4 @@ public class QuizResolveActivity extends AppCompatActivity implements OnModelIni
         model.setOnStatisticsChanged(this);
         model.initialize();
     }
-
-
 }
