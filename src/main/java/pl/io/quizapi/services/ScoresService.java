@@ -9,6 +9,7 @@ import pl.io.quizapi.dao.entities.Score;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ScoresService {
@@ -23,27 +24,23 @@ public class ScoresService {
     }
 
     public List<ScoreDTO> getAllScores() {
-        List<Score> scores = (ArrayList<Score>) scoresRepo.findAll();
-        List<ScoreDTO> scoreDTOS = new ArrayList<>();
 
-        for (Score s : scores) {
-            ScoreDTO scoreDTO = new ScoreDTO(s.getUsername(), s.getScore());
-            scoreDTOS.add(scoreDTO);
-        }
-
-        return scoreDTOS;
+        return ((ArrayList<Score>) scoresRepo.findAll())
+                .stream()
+                .map(score -> new ScoreDTO(score.getUsername(), score.getScore()))
+                .collect(Collectors.toList());
     }
 
     public void addScore(ScoreDTO scoreDTO) {
 
-        Score score = scoresRepo.findByUsername(scoreDTO.getUsername());
+        final Score scoreToSave = scoresRepo.findByUsername(scoreDTO.getUsername())
+                .map(score -> {
+                    int currentScore = score.getScore() + scoreDTO.getScore();
+                    score.setScore(currentScore);
+                    return score;
+                })
+                .orElseGet(() -> new Score(scoreDTO.getUsername(), scoreDTO.getScore()));
 
-        if (score == null) {
-            scoresRepo.save(new Score(scoreDTO.getUsername(), scoreDTO.getScore()));
-        } else {
-            int currentScore = score.getScore() + scoreDTO.getScore();
-            score.setScore(currentScore);
-            scoresRepo.save(score);
-        }
+        scoresRepo.save(scoreToSave);
     }
 }

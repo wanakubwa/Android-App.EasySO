@@ -6,10 +6,9 @@ import pl.io.quizapi.dao.CategoriesRepository;
 import pl.io.quizapi.dao.dtos.CategoryDTO;
 import pl.io.quizapi.dao.dtos.QuizLabelDTO;
 import pl.io.quizapi.dao.entities.Category;
-import pl.io.quizapi.dao.entities.Quiz;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CategoriesService {
@@ -19,35 +18,23 @@ public class CategoriesService {
     @Autowired
     public CategoriesService(CategoriesRepository categoriesRepo) {
         this.categoriesRepo = categoriesRepo;
-
     }
 
     public List<CategoryDTO> getAllCategories() {
-        List<Category> categories = (List<Category>) categoriesRepo.findAll();
-        List<CategoryDTO> categoryDTOS = new ArrayList<>();
-        for (Category c : categories) {
-            CategoryDTO categoryDTO = new CategoryDTO(c.getName(), c.getQuizzes().size());
-            categoryDTOS.add(categoryDTO);
-        }
 
-        return categoryDTOS;
+        return ((List<Category>) categoriesRepo.findAll())
+                .stream()
+                .map(category -> new CategoryDTO(category.getName(), category.getQuizzes().size()))
+                .collect(Collectors.toList());
     }
 
 
     public List<QuizLabelDTO> getAllQuizzesFromCategory(String categoryName) {
-        Category category = categoriesRepo.findByName(categoryName).orElse(null);
-        if (category != null) {
-            List<QuizLabelDTO> retVal = new ArrayList<>();
-            for (Quiz q : category.getQuizzes()) {
-                QuizLabelDTO quizLabelDTO = new QuizLabelDTO(q.getName(), q.getQuestions().size());
-                retVal.add(quizLabelDTO);
-            }
+        Category category = categoriesRepo.findByName(categoryName).orElseThrow(RuntimeException::new);
 
-            return retVal;
-        } else {
-            return null;
-        }
+        return category.getQuizzes()
+                .stream()
+                .map(quiz -> new QuizLabelDTO(quiz.getName(), quiz.getQuestions().size()))
+                .collect(Collectors.toList());
     }
-
-
 }

@@ -15,6 +15,7 @@ import pl.io.quizapi.dao.entities.Quiz;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class QuizesService {
@@ -35,25 +36,16 @@ public class QuizesService {
     }
 
     public QuizDTO findByName(String name) {
-        Quiz quiz = quizzesRepo.findByName(name).orElse(null);
+        Quiz quiz = quizzesRepo.findByName(name).orElseThrow(RuntimeException::new);
 
-        if (quiz != null) {
-            return modelMapper.map(quiz, QuizDTO.class);
-        } else {
-            return null;
-        }
+        return modelMapper.map(quiz, QuizDTO.class);
     }
 
     public List<QuizLabelDTO> getAllQuizLabels() {
-        List<Quiz> quizzes = (List<Quiz>) quizzesRepo.findAll();
-        List<QuizLabelDTO> labels = new ArrayList<>();
-
-        for (Quiz q : quizzes) {
-            QuizLabelDTO quizLabelDTO = new QuizLabelDTO(q.getName(), q.getQuestions().size());
-            labels.add(quizLabelDTO);
-        }
-
-        return labels;
+        return ((List<Quiz>) quizzesRepo.findAll())
+                .stream()
+                .map(quiz -> new QuizLabelDTO(quiz.getName(), quiz.getQuestions().size()))
+                .collect(Collectors.toList());
     }
 
     public List<QuizDTO> getAllQuizzes() {
@@ -67,32 +59,10 @@ public class QuizesService {
         return quizDTOS;
     }
 
-    public Category saveCategory(CategoryDTO category) {
-        Category categoryEntity = new Category(category.getName());
-        categoriesRepos.save(categoryEntity);
-
-        return categoryEntity;
-    }
-
     public void saveQuiz(QuizDTO quiz) {
         Quiz mappedQuiz = new Quiz(quiz.getName());
         quizzesRepo.save(mappedQuiz);
         saveQuestions(quiz.getQuestions(), mappedQuiz);
-    }
-
-    private void saveQuestions(List<QuestionDTO> questions, Quiz quiz) {
-        for (QuestionDTO q : questions) {
-            Question question = new Question(q.getQuestion(), quiz);
-            questionsRepo.save(question);
-            saveAnswers(q.getAnswers(), question);
-        }
-    }
-
-    private void saveAnswers(List<AnswerDTO> answers, Question question) {
-        for (AnswerDTO a : answers) {
-            Answer answer = new Answer(a.getAnswer(), a.getResult(), question);
-            answersRepo.save(answer);
-        }
     }
 
     public void saveNewQuiz(FullQuizDTO quiz) {
@@ -113,6 +83,21 @@ public class QuizesService {
         Quiz mappedQuiz = new Quiz(quiz.getQuiz().getName(), category);
         quizzesRepo.save(mappedQuiz);
         saveQuestions(quiz.getQuiz().getQuestions(), mappedQuiz);
+    }
+
+    private void saveQuestions(List<QuestionDTO> questions, Quiz quiz) {
+        for (QuestionDTO q : questions) {
+            Question question = new Question(q.getQuestion(), quiz);
+            questionsRepo.save(question);
+            saveAnswers(q.getAnswers(), question);
+        }
+    }
+
+    private void saveAnswers(List<AnswerDTO> answers, Question question) {
+        for (AnswerDTO a : answers) {
+            Answer answer = new Answer(a.getAnswer(), a.getResult(), question);
+            answersRepo.save(answer);
+        }
     }
 
 }
