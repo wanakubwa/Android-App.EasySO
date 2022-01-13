@@ -120,6 +120,10 @@ public class QuizApiApplication {
         Answer a47 = new Answer("Wektory A i C są ze sobą skorelowane ujemnie", false, question17);
         Answer a48 = new Answer("Wektory A i B są ze sobą skorelowane dodatnio", false, question17);
 
+        categoriesRepo.save(DS);
+
+        quizesRepo.save(ds);
+
         questionsRepo.save(question0);
         questionsRepo.save(question1);
         questionsRepo.save(question2);
