@@ -67,8 +67,8 @@ public class QuizApiApplication {
         Question question33 = new Question("Regresja liniowa y=ax+b to przykład regresji:", ds);
         Question question34 = new Question("Warunkiem koniecznym funkcji jądra jest:", ds);
         Question question35 = new Question("Zbiór danych składa się z 4 obiektów {o , , , } opisanych atrybutem a i 1 o2 o3 o4\n" +
-                "przypisanych do jednej z dwóch klas decyzyjnych (atrybut class). Entropia\n" +
-                "warunkowa (ważona) tego zbioru przykładów ze względu na podział zakresu wartości\n" +
+//                "przypisanych do jednej z dwóch klas decyzyjnych (atrybut class). Entropia\n" +
+//                "warunkowa (ważona) tego zbioru przykładów ze względu na podział zakresu wartości\n" +
                 "atrybutu a za pomocą wartości progowej równej 2.5:", ds);
         Question question36 = new Question("Metoda dyskretyzacji według równej częstości:", ds);
 
@@ -155,71 +155,71 @@ public class QuizApiApplication {
         Answer a55 = new Answer("wymaga podania parametru określającego liczbę wynikowych przedziałów", true, question36);
         Answer a56 = new Answer("jest bardziej oporna na wartości odstające niż metoda dyskretyzacji według równej\n" +
                 "szerokości przedziałów", true, question36);
-//        Answer bq19 = new Answer("0.5", false, question19);
-//        Answer bq191 = new Answer("0", false, question19);
-//        Answer bq192 = new Answer("-0.5", false, question19);
-//        Answer bq193 = new Answer("1", true, question19);
-//
-//        Answer bq20 = new Answer("ma złożoność zbyt dużą do analizy dużych sieci (np. 1000000 węzłów)", true, question20);
-//        Answer bq201 = new Answer("bazuje na centralności betweeness dla krawędzi", true, question20);
-//        Answer bq202 = new Answer("bazuje na centralności betweeness dla węzłów", false, question20);
-//        Answer bq203 = new Answer("w kolejnych iteracjach dzieli sieć na społeczności usuwając kolejne krawędzie", true, question20);
-//
-//        Answer bq21 = new Answer("określa liczbę najkrótszych ścieżek przechodzących przez dany węzeł", true, question21);
-//        Answer bq211 = new Answer("jest wysoka dla węzła łączącego dwie społeczności", true, question21);
-//        Answer bq212 = new Answer("Wskazuje które węzły są najważniejsze", true, question21);
-//        Answer bq213 = new Answer("Węzły u dużym pośrednictwie mogą być punktami podtrzymania spójności sieci", false, question21);
-//
-//        Answer bq22 = new Answer("bardziej prawdopodobne jest połączenie się nowego węzła w sieci z węzłami mającymi względnie dużo powiązań", true, question22);
-//        Answer bq221 = new Answer("bardziej prawdopodobne jest połączenie się nowego węzłą w sieci z węzłami mającmi względnie mało powiązań", false, question22);
-//        Answer bq222 = new Answer("prawdopodobieństwa połączenia się nowego węzła z każdym z pozostałych węzłów jest jednakowe", false, question22);
-//
-//        Answer bq23 = new Answer("W przypadku jeśli zbiór danych jest nieliczny, dobrą taktyką jest wykorzystanie całego zbioru danych zarówno na etapie uczenia klasyfikatora jak i testowania jego jakości gdyż dzięki temu klasyfikator dostanie więcej informacji o obiektach na etapie uczenia", true, question23);
-//        Answer bq231 = new Answer("10-krotna stratyfikowana walidacja krzyżowa to metoda oceny jakości klasyfikatora, która dzieli zbiór danych w taki sposób, że losowo 70% obiektów stanowi zbiór treningowy a 30% zbiór testowy, Procedura ta powtarzana jest 10 razy, a jakość klasyfikatora jest średnią z jakości klasyfikacji 10-ciu powtórzeń", false, question23);
-//        Answer bq232 = new Answer("W przypadku jeśli zbiór danych jest nieliczny, lepiej będzie zastosować metodą leave-one-out niż 10-krotną walidację krzyżową", true, question23);
-//
-//        Answer bq24 = new Answer("chuj wie", false, question24);
-//
-//        Answer bq25 = new Answer("wyznaczanie podziału danych na treningowe i testowe", true, question23);
-//        Answer bq251 = new Answer("szybki napływ danych", true, question25);
-//        Answer bq252 = new Answer("przechowywanie jedynie zagregowanych charakterystyk zamiast danych", true, question25);
-//        Answer bq253 = new Answer("stosowanie liniowych lub sub-liniowych metod analizy", true, question25);
-//
-//        Answer bq26 = new Answer("jest największa dla węzłów mających jedno powiązanie", false, question26);
-//        Answer bq261 = new Answer("zależy od liczby najkrótszych ścieżek w sieci wychodzących z danego węzła", false, question26);
-//        Answer bq262 = new Answer("zależy od długości najkrótszych ścieżek w sieci wychodzących z danego węzła", true, question26);
-//        Answer bq263 = new Answer("zależy od liczby powiązań węzła", true, question26);
-//
-//        Answer bq27 = new Answer("jtestowaniu modelu na specjalnie wydzielonych danych testowych", false, question27);
-//        Answer bq271 = new Answer("testowaniu modelu na nadchodzących danych, które w kolejnym kroku posłużą do uczenia tego modelu", true, question27);
-//        Answer bq272 = new Answer("wyznaczaniu błędu modelu jako skumulowanej sumy wartości funkcji straty, której wartość wyznaczana jest dla kolejnych przykładów", true, question27);
-//
-//
-//        Answer bq28 = new Answer("0.75", false, question28);
-//        Answer bq281 = new Answer("0.25", true, question28);
-//        Answer bq282 = new Answer("0.6", false, question28);
-//        Answer bq283 = new Answer("0.6", false, question28);
-//
-//        Answer bq29 = new Answer("parametr definiujący promień analizowanego sąsiedztwa każdego obiektu danych", false, question29);
-//        Answer bq291 = new Answer("parametr definiujący liczbę iteracji", true, question29);
-//        Answer bq292 = new Answer("parametr definiujący liczbę grup", true, question29);
-//        Answer bq293 = new Answer("parametr definiujący liczbę sąsiadów stanowiących o gęstości analizowanego sąsiedztwa", false, question29);
-//
-//        Answer bq30 = new Answer("dendrogram", true, question30);
-//        Answer bq301 = new Answer("rozmyta macierz podziału", false, question30);
-//        Answer bq302 = new Answer("ostra macierz podziału", false, question30);
-//
-//        Answer bq31 = new Answer("stopień węzła", true, question31);
-//        Answer bq311 = new Answer("centralność closeness", false, question31);
-//        Answer bq312 = new Answer("współczynnik grupowania", false, question31);
-//
-//        Answer bq32 = new Answer("grupa węzłów o podobnym stopniu", false, question32);
-//        Answer bq321 = new Answer("grupa węzłów o podobnej wartości współczynnika grupowania", false, question32);
-//        Answer bq322 = new Answer("grupa węzłów o większej liczbie powiązań między sobą niż z resztą sieci", true, question32);
-//
-//        Answer bq33 = new Answer("półparametrycznej", false, question33);
-//        Answer bq331 = new Answer("nieparametrycznej", false, question33);
-//        Answer bq332 = new Answer("parametrycznej", true, question33);
+        Answer bq19 = new Answer("0.5", false, question19);
+        Answer bq191 = new Answer("0", false, question19);
+        Answer bq192 = new Answer("-0.5", false, question19);
+        Answer bq193 = new Answer("1", true, question19);
+
+        Answer bq20 = new Answer("ma złożoność zbyt dużą do analizy dużych sieci (np. 1000000 węzłów)", true, question20);
+        Answer bq201 = new Answer("bazuje na centralności betweeness dla krawędzi", true, question20);
+        Answer bq202 = new Answer("bazuje na centralności betweeness dla węzłów", false, question20);
+        Answer bq203 = new Answer("w kolejnych iteracjach dzieli sieć na społeczności usuwając kolejne krawędzie", true, question20);
+
+        Answer bq21 = new Answer("określa liczbę najkrótszych ścieżek przechodzących przez dany węzeł", true, question21);
+        Answer bq211 = new Answer("jest wysoka dla węzła łączącego dwie społeczności", true, question21);
+        Answer bq212 = new Answer("Wskazuje które węzły są najważniejsze", true, question21);
+        Answer bq213 = new Answer("Węzły u dużym pośrednictwie mogą być punktami podtrzymania spójności sieci", false, question21);
+
+        Answer bq22 = new Answer("bardziej prawdopodobne jest połączenie się nowego węzła w sieci z węzłami mającymi względnie dużo powiązań", true, question22);
+        Answer bq221 = new Answer("bardziej prawdopodobne jest połączenie się nowego węzłą w sieci z węzłami mającmi względnie mało powiązań", false, question22);
+        Answer bq222 = new Answer("prawdopodobieństwa połączenia się nowego węzła z każdym z pozostałych węzłów jest jednakowe", false, question22);
+
+        Answer bq23 = new Answer("W przypadku jeśli zbiór danych jest nieliczny, dobrą taktyką jest wykorzystanie całego zbioru danych zarówno na etapie uczenia klasyfikatora jak i testowania jego jakości gdyż dzięki temu klasyfikator dostanie więcej informacji o obiektach na etapie uczenia", true, question23);
+        Answer bq231 = new Answer("10-krotna stratyfikowana walidacja krzyżowa to metoda oceny jakości klasyfikatora, która dzieli zbiór danych w taki sposób, że losowo 70% obiektów stanowi zbiór treningowy a 30% zbiór testowy, Procedura ta powtarzana jest 10 razy, a jakość klasyfikatora jest średnią z jakości klasyfikacji 10-ciu powtórzeń", false, question23);
+        Answer bq232 = new Answer("W przypadku jeśli zbiór danych jest nieliczny, lepiej będzie zastosować metodą leave-one-out niż 10-krotną walidację krzyżową", true, question23);
+
+        Answer bq24 = new Answer("chuj wie", false, question24);
+
+        Answer bq25 = new Answer("wyznaczanie podziału danych na treningowe i testowe", true, question23);
+        Answer bq251 = new Answer("szybki napływ danych", true, question25);
+        Answer bq252 = new Answer("przechowywanie jedynie zagregowanych charakterystyk zamiast danych", true, question25);
+        Answer bq253 = new Answer("stosowanie liniowych lub sub-liniowych metod analizy", true, question25);
+
+        Answer bq26 = new Answer("jest największa dla węzłów mających jedno powiązanie", false, question26);
+        Answer bq261 = new Answer("zależy od liczby najkrótszych ścieżek w sieci wychodzących z danego węzła", false, question26);
+        Answer bq262 = new Answer("zależy od długości najkrótszych ścieżek w sieci wychodzących z danego węzła", true, question26);
+        Answer bq263 = new Answer("zależy od liczby powiązań węzła", true, question26);
+
+        Answer bq27 = new Answer("jtestowaniu modelu na specjalnie wydzielonych danych testowych", false, question27);
+        Answer bq271 = new Answer("testowaniu modelu na nadchodzących danych, które w kolejnym kroku posłużą do uczenia tego modelu", true, question27);
+        Answer bq272 = new Answer("wyznaczaniu błędu modelu jako skumulowanej sumy wartości funkcji straty, której wartość wyznaczana jest dla kolejnych przykładów", true, question27);
+
+
+        Answer bq28 = new Answer("0.75", false, question28);
+        Answer bq281 = new Answer("0.25", true, question28);
+        Answer bq282 = new Answer("0.6", false, question28);
+        Answer bq283 = new Answer("0.6", false, question28);
+
+        Answer bq29 = new Answer("parametr definiujący promień analizowanego sąsiedztwa każdego obiektu danych", false, question29);
+        Answer bq291 = new Answer("parametr definiujący liczbę iteracji", true, question29);
+        Answer bq292 = new Answer("parametr definiujący liczbę grup", true, question29);
+        Answer bq293 = new Answer("parametr definiujący liczbę sąsiadów stanowiących o gęstości analizowanego sąsiedztwa", false, question29);
+
+        Answer bq30 = new Answer("dendrogram", true, question30);
+        Answer bq301 = new Answer("rozmyta macierz podziału", false, question30);
+        Answer bq302 = new Answer("ostra macierz podziału", false, question30);
+
+        Answer bq31 = new Answer("stopień węzła", true, question31);
+        Answer bq311 = new Answer("centralność closeness", false, question31);
+        Answer bq312 = new Answer("współczynnik grupowania", false, question31);
+
+        Answer bq32 = new Answer("grupa węzłów o podobnym stopniu", false, question32);
+        Answer bq321 = new Answer("grupa węzłów o podobnej wartości współczynnika grupowania", false, question32);
+        Answer bq322 = new Answer("grupa węzłów o większej liczbie powiązań między sobą niż z resztą sieci", true, question32);
+
+        Answer bq33 = new Answer("półparametrycznej", false, question33);
+        Answer bq331 = new Answer("nieparametrycznej", false, question33);
+        Answer bq332 = new Answer("parametrycznej", true, question33);
 
 
         categoriesRepo.save(DS);
@@ -243,21 +243,21 @@ public class QuizApiApplication {
         questionsRepo.save(question15);
         questionsRepo.save(question16);
         questionsRepo.save(question17);
-//        questionsRepo.save(question19);
-//        questionsRepo.save(question20);
-//        questionsRepo.save(question21);
-//        questionsRepo.save(question22);
-//        questionsRepo.save(question23);
-//        questionsRepo.save(question24);
-//        questionsRepo.save(question25);
-//        questionsRepo.save(question26);
-//        questionsRepo.save(question27);
-//        questionsRepo.save(question28);
-//        questionsRepo.save(question29);
-//        questionsRepo.save(question30);
-//        questionsRepo.save(question31);
-//        questionsRepo.save(question32);
-//        questionsRepo.save(question33);
+        questionsRepo.save(question19);
+        questionsRepo.save(question20);
+        questionsRepo.save(question21);
+        questionsRepo.save(question22);
+        questionsRepo.save(question23);
+        questionsRepo.save(question24);
+        questionsRepo.save(question25);
+        questionsRepo.save(question26);
+        questionsRepo.save(question27);
+        questionsRepo.save(question28);
+        questionsRepo.save(question29);
+        questionsRepo.save(question30);
+        questionsRepo.save(question31);
+        questionsRepo.save(question32);
+        questionsRepo.save(question33);
         questionsRepo.save(question34);
         questionsRepo.save(question35);
         questionsRepo.save(question36);
@@ -322,56 +322,56 @@ public class QuizApiApplication {
         anwersRepo.save(a57);
         anwersRepo.save(a58);
         anwersRepo.save(a59);
-//        anwersRepo.save(bq19);
-//        anwersRepo.save(bq191);
-//        anwersRepo.save(bq192);
-//        anwersRepo.save(bq193);
-//        anwersRepo.save(bq20);
-//        anwersRepo.save(bq201);
-//        anwersRepo.save(bq202);
-//        anwersRepo.save(bq203);
-//        anwersRepo.save(bq21);
-//        anwersRepo.save(bq211);
-//        anwersRepo.save(bq212);
-//        anwersRepo.save(bq213);
-//        anwersRepo.save(bq22);
-//        anwersRepo.save(bq221);
-//        anwersRepo.save(bq222);
-//        anwersRepo.save(bq23);
-//        anwersRepo.save(bq231);
-//        anwersRepo.save(bq232);
-//        anwersRepo.save(bq24);
-//        anwersRepo.save(bq25);
-//        anwersRepo.save(bq251);
-//        anwersRepo.save(bq252);
-//        anwersRepo.save(bq253);
-//        anwersRepo.save(bq26);
-//        anwersRepo.save(bq261);
-//        anwersRepo.save(bq262);
-//        anwersRepo.save(bq263);
-//        anwersRepo.save(bq27);
-//        anwersRepo.save(bq271);
-//        anwersRepo.save(bq272);
-//        anwersRepo.save(bq28);
-//        anwersRepo.save(bq281);
-//        anwersRepo.save(bq282);
-//        anwersRepo.save(bq283);
-//        anwersRepo.save(bq29);
-//        anwersRepo.save(bq291);
-//        anwersRepo.save(bq292);
-//        anwersRepo.save(bq293);
-//        anwersRepo.save(bq30);
-//        anwersRepo.save(bq301);
-//        anwersRepo.save(bq302);
-//        anwersRepo.save(bq31);
-//        anwersRepo.save(bq311);
-//        anwersRepo.save(bq312);
-//        anwersRepo.save(bq32);
-//        anwersRepo.save(bq321);
-//        anwersRepo.save(bq322);
-//        anwersRepo.save(bq33);
-//        anwersRepo.save(bq331);
-//        anwersRepo.save(bq332);
+        anwersRepo.save(bq19);
+        anwersRepo.save(bq191);
+        anwersRepo.save(bq192);
+        anwersRepo.save(bq193);
+        anwersRepo.save(bq20);
+        anwersRepo.save(bq201);
+        anwersRepo.save(bq202);
+        anwersRepo.save(bq203);
+        anwersRepo.save(bq21);
+        anwersRepo.save(bq211);
+        anwersRepo.save(bq212);
+        anwersRepo.save(bq213);
+        anwersRepo.save(bq22);
+        anwersRepo.save(bq221);
+        anwersRepo.save(bq222);
+        anwersRepo.save(bq23);
+        anwersRepo.save(bq231);
+        anwersRepo.save(bq232);
+        anwersRepo.save(bq24);
+        anwersRepo.save(bq25);
+        anwersRepo.save(bq251);
+        anwersRepo.save(bq252);
+        anwersRepo.save(bq253);
+        anwersRepo.save(bq26);
+        anwersRepo.save(bq261);
+        anwersRepo.save(bq262);
+        anwersRepo.save(bq263);
+        anwersRepo.save(bq27);
+        anwersRepo.save(bq271);
+        anwersRepo.save(bq272);
+        anwersRepo.save(bq28);
+        anwersRepo.save(bq281);
+        anwersRepo.save(bq282);
+        anwersRepo.save(bq283);
+        anwersRepo.save(bq29);
+        anwersRepo.save(bq291);
+        anwersRepo.save(bq292);
+        anwersRepo.save(bq293);
+        anwersRepo.save(bq30);
+        anwersRepo.save(bq301);
+        anwersRepo.save(bq302);
+        anwersRepo.save(bq31);
+        anwersRepo.save(bq311);
+        anwersRepo.save(bq312);
+        anwersRepo.save(bq32);
+        anwersRepo.save(bq321);
+        anwersRepo.save(bq322);
+        anwersRepo.save(bq33);
+        anwersRepo.save(bq331);
+        anwersRepo.save(bq332);
     }
 
     @Bean
