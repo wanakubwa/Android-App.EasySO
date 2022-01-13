@@ -67,8 +67,8 @@ public class QuizApiApplication {
         Question question33 = new Question("Regresja liniowa y=ax+b to przykład regresji:", ds);
         Question question34 = new Question("Warunkiem koniecznym funkcji jądra jest:", ds);
         Question question35 = new Question("Zbiór danych składa się z 4 obiektów {o , , , } opisanych atrybutem a i 1 o2 o3 o4\n" +
-//                "przypisanych do jednej z dwóch klas decyzyjnych (atrybut class). Entropia\n" +
-//                "warunkowa (ważona) tego zbioru przykładów ze względu na podział zakresu wartości\n" +
+                "przypisanych do jednej z dwóch klas decyzyjnych (atrybut class). Entropia\n" +
+                "warunkowa (ważona) tego zbioru przykładów ze względu na podział zakresu wartości\n" +
                 "atrybutu a za pomocą wartości progowej równej 2.5:", ds);
         Question question36 = new Question("Metoda dyskretyzacji według równej częstości:", ds);
 
