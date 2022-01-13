@@ -141,10 +141,8 @@ public class QuizApiApplication {
         Answer a47 = new Answer("Wektory A i C są ze sobą skorelowane ujemnie", false, question17);
         Answer a48 = new Answer("Wektory A i B są ze sobą skorelowane dodatnio", false, question17);
 
-        Answer a57 = new Answer("∫ K(x)dx\n" +
-                "R\n" +
-                "= 1", true, question34);
-        Answer a58 = new Answer("∀ K(x) (− )", true, question34);
+        Answer a57 = new Answer("calka K(x)dx = 1", true, question34);
+        Answer a58 = new Answer("dla kazdego K(x) (-)", true, question34);
         Answer a59 = new Answer("K(0) = 1", false, question34);
 
         Answer a49 = new Answer("przyjmuje wartość ujemną\n", false, question35);
