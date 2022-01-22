@@ -398,7 +398,7 @@ public class QuizApiApplication {
         Answer mcQuestion1Answear1 = new Answer("W kontekście określenia czasu przyszłego zdarzenia struktura FES pełni funkcję analogiczną do planu zdarzeń w pakiecie NewGASP\n", false, mcQuestion1);
         Answer mcQuestion1Answear2 = new Answer("Wywołanie metody par() o postaci par(“x”) zwraca aktualną wartość parametru o nazwie “x” modułu, w którym wywołano tę metodę", true, mcQuestion1);
         Answer mcQuestion1Answear3 = new Answer("Definicje połączeń między modułami zapisane są w pliku konfiguracyjnym omnetpp.ini", false, mcQuestion1);
-        questionsRepo.save(mcQuestion0);
+        questionsRepo.save(mcQuestion1);
         anwersRepo.save(mcQuestion1Answear0);
         anwersRepo.save(mcQuestion1Answear1);
         anwersRepo.save(mcQuestion1Answear2);
@@ -432,7 +432,7 @@ public class QuizApiApplication {
         Answer mcQuestion5Answear1Missed = new Answer("Średnią długość kolejki", false, mcQuestion5Missed);
         Answer mcQuestion5Answear2Missed = new Answer("Średnią liczbę zgłoszeń przebywających w systemie", false, mcQuestion5Missed);
         Answer mcQuestion5Answear3Missed = new Answer("Średnie wykorzystanie (zajętość) stanowiska obsługi", false, mcQuestion5Missed);
-        questionsRepo.save(mcQuestion5Missed );
+        questionsRepo.save(mcQuestion5Missed);
         anwersRepo.save(mcQuestion5Answear0Missed);
         anwersRepo.save(mcQuestion5Answear1Missed);
         anwersRepo.save(mcQuestion5Answear2Missed);
@@ -473,17 +473,17 @@ public class QuizApiApplication {
 
         Question mcQuestion8 = new Question("W pakiecie SimEvents bloki kolejek udostępniają statystyki prezentujące", mc);
         Answer mcQuestion8Answear0 = new Answer("Średnią liczbę obiektów w kolejce", true, mcQuestion8);
-        Answer mcQuestion8Answear1 = new Answer("Maksymalną liczbę obiektów w kolejce\n", false, mcQuestion8);
+        Answer mcQuestion8Answear1 = new Answer("Maksymalną liczbę obiektów w kolejce", false, mcQuestion8);
         Answer mcQuestion8Answear2 = new Answer("Histogram czasu pobytu obiektu w kolejce", false, mcQuestion8);
         Answer mcQuestion8Answear3 = new Answer("Liczbę obiektów, które nie mogły wejść do bloku kolejki", false, mcQuestion8);
-        questionsRepo.save(mcQuestion0);
+        questionsRepo.save(mcQuestion8);
         anwersRepo.save(mcQuestion8Answear0);
         anwersRepo.save(mcQuestion8Answear1);
         anwersRepo.save(mcQuestion8Answear2);
         anwersRepo.save(mcQuestion8Answear3);
 
         Question mcQuestion9 = new Question(" W pakiecie SimEvents bloki kolejek udostępniają statystyki prezentujące:", mc);
-        Answer mcQuestion9Answear0 = new Answer("Aktualną liczbę obiektów w kolejce\n", true, mcQuestion9);
+        Answer mcQuestion9Answear0 = new Answer("Aktualną liczbę obiektów w kolejce", true, mcQuestion9);
         Answer mcQuestion9Answear1 = new Answer("Średnią liczbę obiektów w kolejce", true, mcQuestion9);
         Answer mcQuestion9Answear2 = new Answer("Histogram czasu pobytu obiektu w kolejce", false, mcQuestion9);
         Answer mcQuestion9Answear3 = new Answer("Liczbę obiektów, które nie mogły wejść do bloku kolejki", false, mcQuestion9);
