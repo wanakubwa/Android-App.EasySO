@@ -382,6 +382,8 @@ public class QuizApiApplication {
         categoriesRepo.save(MC);
         quizesRepo.save(mc);
 
+        /* Pytania 2 - 12 */
+
         Question mcQuestion0 = new Question("Oceń poprawność następujących stwierdzeń dla modelu M/M/1 zbudowanego z wykorzystaniem środowiska OMNeT++", mc);
         Answer mcQuestion0Answear0 = new Answer("Dla zbudowania poprawnego modelu wystarczające jest posłużenie się w obrębie całego modelu dwoma typami komunikatów sterujących, sygnalizującymi wystąpienie zdarzeń „wygenerowanie kolejnego zgłoszenia” i „zakończenie obsługi”", true, mcQuestion0);
         Answer mcQuestion0Answear1 = new Answer("Warunkiem rozpoczęcia obsługi danego zgłoszenia jest nadejście komunikatu informującego o przybyciu kolejnego zgłoszenia", false, mcQuestion0);
@@ -503,6 +505,138 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion10Answear1);
         anwersRepo.save(mcQuestion10Answear2);
         anwersRepo.save(mcQuestion10Answear3);
+
+        /* Pytania 14 - 24 */
+
+        Question mcQuestion11 = new Question("Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych", mc);
+        Answer mcQuestion11Answear0 = new Answer("Schemat Eulera jest przykładem schematu jednokrokowego", true, mcQuestion11);
+        Answer mcQuestion11Answear1 = new Answer("W metodzie predyktor-korektor celem etapu predykcji jest znalezienie początkowego przybliżenia punktu Vj+1", true, mcQuestion11);
+        Answer mcQuestion11Answear2 = new Answer("Schemat różnicowy wielokrokowy ma postać Vj+1 = F(Vj,Tj)", false, mcQuestion11);
+        Answer mcQuestion11Answear3 = new Answer("Schemat różnicowy o postaci Vj+1= F(Vj+1, Vj, ...., Vj-p, Tj) jest schematem niejawnym", false, mcQuestion11);
+        questionsRepo.save(mcQuestion11);
+        anwersRepo.save(mcQuestion11Answear0);
+        anwersRepo.save(mcQuestion11Answear1);
+        anwersRepo.save(mcQuestion11Answear2);
+        anwersRepo.save(mcQuestion11Answear3);
+
+        Question mcQuestion12 = new Question("Zmienne stanu w modelu przepływu cieczy opisującym sieć AQM, to:", mc);
+        Answer mcQuestion12Answear0 = new Answer("Intensywność pakietów przychodzących i wychodzących", false, mcQuestion12);
+        Answer mcQuestion12Answear1 = new Answer("Rozmiar okna w ruterze nadawcy i średnia zajętość bufora w ruterze odbiorcy", false, mcQuestion12);
+        Answer mcQuestion12Answear2 = new Answer("Liczba aktywnych sesji TCP i średnia zajętość bufora w ruterze nadawcy", false, mcQuestion12);
+        Answer mcQuestion12Answear3 = new Answer("Czas obiegu i prawdopodobieństwo wysłania negatywnego potwierdzenia", true, mcQuestion12);
+        questionsRepo.save(mcQuestion12);
+        anwersRepo.save(mcQuestion12Answear0);
+        anwersRepo.save(mcQuestion12Answear1);
+        anwersRepo.save(mcQuestion12Answear2);
+        anwersRepo.save(mcQuestion12Answear3);
+
+        Question mcQuestion13 = new Question("Zmienne stanu w modelu przepływu cieczy opisującym sieć AQM, to:", mc);
+        Answer mcQuestion13Answear0 = new Answer("Średni rozmiar okna w routerze nadawcy i średnia zajętość bufora w routerze odbiorcy", true, mcQuestion13);
+        Answer mcQuestion13Answear1 = new Answer("Czas obiegu i prawdopodobieństwo wysłania negatywnego potwierdzenia", true, mcQuestion13);
+        Answer mcQuestion13Answear2 = new Answer("Średni rozmiar okna w routerze odbiorcy i średnia zajętość bufora w routerze nadawcy", false, mcQuestion13);
+        Answer mcQuestion13Answear3 = new Answer("Liczba aktywnych sesji TCP i opóźnienie propagacji wysłania negatywnego potwierdzenia", true, mcQuestion13);
+        questionsRepo.save(mcQuestion13);
+        anwersRepo.save(mcQuestion13Answear0);
+        anwersRepo.save(mcQuestion13Answear1);
+        anwersRepo.save(mcQuestion13Answear2);
+        anwersRepo.save(mcQuestion13Answear3);
+
+        Question mcQuestion14 = new Question("Oceń poprawność następujących stwierdzeń dotyczących zagadnień związanych z obliczaniem wartości początkowych zmiennych stanu i zmiennych wyjścia", mc);
+        Answer mcQuestion14Answear0 = new Answer("Przy zastosowaniu metody szeregowej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
+                "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych\n", false, mcQuestion14);
+        Answer mcQuestion14Answear1 = new Answer("Gdy zmienna wejściowa w chwili t = 0 nie jest impulsem Diraca, to pomiędzy wartościami zmiennych stanu\n" +
+                "zachodzi następująca relacja: x(0+) ≠ x(0-)" +
+                "−)", false, mcQuestion14);
+        Answer mcQuestion14Answear2 = new Answer("Przy zastosowaniu metody równoległej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
+                "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych\n", false, mcQuestion14);
+        Answer mcQuestion14Answear3 = new Answer("Przy zastosowaniu metody ogólnej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
+                "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych", true, mcQuestion14);
+        questionsRepo.save(mcQuestion14);
+        anwersRepo.save(mcQuestion14Answear0);
+        anwersRepo.save(mcQuestion14Answear1);
+        anwersRepo.save(mcQuestion14Answear2);
+        anwersRepo.save(mcQuestion14Answear3);
+
+        Question mcQuestion15 = new Question("Oceń poprawność następujących stwierdzeń dotyczących zagadnień związanych z obliczaniem\n" +
+                "wartości początkowych zmiennych stanu i zmiennych wyjścia", mc);
+        Answer mcQuestion15Answear0 = new Answer("Gdy zmienna wejściowa w chwili t = 0 nie jest impulsem Diraca, to pomiędzy wartościami zmiennych stanu zachodzi następująca relacja: x(0+) ≠ x(0-)", false, mcQuestion15);
+        Answer mcQuestion15Answear1 = new Answer("W metodzie predyktor-korektor celem etapu predykcji jest znalezienie początkowego przybliżenia punktu Vj+1", false, mcQuestion15);
+        Answer mcQuestion15Answear2 = new Answer("Przy zastosowaniu metody szeregowej wartości początkowe kolej", false, mcQuestion15);
+        Answer mcQuestion15Answear3 = new Answer("Przy zastosowaniu metody ogólnej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
+                "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych", true, mcQuestion15);
+        questionsRepo.save(mcQuestion15);
+        anwersRepo.save(mcQuestion15Answear0);
+        anwersRepo.save(mcQuestion15Answear1);
+        anwersRepo.save(mcQuestion15Answear2);
+        anwersRepo.save(mcQuestion15Answear3);
+
+        Question mcQuestion16 = new Question("Formuła K(p) = k/(1+pT) opisuje operatorową funkcję przejścia", mc);
+        Answer mcQuestion16Answear0 = new Answer("Elementu inercyjnego 1 rzęd", true, mcQuestion16);
+        Answer mcQuestion16Answear1 = new Answer("Elementu różniczkującego z inercją", true, mcQuestion16);
+        Answer mcQuestion16Answear2 = new Answer("Elementu opóźniającego", false, mcQuestion16);
+        Answer mcQuestion16Answear3 = new Answer("Elementu całkującego z inercją", false, mcQuestion16);
+        questionsRepo.save(mcQuestion16);
+        anwersRepo.save(mcQuestion16Answear0);
+        anwersRepo.save(mcQuestion16Answear1);
+        anwersRepo.save(mcQuestion16Answear2);
+        anwersRepo.save(mcQuestion16Answear3);
+
+        Question mcQuestion17 = new Question(" Które z poniższych formuł opisują funkcję dodatnio określoną?", mc);
+        Answer mcQuestion17Answear0 = new Answer("V(x1,x2)= 2(x1)^2 - 2(x1x2) + 2(x2)^2", true, mcQuestion17);
+        Answer mcQuestion17Answear1 = new Answer("V(x1,x2)= (x1)^2 - 3(x1x2) + 3(x2)^2", true, mcQuestion17);
+        Answer mcQuestion17Answear2 = new Answer("V(x1,x2)= (x1)^2 - 3(x1x2) + 2(x2)^2", false, mcQuestion17);
+        Answer mcQuestion17Answear3 = new Answer("V(x1,x2)= (x1)^2 - 4(x1x2) + 3(x2)^2", false, mcQuestion17);
+        questionsRepo.save(mcQuestion17);
+        anwersRepo.save(mcQuestion17Answear0);
+        anwersRepo.save(mcQuestion17Answear1);
+        anwersRepo.save(mcQuestion17Answear2);
+        anwersRepo.save(mcQuestion17Answear3);
+
+        Question mcQuestion18 = new Question("Które z poniższych formuł opisują funkcję dodatnio określoną?", mc);
+        Answer mcQuestion18Answear0 = new Answer("V(x1,x2)= (x1)^2 - 4(x1x2) + 3(x2)^2", false, mcQuestion18);
+        Answer mcQuestion18Answear1 = new Answer("V(x1,x2)= (x1)^2 - 3(x1x2) + 3(x2)^2", true, mcQuestion18);
+        Answer mcQuestion18Answear2 = new Answer("V(x1,x2)= 1.01(x1)^2 - 2(x1x2) + (x2)^2", true, mcQuestion18);
+        Answer mcQuestion18Answear3 = new Answer("V(x1,x2)= (x1)^2 - 6(x1x2) + 9(x2)^2", false, mcQuestion18);
+        questionsRepo.save(mcQuestion18);
+        anwersRepo.save(mcQuestion18Answear0);
+        anwersRepo.save(mcQuestion18Answear1);
+        anwersRepo.save(mcQuestion18Answear2);
+        anwersRepo.save(mcQuestion18Answear3);
+
+        Question mcQuestion19 = new Question("Które z poniższych formuł opisują funkcję dodatnio określoną?", mc);
+        Answer mcQuestion19Answear0 = new Answer("V(x1,x2)= 2(x1)^2 - 2(x1x2) + 2(x2)^2", true, mcQuestion19);
+        Answer mcQuestion19Answear1 = new Answer("V(x1,x2)= (x1)^2 - 4(x1x2) + (x2)^2", false, mcQuestion19);
+        Answer mcQuestion19Answear2 = new Answer("V(x1,x2)= 9(x1)^2 - 6(x1x2) + (x2)^2", false, mcQuestion19);
+        Answer mcQuestion19Answear3 = new Answer("V(x1,x2)= (x1)^2 - 3(x1x2) + 2(x2)^2", false, mcQuestion19);
+        questionsRepo.save(mcQuestion19);
+        anwersRepo.save(mcQuestion19Answear0);
+        anwersRepo.save(mcQuestion19Answear1);
+        anwersRepo.save(mcQuestion19Answear2);
+        anwersRepo.save(mcQuestion19Answear3);
+
+        Question mcQuestion20 = new Question("Zakładając warunek początkowy X0= [ 0;0 ] oraz e0 = 0 i en = 1 dla n > 0 ocenić poprawność wyliczenia wartości\n" +
+                "wektora kolumnowego Xi", mc);
+        Answer mcQuestion20Answear0 = new Answer("X2 = [0;1]", false, mcQuestion20);
+        Answer mcQuestion20Answear1 = new Answer("X1=[0;0]", true, mcQuestion20);
+        Answer mcQuestion20Answear2 = new Answer("X3=[-1;1]", false, mcQuestion20);
+        Answer mcQuestion20Answear3 = new Answer("X4=[0;1]", true, mcQuestion20);
+        questionsRepo.save(mcQuestion20);
+        anwersRepo.save(mcQuestion20Answear0);
+        anwersRepo.save(mcQuestion20Answear1);
+        anwersRepo.save(mcQuestion20Answear2);
+        anwersRepo.save(mcQuestion20Answear3);
+
+        Question mcQuestion21 = new Question("Zakładając warunek początkowy X0= [ 0;0 ] oraz e0 = 0 i en = 1 dla n > 0 ocenić poprawność wyliczenia wartości\n" +
+                "wektora kolumnowego Xi", mc);
+        Answer mcQuestion21Answear0 = new Answer("X3=[-1;1]", true, mcQuestion21);
+        Answer mcQuestion21Answear1 = new Answer("X4=[-2;0]", false, mcQuestion21);
+        Answer mcQuestion21Answear2 = new Answer("X2[0;1]", true, mcQuestion21);
+        Answer mcQuestion21Answear3 = new Answer("X1=[0;0]", true, mcQuestion21);
+        questionsRepo.save(mcQuestion21);
+        anwersRepo.save(mcQuestion21Answear0);
+        anwersRepo.save(mcQuestion21Answear1);
+        anwersRepo.save(mcQuestion21Answear2);
+        anwersRepo.save(mcQuestion21Answear3);
 
     }
 
