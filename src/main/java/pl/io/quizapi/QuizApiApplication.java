@@ -372,7 +372,9 @@ public class QuizApiApplication {
         anwersRepo.save(bq33);
         anwersRepo.save(bq331);
         anwersRepo.save(bq332);
+    }
 
+    private void createMCQuiz(CategoriesRepository categoriesRepo, ScoresRepository scoresRepo, QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository anwersRepo) {
 
         Category MC = new Category("MC");
         Quiz mc = new Quiz("MC", MC);
@@ -390,6 +392,118 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion0Answear1);
         anwersRepo.save(mcQuestion0Answear2);
         anwersRepo.save(mcQuestion0Answear3);
+
+        Question mcQuestion1 = new Question("Oceń poprawność następujących stwierdzeń dotyczących modelu utworzonego w pakiecie OMNeT++", mc);
+        Answer mcQuestion1Answear0 = new Answer("Sposób wyznaczania wartości parametrów poszczególnych modułów zapisany jest w pliku konfiguracyjnym ”omnetpp.ini”", true, mcQuestion1);
+        Answer mcQuestion1Answear1 = new Answer("W kontekście określenia czasu przyszłego zdarzenia struktura FES pełni funkcję analogiczną do planu zdarzeń w pakiecie NewGASP\n", false, mcQuestion1);
+        Answer mcQuestion1Answear2 = new Answer("Wywołanie metody par() o postaci par(“x”) zwraca aktualną wartość parametru o nazwie “x” modułu, w którym wywołano tę metodę", true, mcQuestion1);
+        Answer mcQuestion1Answear3 = new Answer("Definicje połączeń między modułami zapisane są w pliku konfiguracyjnym omnetpp.ini", false, mcQuestion1);
+        questionsRepo.save(mcQuestion0);
+        anwersRepo.save(mcQuestion1Answear0);
+        anwersRepo.save(mcQuestion1Answear1);
+        anwersRepo.save(mcQuestion1Answear2);
+        anwersRepo.save(mcQuestion1Answear3);
+
+        Question mcQuestion2 = new Question("Oceń poprawność następujących stwierdzeń dla modelu systemu M/M/1 zbudowanego z wykorzystaniem środowiska OMNeT++", mc);
+        Answer mcQuestion2Answear0 = new Answer("W celu zebrania danych dla przygotowania wykresu zmian aktualnej liczby zgłoszeń przebywających w systemie należy zastosować klasę cOutVector", true, mcQuestion2);
+        Answer mcQuestion2Answear1 = new Answer("Warunkiem zakończenia obsługi danego zgłoszenia jest obecnośc w kolejce co najmniej jednego zgłoszenia czekającego na obsługę", false, mcQuestion2);
+        Answer mcQuestion2Answear2 = new Answer("Dla wejścia zgłoszenia na stanowisko obsługi pusta kolejka przed stanowiskiem jest warunkiem koniecznym, ale niewystarczającym", false, mcQuestion2);
+        Answer mcQuestion2Answear3 = new Answer("Dla zbudowania poprawnego modelu wystarczające jest posłużenie się w obrębie całego modelu jednym typem komunikatu sterującego – sygnalizującym wystąpienie zdarzenia „wygenerowanie kolejnego zgłoszenia”", false, mcQuestion2);
+        questionsRepo.save(mcQuestion2);
+        anwersRepo.save(mcQuestion2Answear0);
+        anwersRepo.save(mcQuestion2Answear1);
+        anwersRepo.save(mcQuestion2Answear2);
+        anwersRepo.save(mcQuestion2Answear3);
+
+        Question mcQuestion3 = new Question("Oceń poprawność następujących stwierdzeń dotyczących mechanizmów pakietu OMNeT++:", mc);
+        Answer mcQuestion3Answear0 = new Answer("W dowolnej chwili czasu symulacyjnego wywołanie o postaci scheduleAt(simTime(), msg) powoduje natychmiastowe nadejście komunikatu sterującego", true, mcQuestion3);
+        Answer mcQuestion3Answear1 = new Answer("Metoda par() zwraca aktualną wartość parametru modułu podanego jako argument metody", false, mcQuestion3);
+        Answer mcQuestion3Answear2 = new Answer("Metoda send umieszcza komunikat sterujący w liście przyszłych zdarzeń (FES)", false, mcQuestion3);
+        Answer mcQuestion3Answear3 = new Answer("Definicje połączeń między modułami zapisane są w pliku konfiguracyjnym omnetpp.ini", false, mcQuestion3);
+        questionsRepo.save(mcQuestion3);
+        anwersRepo.save(mcQuestion3Answear0);
+        anwersRepo.save(mcQuestion3Answear1);
+        anwersRepo.save(mcQuestion3Answear2);
+        anwersRepo.save(mcQuestion3Answear3);
+
+
+        Question mcQuestion5Missed = new Question("TODO  W modelu systemu M/M/1 zbudowanym z użyciem pakietu NewGASP za pomocą statystyki Timst można wyznaczyć:", mc);
+        Answer mcQuestion5Answear0Missed = new Answer("Średni czas pobytu zgłoszenia w kolejce", false, mcQuestion5Missed);
+        Answer mcQuestion5Answear1Missed = new Answer("Średnią długość kolejki", false, mcQuestion5Missed);
+        Answer mcQuestion5Answear2Missed = new Answer("Średnią liczbę zgłoszeń przebywających w systemie", false, mcQuestion5Missed);
+        Answer mcQuestion5Answear3Missed = new Answer("Średnie wykorzystanie (zajętość) stanowiska obsługi", false, mcQuestion5Missed);
+        questionsRepo.save(mcQuestion5Missed );
+        anwersRepo.save(mcQuestion5Answear0Missed);
+        anwersRepo.save(mcQuestion5Answear1Missed);
+        anwersRepo.save(mcQuestion5Answear2Missed);
+        anwersRepo.save(mcQuestion5Answear3Missed);
+
+        Question mcQuestion5 = new Question("W pakiecie SimEvents do budowy modelu wykorzystywane są:", mc);
+        Answer mcQuestion5Answear0 = new Answer("Koncepcje wyboru działania”", true, mcQuestion5);
+        Answer mcQuestion5Answear1 = new Answer("Ciągłe równania stanu", false, mcQuestion5);
+        Answer mcQuestion5Answear2 = new Answer("Dyskretne równania stanu", false, mcQuestion5);
+        Answer mcQuestion5Answear3 = new Answer("Koncepcja planowania zdarzeń", false, mcQuestion5);
+        questionsRepo.save(mcQuestion5);
+        anwersRepo.save(mcQuestion5Answear0);
+        anwersRepo.save(mcQuestion5Answear1);
+        anwersRepo.save(mcQuestion5Answear2);
+        anwersRepo.save(mcQuestion5Answear3);
+
+        Question mcQuestion6 = new Question("Oceń, które z poniższych zdarzeń mogą wystąpić w zamkniętej sieci stanowisk obsługi typu M/M/1", mc);
+        Answer mcQuestion6Answear0 = new Answer("1 Zakończenie obsługi zgłoszenia”", true, mcQuestion6);
+        Answer mcQuestion6Answear1 = new Answer("Rozpoczęcie obsługi zgłoszenia", true, mcQuestion6);
+        Answer mcQuestion6Answear2 = new Answer("Opuszczenie z sieci przez zgłoszenie", false, mcQuestion6);
+        Answer mcQuestion6Answear3 = new Answer("Przybycie nowego zgłoszenia do sieci", false, mcQuestion6);
+        questionsRepo.save(mcQuestion6);
+        anwersRepo.save(mcQuestion6Answear0);
+        anwersRepo.save(mcQuestion6Answear1);
+        anwersRepo.save(mcQuestion6Answear2);
+        anwersRepo.save(mcQuestion6Answear3);
+
+        Question mcQuestion7 = new Question("Ocen, które z poniższych zdarzeń mogą wystąpić w otwartej sieci stanowisk obsługi typu M/M/1", mc);
+        Answer mcQuestion7Answear0 = new Answer("Rozpoczęcie obsługi zgłoszenia", true, mcQuestion7);
+        Answer mcQuestion7Answear1 = new Answer("Przybycie nowego zgłoszenia do sieci", true, mcQuestion7);
+        Answer mcQuestion7Answear2 = new Answer("Opuszczenie sieci przez zgłoszenie", true, mcQuestion7);
+        Answer mcQuestion7Answear3 = new Answer("Zakończenie obsługi zgłoszenia", true, mcQuestion7);
+        questionsRepo.save(mcQuestion7);
+        anwersRepo.save(mcQuestion7Answear0);
+        anwersRepo.save(mcQuestion7Answear1);
+        anwersRepo.save(mcQuestion7Answear2);
+        anwersRepo.save(mcQuestion7Answear3);
+
+        Question mcQuestion8 = new Question("W pakiecie SimEvents bloki kolejek udostępniają statystyki prezentujące", mc);
+        Answer mcQuestion8Answear0 = new Answer("Średnią liczbę obiektów w kolejce", true, mcQuestion8);
+        Answer mcQuestion8Answear1 = new Answer("Maksymalną liczbę obiektów w kolejce\n", false, mcQuestion8);
+        Answer mcQuestion8Answear2 = new Answer("Histogram czasu pobytu obiektu w kolejce", false, mcQuestion8);
+        Answer mcQuestion8Answear3 = new Answer("Liczbę obiektów, które nie mogły wejść do bloku kolejki", false, mcQuestion8);
+        questionsRepo.save(mcQuestion0);
+        anwersRepo.save(mcQuestion8Answear0);
+        anwersRepo.save(mcQuestion8Answear1);
+        anwersRepo.save(mcQuestion8Answear2);
+        anwersRepo.save(mcQuestion8Answear3);
+
+        Question mcQuestion9 = new Question(" W pakiecie SimEvents bloki kolejek udostępniają statystyki prezentujące:", mc);
+        Answer mcQuestion9Answear0 = new Answer("Aktualną liczbę obiektów w kolejce\n", true, mcQuestion9);
+        Answer mcQuestion9Answear1 = new Answer("Średnią liczbę obiektów w kolejce", true, mcQuestion9);
+        Answer mcQuestion9Answear2 = new Answer("Histogram czasu pobytu obiektu w kolejce", false, mcQuestion9);
+        Answer mcQuestion9Answear3 = new Answer("Liczbę obiektów, które nie mogły wejść do bloku kolejki", false, mcQuestion9);
+        questionsRepo.save(mcQuestion9);
+        anwersRepo.save(mcQuestion9Answear0);
+        anwersRepo.save(mcQuestion9Answear1);
+        anwersRepo.save(mcQuestion9Answear2);
+        anwersRepo.save(mcQuestion9Answear3);
+
+        Question mcQuestion10 = new Question("Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych", mc);
+        Answer mcQuestion10Answear0 = new Answer("Schemat Eulera jest przykładem schematu jednokrokowego", true, mcQuestion10);
+        Answer mcQuestion10Answear1 = new Answer("W metodzie predyktor-korektor celem etapu predykcji jest znalezienie początkowego przybliżenia punktu Vj+1", true, mcQuestion10);
+        Answer mcQuestion10Answear2 = new Answer("Schemat różnicowy wielokrokowy ma postać Vj+1 = F(Vj,Tj)", false, mcQuestion10);
+        Answer mcQuestion10Answear3 = new Answer("Schemat różnicowy o postaci Vj+1= F(Vj+1, Vj, ...., Vj-p, Tj) jest schematem niejawnym", false, mcQuestion10);
+        questionsRepo.save(mcQuestion10);
+        anwersRepo.save(mcQuestion10Answear0);
+        anwersRepo.save(mcQuestion10Answear1);
+        anwersRepo.save(mcQuestion10Answear2);
+        anwersRepo.save(mcQuestion10Answear3);
+
     }
 
     @Bean
@@ -526,6 +640,7 @@ public class QuizApiApplication {
             anwersRepo.save(a34);
 
             createDSQuiz(categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
+            createMCQuiz(categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
         };
     }
 }
