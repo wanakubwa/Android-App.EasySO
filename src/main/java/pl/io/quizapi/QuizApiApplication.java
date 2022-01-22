@@ -372,6 +372,24 @@ public class QuizApiApplication {
         anwersRepo.save(bq33);
         anwersRepo.save(bq331);
         anwersRepo.save(bq332);
+
+
+        Category MC = new Category("MC");
+        Quiz mc = new Quiz("MC", MC);
+
+        categoriesRepo.save(MC);
+        quizesRepo.save(mc);
+
+        Question mcQuestion0 = new Question("Oceń poprawność następujących stwierdzeń dla modelu M/M/1 zbudowanego z wykorzystaniem środowiska OMNeT++", mc);
+        Answer mcQuestion0Answear0 = new Answer("Dla zbudowania poprawnego modelu wystarczające jest posłużenie się w obrębie całego modelu dwoma typami komunikatów sterujących, sygnalizującymi wystąpienie zdarzeń „wygenerowanie kolejnego zgłoszenia” i „zakończenie obsługi”", true, mcQuestion0);
+        Answer mcQuestion0Answear1 = new Answer("Warunkiem rozpoczęcia obsługi danego zgłoszenia jest nadejście komunikatu informującego o przybyciu kolejnego zgłoszenia", false, mcQuestion0);
+        Answer mcQuestion0Answear2 = new Answer("Warunkiem zakończenia obsługi danego zgłoszenia jest niepusta kolejka przed tym stanowiskiem", false, mcQuestion0);
+        Answer mcQuestion0Answear3 = new Answer("Pusta kolejka przed stanowiskiem obsługi jest warunkiem wystarczającym wejścia zgłoszenia na to stanowisko", false, mcQuestion0);
+        questionsRepo.save(mcQuestion0);
+        anwersRepo.save(mcQuestion0Answear0);
+        anwersRepo.save(mcQuestion0Answear1);
+        anwersRepo.save(mcQuestion0Answear2);
+        anwersRepo.save(mcQuestion0Answear3);
     }
 
     @Bean
