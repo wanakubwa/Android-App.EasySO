@@ -13,6 +13,7 @@ public class Question implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
+    @Column(length = 1000)
     private String questionText;
 
     @OneToMany(mappedBy = "question",fetch = FetchType.LAZY)

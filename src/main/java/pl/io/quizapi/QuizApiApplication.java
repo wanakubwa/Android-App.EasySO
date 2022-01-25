@@ -808,11 +808,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion34Answear2);
         anwersRepo.save(mcQuestion34Answear3);
 
-        Question mcQuestion35 = new Question("Dany jest generator liczb losowych Xi o "
-            + "rozkładzie równomiernym w przedziale (-0.5, 0.5) oraz\n"
-            + "wyznaczane są liczby losowe Yi wg wzorów podanych poniżej. Wskaż, które z "
-            + "podanych wzorów mogą być"
-            + "zastosowane do generacji liczb losowych o rozkładzie normalnym N(0, 1):", mc);
+        Question mcQuestion35 = new Question("Dany jest generator liczb losowych Xi o rozkładzie równomiernym w przedziale (-0.5, 0.5) oraz wyznaczane są liczby losowe Yi wg wzorów podanych poniżej. Wskaż, które z podanych wzorów mogą być zastosowane do generacji liczb losowych o rozkładzie normalnym N(0, 1):", mc);
         Answer mcQuestion35Answear0 = new Answer("Yi=E^12(Xi)", true, mcQuestion35);
         Answer mcQuestion35Answear1 = new Answer("Yi=E^18(Xi)", false, mcQuestion35);
         Answer mcQuestion35Answear2 = new Answer("Yi=E^6(Xi)", false, mcQuestion35);
@@ -915,7 +911,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion42Answear1);
         anwersRepo.save(mcQuestion42Answear2);
         anwersRepo.save(mcQuestion42Answear3);
-            
+
     }
 
     @Bean
