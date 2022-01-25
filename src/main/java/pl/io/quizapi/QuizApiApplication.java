@@ -581,7 +581,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion16Answear2);
         anwersRepo.save(mcQuestion16Answear3);
 
-        Question mcQuestion17 = new Question(" Które z poniższych formuł opisują funkcję dodatnio określoną?", mc);
+        Question mcQuestion17 = new Question("Które z poniższych formuł opisują funkcję dodatnio określoną?", mc);
         Answer mcQuestion17Answear0 = new Answer("V(x1,x2)= 2(x1)^2 - 2(x1x2) + 2(x2)^2", true, mcQuestion17);
         Answer mcQuestion17Answear1 = new Answer("V(x1,x2)= (x1)^2 - 3(x1x2) + 3(x2)^2", true, mcQuestion17);
         Answer mcQuestion17Answear2 = new Answer("V(x1,x2)= (x1)^2 - 3(x1x2) + 2(x2)^2", false, mcQuestion17);
@@ -773,7 +773,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion31Answear3);
 
         Question mcQuestion32 = new Question("Koncepcja wyboru działania:\n", mc);
-        Answer mcQuestion32Answear0 = new Answer("Umożliwia modelowanie systemów masowej obsługi (??)", true, mcQuestion32);
+        Answer mcQuestion32Answear0 = new Answer("Umożliwia modelowanie systemów masowej obsługi", true, mcQuestion32);
         Answer mcQuestion32Answear1 = new Answer("Wymaga, aby w budowanym modelu cyfrowym przy każdym przesunięciu czasu zbadać możliwość\n" +
                 "wystąpienia wszystkich zdarzeń czasowych i warunkowych", true, mcQuestion32);
         Answer mcQuestion32Answear2 = new Answer("Implementowana jest w programie Simnon", false, mcQuestion32);
@@ -783,6 +783,139 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion32Answear1);
         anwersRepo.save(mcQuestion32Answear2);
         anwersRepo.save(mcQuestion32Answear3);
+
+        /* Pytania 35 - 38 */
+
+        Question mcQuestion33 = new Question("Rozwiązaniem równań stanu o postaci x' = Ax + Bu z warunkami początkowymi x0 jest", mc);
+        Answer mcQuestion33Answear0 = new Answer("e^A", true, mcQuestion33);
+        Answer mcQuestion33Answear1 = new Answer("e^(-A)", false, mcQuestion33);
+        Answer mcQuestion33Answear2 = new Answer("e^B", false, mcQuestion33);
+        Answer mcQuestion33Answear3 = new Answer("e^(-B)", false, mcQuestion33);
+        questionsRepo.save(mcQuestion33);
+        anwersRepo.save(mcQuestion33Answear0);
+        anwersRepo.save(mcQuestion33Answear1);
+        anwersRepo.save(mcQuestion33Answear2);
+        anwersRepo.save(mcQuestion33Answear3);
+
+        Question mcQuestion34 = new Question("Oceń poprawność następujących stwierdzeń dotyczących układów i sygnałów dyskretnych:", mc);
+        Answer mcQuestion34Answear0 = new Answer("Ciąg impulsów Diraca jest sygnałem o modulowanej amplitudzie", true, mcQuestion34);
+        Answer mcQuestion34Answear1 = new Answer("Sygnał schodkowy jest sygnałem o modulowanej amplitudzie", true, mcQuestion34);
+        Answer mcQuestion34Answear2 = new Answer("W układzie dyskretnym wszystkie sygnały mają charakter dyskretny", false, mcQuestion34);
+        Answer mcQuestion34Answear3 = new Answer("Sygnał interpolacji liniowej u(t) = pojebanyWzor dla pojebanyPrzedzial jest sygnałem o modulowanej amplitudzie (??????)", false, mcQuestion34);
+        questionsRepo.save(mcQuestion34);
+        anwersRepo.save(mcQuestion34Answear0);
+        anwersRepo.save(mcQuestion34Answear1);
+        anwersRepo.save(mcQuestion34Answear2);
+        anwersRepo.save(mcQuestion34Answear3);
+
+        Question mcQuestion35 = new Question("Dany jest generator liczb losowych Xi o "
+            + "rozkładzie równomiernym w przedziale (-0.5, 0.5) oraz\n"
+            + "wyznaczane są liczby losowe Yi wg wzorów podanych poniżej. Wskaż, które z "
+            + "podanych wzorów mogą być"
+            + "zastosowane do generacji liczb losowych o rozkładzie normalnym N(0, 1):", mc);
+        Answer mcQuestion35Answear0 = new Answer("Yi=E^12(Xi)", true, mcQuestion35);
+        Answer mcQuestion35Answear1 = new Answer("Yi=E^18(Xi)", false, mcQuestion35);
+        Answer mcQuestion35Answear2 = new Answer("Yi=E^6(Xi)", false, mcQuestion35);
+        Answer mcQuestion35Answear3 = new Answer("Yi=E^24(Xi)", false, mcQuestion35);
+        questionsRepo.save(mcQuestion35);
+        anwersRepo.save(mcQuestion35Answear0);
+        anwersRepo.save(mcQuestion35Answear1);
+        anwersRepo.save(mcQuestion35Answear2);
+        anwersRepo.save(mcQuestion35Answear3);
+
+        Question mcQuestion36 = new Question("Oceń poprawność następujących stwierdzeń dotyczących stabilności układów liniowych ciągłych:\n", mc);
+        Answer mcQuestion36Answear0 = new Answer("Kryterium Hurwitza pozwala na wyznaczenie wartości pierwiastków "
+            + "równania charakterystycznego\n", false, mcQuestion36);
+        Answer mcQuestion36Answear1 = new Answer("Jeśli pierwiastki równania charakterystycznego układu mają części "
+            + "rzeczywiste mniejsze od zera, to układ jest stabilny asymptotycznie\n", true, mcQuestion36);
+        Answer mcQuestion36Answear2 = new Answer("Dla układu dynamicznego opisanego równaniem 7y′′ + 2y′ + 3y = 0 "
+            + "wyznacznik ∆2 z kryterium Hurwitza jest wyrażony następująco:|2 0 ; 7 3 |", true, mcQuestion36);
+        Answer mcQuestion36Answear3 = new Answer("Dla układu dynamicznego opisanego równaniem 2y′′ + 3y′ + 4y = 0 "
+            + "wyznacznik ∆2 z kryterium Hurwitza jest wyrażony następująco: | 0 3 ; 2 4|", false, mcQuestion36);
+        questionsRepo.save(mcQuestion36);
+        anwersRepo.save(mcQuestion36Answear0);
+        anwersRepo.save(mcQuestion36Answear1);
+        anwersRepo.save(mcQuestion36Answear2);
+        anwersRepo.save(mcQuestion36Answear3);
+
+        /* Ulciorek */
+        Question mcQuestion37 = new Question("Oceń poprawność następujących stwierdzeń dla dowolnego modelu układu "
+            + "zdarzeń dyskretnych\n"
+            + "zbudowanego według koncepcji planowania zdarzeń:", mc);
+        Answer mcQuestion37Answear0 = new Answer("wykrycie przez procedurę kontroli symulacji pustego zbioru "
+            + "zaplanowanych zdarzeń w trakcie\n"
+            + "realizacji eksperymentu oznacza, że aktualny stan układu jest ostateczny", true, mcQuestion37);
+        Answer mcQuestion37Answear1 = new Answer("planowanie dotyczy zarówno tego, co będzie odbywać się w przyszłości, jak i przeszłości", false, mcQuestion37);
+        Answer mcQuestion37Answear2 = new Answer("mechanizmem upływu czasu symulacyjnego steruje procedura kontroli symulacji", true, mcQuestion37);
+        Answer mcQuestion37Answear3 = new Answer("zaplanowanie zdarzenia wymaga między innymi obliczenia chwili zajścia tego zdarzenia", true, mcQuestion37);
+        questionsRepo.save(mcQuestion37);
+        anwersRepo.save(mcQuestion37Answear0);
+        anwersRepo.save(mcQuestion37Answear1);
+        anwersRepo.save(mcQuestion37Answear2);
+        anwersRepo.save(mcQuestion37Answear3);
+
+        Question mcQuestion38 = new Question(" Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych:", mc);
+        Answer mcQuestion38Answear0 = new Answer("w schematach jednokrokowych kolejne przybliżenie rozwiązania tk+1, "
+            + "vk+1 zależy od\n"
+            + "wartości vk i pochodnej f w otoczeniu tk, vk (????)", true, mcQuestion38);
+        Answer mcQuestion38Answear1 = new Answer("funkcja f występująca we wzorach schematów różnicowych jest prawą stroną równania stanu", true, mcQuestion38);
+        Answer mcQuestion38Answear2 = new Answer("schemat różnicowy o postaci vj+1 = F(vj+1, vj, … , vj-p, tj) jest "
+            + "schematem jawnym", false, mcQuestion38);
+        Answer mcQuestion38Answear3 = new Answer("metody Rungego-Kutty są przykładami metod jednokrokowych", true, mcQuestion38);
+        questionsRepo.save(mcQuestion38);
+        anwersRepo.save(mcQuestion38Answear0);
+        anwersRepo.save(mcQuestion38Answear1);
+        anwersRepo.save(mcQuestion38Answear2);
+        anwersRepo.save(mcQuestion38Answear3);
+
+        Question mcQuestion39 = new Question("W środowisku Matlab/Simulink funkcja sim umożliwia", mc);
+        Answer mcQuestion39Answear0 = new Answer("rozwiązanie zagadnienia początkowego dla układów dyskretnych", true, mcQuestion39);
+        Answer mcQuestion39Answear1 = new Answer("rozwiązanie zagadnienia optymalizacji parametrycznej", false, mcQuestion39);
+        Answer mcQuestion39Answear2 = new Answer("rozwiązanie zagadnienia początkowego dla układów ciągłych", true, mcQuestion39);
+        Answer mcQuestion39Answear3 = new Answer("wyznaczenie czasowej funkcji przejścia", false, mcQuestion39);
+        questionsRepo.save(mcQuestion39);
+        anwersRepo.save(mcQuestion39Answear0);
+        anwersRepo.save(mcQuestion39Answear1);
+        anwersRepo.save(mcQuestion39Answear2);
+        anwersRepo.save(mcQuestion39Answear3);
+
+        Question mcQuestion40 = new Question("Oceń poprawność następujących stwierdzeń dotyczących zadania optymalizacji parametrycznej", mc);
+        Answer mcQuestion40Answear0 = new Answer("zadanie dwugraniczne jest przykładem zadania optymalizacji parametrycznej", true, mcQuestion40);
+        Answer mcQuestion40Answear1 = new Answer("parametrami optymalizacji nie mogą być warunki początkowe zmiennych stanu", false, mcQuestion40);
+        Answer mcQuestion40Answear2 = new Answer("w zadaniach optymalizacji parametrycznej szukamy takich optymalnych"
+            + " wartości parametrów α, by wskaźnik jakości przyjął wartość minimalną", true, mcQuestion40);
+        Answer mcQuestion40Answear3 = new Answer("szukanie maksymalnej wartości wskaźnika jakości można zastąpić "
+            + "szukaniem minimalnej wartości wskaźnika pomnożonego przez -1", true, mcQuestion40);
+        questionsRepo.save(mcQuestion40);
+        anwersRepo.save(mcQuestion40Answear0);
+        anwersRepo.save(mcQuestion40Answear1);
+        anwersRepo.save(mcQuestion40Answear2);
+        anwersRepo.save(mcQuestion40Answear3);
+
+        Question mcQuestion41 = new Question(" Oceń poprawność następujących stwierdzeń dla dowolnego modelu układu "
+            + "zdarzeń dyskretnych zbudowanego według koncepcji planowania zdarzeń", mc);
+        Answer mcQuestion41Answear0 = new Answer("można planować zdarzenia odbywające się w przeszłości", false, mcQuestion41);
+        Answer mcQuestion41Answear1 = new Answer("zaplanowanie zdarzenia wymaga między innymi obliczenia chwili zajścia tego zdarzenia", true, mcQuestion41);
+        Answer mcQuestion41Answear2 = new Answer("mechanizmem upływu czasu symulacyjnego steruje procedura kontroli symulacji", true, mcQuestion41);
+        Answer mcQuestion41Answear3 = new Answer("obecność elementów w zbiorze zaplanowanych zdarzeń po zakończeniu "
+            + "realizacji eksperymentu oznacza, że eksperyment zakończył się w sposób nieprawidłowy (błędny)", false, mcQuestion41);
+        questionsRepo.save(mcQuestion41);
+        anwersRepo.save(mcQuestion41Answear0);
+        anwersRepo.save(mcQuestion41Answear1);
+        anwersRepo.save(mcQuestion41Answear2);
+        anwersRepo.save(mcQuestion41Answear3);
+
+        Question mcQuestion42 = new Question("Oceń poprawność poniższych stwierdzeń związanych z opisem w postaci równań stanu", mc);
+        Answer mcQuestion42Answear0 = new Answer("dla danego układu istnieje tylko jeden opis za pomocą równań stanu", false, mcQuestion42);
+        Answer mcQuestion42Answear1 = new Answer("równania stanu można stosować zarówno do opisu układów liniowych, jak i nieliniowych", true, mcQuestion42);
+        Answer mcQuestion42Answear2 = new Answer("w równaniu stanu nie występuje zależność od pochodnych sygnału wejściowego", true, mcQuestion42);
+        Answer mcQuestion42Answear3 = new Answer("równania stanu są równaniami różniczkowymi", true, mcQuestion42);
+        questionsRepo.save(mcQuestion42);
+        anwersRepo.save(mcQuestion42Answear0);
+        anwersRepo.save(mcQuestion42Answear1);
+        anwersRepo.save(mcQuestion42Answear2);
+        anwersRepo.save(mcQuestion42Answear3);
+            
     }
 
     @Bean
