@@ -852,11 +852,9 @@ public class QuizApiApplication {
 
         /* Ulciorek */
         Question mcQuestion37 = new Question("Oceń poprawność następujących stwierdzeń dla dowolnego modelu układu "
-                + "zdarzeń dyskretnych\n"
-                + "zbudowanego według koncepcji planowania zdarzeń:", mc_2);
+                + "zdarzeń dyskretnych zbudowanego według koncepcji planowania zdarzeń:", mc_2);
         Answer mcQuestion37Answear0 = new Answer("wykrycie przez procedurę kontroli symulacji pustego zbioru "
-                + "zaplanowanych zdarzeń w trakcie\n"
-                + "realizacji eksperymentu oznacza, że aktualny stan układu jest ostateczny", true, mcQuestion37);
+                + "zaplanowanych zdarzeń w trakcie realizacji eksperymentu oznacza, że aktualny stan układu jest ostateczny", true, mcQuestion37);
         Answer mcQuestion37Answear1 = new Answer("planowanie dotyczy zarówno tego, co będzie odbywać się w przyszłości, jak i przeszłości", false, mcQuestion37);
         Answer mcQuestion37Answear2 = new Answer("mechanizmem upływu czasu symulacyjnego steruje procedura kontroli symulacji", true, mcQuestion37);
         Answer mcQuestion37Answear3 = new Answer("zaplanowanie zdarzenia wymaga między innymi obliczenia chwili zajścia tego zdarzenia", true, mcQuestion37);
@@ -866,10 +864,9 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion37Answear2);
         anwersRepo.save(mcQuestion37Answear3);
 
-        Question mcQuestion38 = new Question(" Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych:", mc_2);
+        Question mcQuestion38 = new Question("Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych:", mc_2);
         Answer mcQuestion38Answear0 = new Answer("w schematach jednokrokowych kolejne przybliżenie rozwiązania tk+1, "
-                + "vk+1 zależy od\n"
-                + "wartości vk i pochodnej f w otoczeniu tk, vk (????)", true, mcQuestion38);
+                + "vk+1 zależy od wartości vk i pochodnej f w otoczeniu tk, vk (????)", true, mcQuestion38);
         Answer mcQuestion38Answear1 = new Answer("funkcja f występująca we wzorach schematów różnicowych jest prawą stroną równania stanu", true, mcQuestion38);
         Answer mcQuestion38Answear2 = new Answer("schemat różnicowy o postaci vj+1 = F(vj+1, vj, … , vj-p, tj) jest "
                 + "schematem jawnym", false, mcQuestion38);
@@ -880,7 +877,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion38Answear2);
         anwersRepo.save(mcQuestion38Answear3);
 
-        Question mcQuestion39 = new Question("Oceń poprawność następujących stwierdzeń umożliwia", mc_2);
+        Question mcQuestion39 = new Question("W środowisku Matlab/Simulink funkcja sim umożliwia", mc_2);
         Answer mcQuestion39Answear0 = new Answer("rozwiązanie zagadnienia początkowego dla układów dyskretnych", true, mcQuestion39);
         Answer mcQuestion39Answear1 = new Answer("rozwiązanie zagadnienia optymalizacji parametrycznej", false, mcQuestion39);
         Answer mcQuestion39Answear2 = new Answer("rozwiązanie zagadnienia początkowego dla układów ciągłych", true, mcQuestion39);
@@ -914,7 +911,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion40Answear2);
         anwersRepo.save(mcQuestion40Answear3);
 
-        Question mcQuestion41 = new Question(" Oceń poprawność następujących stwierdzeń dla dowolnego modelu układu "
+        Question mcQuestion41 = new Question("Oceń poprawność następujących stwierdzeń dla dowolnego modelu układu "
                 + "zdarzeń dyskretnych zbudowanego według koncepcji planowania zdarzeń", mc_3);
         Answer mcQuestion41Answear0 = new Answer("można planować zdarzenia odbywające się w przeszłości", false, mcQuestion41);
         Answer mcQuestion41Answear1 = new Answer("zaplanowanie zdarzenia wymaga między innymi obliczenia chwili zajścia tego zdarzenia", true, mcQuestion41);
@@ -944,10 +941,8 @@ public class QuizApiApplication {
         Answer mcQuestion43Answear0 = new Answer("nie może być wykorzystywana do generacji liczb o dowolnym nieobciętym rozkładzie\n" +
                 "normalnym", true, mcQuestion43);
         Answer mcQuestion43Answear1 = new Answer("jest zawsze bardziej efektywna od metody odwracania dystrybuanty", false, mcQuestion43);
-        Answer mcQuestion43Answear2 = new Answer("umożliwia wygenerowanie kolejnej liczby zawsze przy jednokrotnym użyciu\n" +
-                "pomocniczego generatora liczb o rozkładzie równomiernym", false, mcQuestion43);
-        Answer mcQuestion43Answear3 = new Answer("znajduje zastosowanie w przypadku, gdy funkcja gęstości rozkładu nie jest\n" +
-                "ograniczona", false, mcQuestion43);
+        Answer mcQuestion43Answear2 = new Answer("umożliwia wygenerowanie kolejnej liczby zawsze przy jednokrotnym użyciu pomocniczego generatora liczb o rozkładzie równomiernym", false, mcQuestion43);
+        Answer mcQuestion43Answear3 = new Answer("znajduje zastosowanie w przypadku, gdy funkcja gęstości rozkładu nie jest ograniczona", false, mcQuestion43);
         questionsRepo.save(mcQuestion43);
         anwersRepo.save(mcQuestion43Answear0);
         anwersRepo.save(mcQuestion43Answear1);
@@ -955,10 +950,8 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion43Answear3);
 
         Question mcQuestion44 = new Question("Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych", mc_3);
-        Answer mcQuestion44Answear0 = new Answer("w ramach metody predyktor-korektor najpierw wykonywana jest metoda zamknięta,\n" +
-                "potem otwarta", false, mcQuestion44);
-        Answer mcQuestion44Answear1 = new Answer("metody zamknięte wymagają rozwiązywania równania algebraicznego w każdym\n" +
-                "kroku", false, mcQuestion44);
+        Answer mcQuestion44Answear0 = new Answer("w ramach metody predyktor-korektor najpierw wykonywana jest metoda zamknięta,potem otwarta", false, mcQuestion44);
+        Answer mcQuestion44Answear1 = new Answer("metody zamknięte wymagają rozwiązywania równania algebraicznego w każdym kroku", false, mcQuestion44);
         Answer mcQuestion44Answear2 = new Answer("w metodzie predyktor-korektor celem etapu korekcji jest znalezienie początkowego\n" +
                 "przybliżenia punktu vj+1", false, mcQuestion44);
         Answer mcQuestion44Answear3 = new Answer("metody otwarte charakteryzują się większą dokładnością od metod zamkniętych", false, mcQuestion44);
@@ -969,10 +962,8 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion44Answear3);
 
         Question mcQuestion45 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metody kolejnych całkowań", mc_3);
-        Answer mcQuestion45Answear0 = new Answer("może być stosowana do wyznaczania równań stanu zarówno układów liniowych jak i\n" +
-                "nieliniowych", true, mcQuestion45);
-        Answer mcQuestion45Answear1 = new Answer("wartości początkowe kolejnych zmiennych stanu są równe warunkiem początkowym\n" +
-                "dla zmiennej wyjścia i jej kolejnych pochodnych", false, mcQuestion45);
+        Answer mcQuestion45Answear0 = new Answer("może być stosowana do wyznaczania równań stanu zarówno układów liniowych jak i nieliniowych", true, mcQuestion45);
+        Answer mcQuestion45Answear1 = new Answer("wartości początkowe kolejnych zmiennych stanu są równe warunkiem początkowym dla zmiennej wyjścia i jej kolejnych pochodnych", false, mcQuestion45);
         Answer mcQuestion45Answear2 = new Answer("jest jedną z metod wchodzących w skład metody mieszanej", true, mcQuestion45);
         Answer mcQuestion45Answear3 = new Answer("znajduje zastosowanie w przypadku, gdy występuje pochodna zmiennej wejściowej", true, mcQuestion45);
         questionsRepo.save(mcQuestion45);
@@ -981,20 +972,12 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion45Answear2);
         anwersRepo.save(mcQuestion45Answear3);
 
-        Question mcQuestion46 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metod badania stabilności\n" +
-                "układów liniowych", mc_3);
-        Answer mcQuestion46Answear0 = new Answer("warunkiem stabilności asymptotycznej układu dyskretnego jest by pierwiastek\n" +
-                "równania charakterystycznego układu leżały na płaszczyźnie zespolonej we wnętrzu\n" +
-                "koła o środku w środku układu współrzędnych i o promieniu 1", true, mcQuestion46);
-        Answer mcQuestion46Answear1 = new Answer("warunkiem stabilności asymptotycznej układu ciągłego jest by pierwiastek równania\n" +
-                "charakterystycznego układu posiadały części rzeczywiste mniejsze od jedności\n", false, mcQuestion46);
-        Answer mcQuestion46Answear2 = new Answer("kryterium Hurwitza pozwala na określenie stabilności układu ciągłego bez\n" +
-                "konieczności wyznaczania dokładnych wartości pierwiastków równania\n" +
-                "charakterystycznego układu", true, mcQuestion46);
-        Answer mcQuestion46Answear3 = new Answer("kryterium Hurwitza pozwala na obliczenie dokładnej wartości pierwiastków równania\n" +
-                "charakterystycznego układu ciągłego", false, mcQuestion46);
-        Answer mcQuestion46Answear4 = new Answer("kryterium Hurwitza pozwala na obliczenie dokładnej wartości pierwiastków równania\n" +
-                "charakterystycznego układu dyskretnego", false, mcQuestion46);
+        Question mcQuestion46 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metod badania stabilności układów liniowych", mc_3);
+        Answer mcQuestion46Answear0 = new Answer("warunkiem stabilności asymptotycznej układu dyskretnego jest by pierwiastek równania charakterystycznego układu leżały na płaszczyźnie zespolonej we wnętrzu koła o środku w środku układu współrzędnych i o promieniu 1", true, mcQuestion46);
+        Answer mcQuestion46Answear1 = new Answer("warunkiem stabilności asymptotycznej układu ciągłego jest by pierwiastek równania charakterystycznego układu posiadały części rzeczywiste mniejsze od jedności\n", false, mcQuestion46);
+        Answer mcQuestion46Answear2 = new Answer("kryterium Hurwitza pozwala na określenie stabilności układu ciągłego bez konieczności wyznaczania dokładnych wartości pierwiastków równania charakterystycznego układu", true, mcQuestion46);
+        Answer mcQuestion46Answear3 = new Answer("kryterium Hurwitza pozwala na obliczenie dokładnej wartości pierwiastków równania charakterystycznego układu ciągłego", false, mcQuestion46);
+        Answer mcQuestion46Answear4 = new Answer("kryterium Hurwitza pozwala na obliczenie dokładnej wartości pierwiastków równania charakterystycznego układu dyskretnego", false, mcQuestion46);
         questionsRepo.save(mcQuestion46);
         anwersRepo.save(mcQuestion46Answear0);
         anwersRepo.save(mcQuestion46Answear1);
@@ -1003,8 +986,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion46Answear4);
 
         Question mcQuestion47 = new Question("Oceń poprawność następujących stwierdzeń dotyczących środowiska R", mc_3);
-        Answer mcQuestion47Answear0 = new Answer("polecenie a[-5] utworzy wektor zawierający elementy wektora a z wyjątkiem elementu\n" +
-                "piątego", false, mcQuestion47);
+        Answer mcQuestion47Answear0 = new Answer("polecenie a[-5] utworzy wektor zawierający elementy wektora a z wyjątkiem elementu piątego", false, mcQuestion47);
         Answer mcQuestion47Answear1 = new Answer("dwa wektory można dodać do siebie tylko wtedy, kiedy oba mają identyczną długość", true, mcQuestion47);
         Answer mcQuestion47Answear2 = new Answer("jeśli funkcja ma zwrócić kilka różnych wartości, to należy z nich utworzyć listę", true, mcQuestion47);
         Answer mcQuestion47Answear3 = new Answer("funkcja lines tworzy nowe okno dla wykresu", false, mcQuestion47);
@@ -1081,7 +1063,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion52Answear2);
         anwersRepo.save(mcQuestion52Answear3);
 
-        Question mcQuestion53 = new Question(" Oceń poprawność następujących stwierdzeń dotyczących metod generacji i liczb\n" +
+        Question mcQuestion53 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metod generacji i liczb\n" +
                 "pseudolosowych", mc_3);
         Answer mcQuestion53Answear0 = new Answer("metoda superpozycji może być przydatna w realizacji generatora zadanego funkcją\n" +
                 "gęstości rozkładu o skomplikowanym kształcie", false, mcQuestion53);
