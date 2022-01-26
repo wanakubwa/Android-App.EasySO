@@ -441,7 +441,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion5Answear3Missed);
 
         Question mcQuestion5 = new Question("W pakiecie SimEvents do budowy modelu wykorzystywane są:", mc);
-        Answer mcQuestion5Answear0 = new Answer("Koncepcje wyboru działania”", true, mcQuestion5);
+        Answer mcQuestion5Answear0 = new Answer("Koncepcje wyboru działania”", false, mcQuestion5);
         Answer mcQuestion5Answear1 = new Answer("Ciągłe równania stanu", false, mcQuestion5);
         Answer mcQuestion5Answear2 = new Answer("Dyskretne równania stanu", false, mcQuestion5);
         Answer mcQuestion5Answear3 = new Answer("Koncepcja planowania zdarzeń", false, mcQuestion5);
@@ -1139,6 +1139,17 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion58Answear1);
         anwersRepo.save(mcQuestion58Answear2);
         anwersRepo.save(mcQuestion58Answear3);
+
+        Question mcQuestion59 = new Question("W pakiecie SimEvents do budowy modelu wykorzystywane są:", mc_3);
+        Answer mcQuestion59Answear0 = new Answer("Koncepcje inreakcji procesów”", true, mcQuestion59);
+        Answer mcQuestion59Answear1 = new Answer("Ciągłe równania stanu", false, mcQuestion59);
+        Answer mcQuestion59Answear2 = new Answer("Dyskretne równania stanu", false, mcQuestion59);
+        Answer mcQuestion59Answear3 = new Answer("Koncepcja planowania zdarzeń", false, mcQuestion59);
+        questionsRepo.save(mcQuestion59);
+        anwersRepo.save(mcQuestion59Answear0);
+        anwersRepo.save(mcQuestion59Answear1);
+        anwersRepo.save(mcQuestion59Answear2);
+        anwersRepo.save(mcQuestion59Answear3);
     }
         @Bean
     public CommandLineRunner dbInit(CategoriesRepository categoriesRepo, ScoresRepository scoresRepo, QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository anwersRepo) {
