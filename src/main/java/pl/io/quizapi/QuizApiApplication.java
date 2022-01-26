@@ -614,266 +614,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion19Answear2);
         anwersRepo.save(mcQuestion19Answear3);
 
-        Question mcQuestion20 = new Question("Zakładając warunek początkowy X0= [ 0;0 ] oraz e0 = 0 i en = 1 dla n > 0 ocenić poprawność wyliczenia wartości\n" +
-                "wektora kolumnowego Xi", mc);
-        Answer mcQuestion20Answear0 = new Answer("X2 = [0;1]", false, mcQuestion20);
-        Answer mcQuestion20Answear1 = new Answer("X1=[0;0]", true, mcQuestion20);
-        Answer mcQuestion20Answear2 = new Answer("X3=[-1;1]", false, mcQuestion20);
-        Answer mcQuestion20Answear3 = new Answer("X4=[0;1]", true, mcQuestion20);
-        questionsRepo.save(mcQuestion20);
-        anwersRepo.save(mcQuestion20Answear0);
-        anwersRepo.save(mcQuestion20Answear1);
-        anwersRepo.save(mcQuestion20Answear2);
-        anwersRepo.save(mcQuestion20Answear3);
 
-        Question mcQuestion21 = new Question("Zakładając warunek początkowy X0= [ 0;0 ] oraz e0 = 0 i en = 1 dla n > 0 ocenić poprawność wyliczenia wartości\n" +
-                "wektora kolumnowego Xi", mc);
-        Answer mcQuestion21Answear0 = new Answer("X3=[-1;1]", true, mcQuestion21);
-        Answer mcQuestion21Answear1 = new Answer("X4=[-2;0]", false, mcQuestion21);
-        Answer mcQuestion21Answear2 = new Answer("X2[0;1]", true, mcQuestion21);
-        Answer mcQuestion21Answear3 = new Answer("X1=[0;0]", true, mcQuestion21);
-        questionsRepo.save(mcQuestion21);
-        anwersRepo.save(mcQuestion21Answear0);
-        anwersRepo.save(mcQuestion21Answear1);
-        anwersRepo.save(mcQuestion21Answear2);
-        anwersRepo.save(mcQuestion21Answear3);
-
-
-        /* Pytania 25 - 34 */
-
-        Question mcQuestion22 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metod optymalizacji parametrycznej:", mc);
-        Answer mcQuestion22Answear0 = new Answer("Metoda Gaussa-Seidela jest gradientową metodą kierunków poprawy", false, mcQuestion22);
-        Answer mcQuestion22Answear1 = new Answer("Metoda kierunków sprzężonych Powella jest bezgradientową metodą kierunków poprawy", true, mcQuestion22);
-        Answer mcQuestion22Answear2 = new Answer("Metoda simpleksu Neldera-Meada jest gradientową metodą poszukiwań prostych", false, mcQuestion22);
-        Answer mcQuestion22Answear3 = new Answer("Metoda Hooka-Jeevesa jest bezgradientową metodą poszukiwań prostych", true, mcQuestion22);
-        questionsRepo.save(mcQuestion22);
-        anwersRepo.save(mcQuestion22Answear0);
-        anwersRepo.save(mcQuestion22Answear1);
-        anwersRepo.save(mcQuestion22Answear2);
-        anwersRepo.save(mcQuestion22Answear3);
-
-        Question mcQuestion23 = new Question("W modelu opartym na schemacie różnicowym Adamsa-Bashfortha 2 rzędu zamiast kroku\n" +
-                "całkowania o wartości h przyjęto krok całkowania o wartości h/2. Które ze zdań jest najbardziej\n" +
-                "prawdopodobne? W wyniku zmiany kroku całkowania lokalny błąd obcięcia będzie:", mc);
-        Answer mcQuestion23Answear0 = new Answer("Sześć razy mniejszy", false, mcQuestion23);
-        Answer mcQuestion23Answear1 = new Answer("Dwa razy mniejszy", false, mcQuestion23);
-        Answer mcQuestion23Answear2 = new Answer("Osiem razy mniejszy", true, mcQuestion23);
-        Answer mcQuestion23Answear3 = new Answer("Cztery razy mniejszy", false, mcQuestion23);
-        questionsRepo.save(mcQuestion23);
-        anwersRepo.save(mcQuestion23Answear0);
-        anwersRepo.save(mcQuestion23Answear1);
-        anwersRepo.save(mcQuestion23Answear2);
-        anwersRepo.save(mcQuestion23Answear3    );
-
-        Question mcQuestion24 = new Question("W prezentowanym na wykładzie modelu elementu inercyjnego pierwszego rzędu, zastosowano\n" +
-                "procedurę CALKA wyznaczającą nowe wartości. Które ze sformułowań są prawdziwe:", mc);
-        Answer mcQuestion24Answear0 = new Answer("Procedura CLKA wyznacza nowe, przybliżone wartości zmiennej wyjściowej yi oraz nową wartość zmiennej\n" +
-                "niezależnej ti", true, mcQuestion24);
-        Answer mcQuestion24Answear1 = new Answer("Procedura CALKA wyznacza nowe, przybliżone wartości zmiennych stanu xi i zmiennej wyjścia yi", true, mcQuestion24);
-        Answer mcQuestion24Answear2 = new Answer("Procedura CALKA wyznacza nowe, przybliżone wartości zmiennej wyjściowej yi", false, mcQuestion24);
-        Answer mcQuestion24Answear3 = new Answer("Procedura CALKA wyznacza nowe przybliżone wartości zmiennych stanu xi, ich pochodnych xi' oraz nową\n" +
-                "wartość zmiennej niezależnej ti", false, mcQuestion24);
-        questionsRepo.save(mcQuestion24);
-        anwersRepo.save(mcQuestion24Answear0);
-        anwersRepo.save(mcQuestion24Answear1);
-        anwersRepo.save(mcQuestion24Answear2);
-        anwersRepo.save(mcQuestion24Answear3);
-
-        Question mcQuestion25 = new Question("Oceń poprawność następujących stwierdzeń dotyczących zagadnień związanych z obliczaniem wartości początkowych zmiennych stanu i zmiennych wyjścia", mc);
-        Answer mcQuestion25Answear0 = new Answer("Przy zastosowaniu metody szeregowej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
-                "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych\n", false, mcQuestion25);
-        Answer mcQuestion25Answear1 = new Answer("Gdy zmienna wejściowa w chwili t = 0 nie jest impulsem Diraca, to pomiędzy wartościami zmiennych stanu\n" +
-                "zachodzi następująca relacja: x(0+) ≠ x(0-)" +
-                "−)", false, mcQuestion25);
-        Answer mcQuestion25Answear2 = new Answer("Przy zastosowaniu metody równoległej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
-                "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych\n", false, mcQuestion25);
-        Answer mcQuestion25Answear3 = new Answer("Przy zastosowaniu metody ogólnej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
-                "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych", true, mcQuestion25);
-        questionsRepo.save(mcQuestion25);
-        anwersRepo.save(mcQuestion25Answear0);
-        anwersRepo.save(mcQuestion25Answear1);
-        anwersRepo.save(mcQuestion25Answear2);
-        anwersRepo.save(mcQuestion25Answear3);
-
-        Question mcQuestion26 = new Question("W środowisku Matlab:", mc);
-        Answer mcQuestion26Answear0 = new Answer("Jednym z parametrów wejściowych funkcji ode45 jest nazwa funkcji wyznaczającej wartości pochodnych\n" +
-                "wektora stanu", true, mcQuestion26);
-        Answer mcQuestion26Answear1 = new Answer("Funkcja ode45 umożliwia rozwiązywanie zagadnienia początkowego", true, mcQuestion26);
-        Answer mcQuestion26Answear2 = new Answer("Funkcja ode45 jest metodą całkowania numerycznego opartą na jednym ze schematów Adamsa-Bashfortha", false, mcQuestion26);
-        Answer mcQuestion26Answear3 = new Answer("Jednym z parametrów wejściowych funkcji ode45 jest wektor początkowych wartości składowych wektora stanu", true, mcQuestion26);
-        questionsRepo.save(mcQuestion26);
-        anwersRepo.save(mcQuestion26Answear0);
-        anwersRepo.save(mcQuestion26Answear1);
-        anwersRepo.save(mcQuestion26Answear2);
-        anwersRepo.save(mcQuestion26Answear3);
-
-        Question mcQuestion27 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metod generacji liczb pseudolosowych", mc);
-        Answer mcQuestion27Answear0 = new Answer("Wygenerowanie kolejnej liczby za pomocą metody odwracania dystrybuanty wymaga jednokrotnego użycia\n" +
-                "pomocniczego generatora liczb o rozkładzie równomiernym", true, mcQuestion27);
-        Answer mcQuestion27Answear1 = new Answer("W ogólnym przypadku metoda eliminacji nie gwarantuje wylosowania wartości liczby pseudolosowej o\n" +
-                "zadanym rozkładzie w pierwszej próbie losowania", true, mcQuestion27);
-        Answer mcQuestion27Answear2 = new Answer("Metoda superpozycji może być przydatna w realizacji generatora zadanego funkcją gęstości rozkładu o\n" +
-                "skomplikowanym wzorze", false, mcQuestion27);
-        Answer mcQuestion27Answear3 = new Answer("Liczby o rozkładzie równomiernym na odcinku [0, 1) mogą być uzyskiwane przez zastosowanie metody\n" +
-                "odwracania dystrybuanty (????????)", false, mcQuestion27);
-        questionsRepo.save(mcQuestion27);
-        anwersRepo.save(mcQuestion27Answear0);
-        anwersRepo.save(mcQuestion27Answear1);
-        anwersRepo.save(mcQuestion27Answear2);
-        anwersRepo.save(mcQuestion27Answear3);
-
-        Question mcQuestion28 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metod generacji liczb pseudolosowych:?", mc);
-        Answer mcQuestion28Answear0 = new Answer("Wygenerowanie kolejnej liczby pseudolosowej o rozkładzie normalnym N(0, 1) może zostać dokonane za\n" +
-                "pomocą metody opartej na centralnym twierdzeniu granicznym (????????)", false, mcQuestion28);
-        Answer mcQuestion28Answear1 = new Answer("Metoda superpozycji może być przydatna w realizacji generatora zadanego funkcją gęstości rozkładu, w opicie\n" +
-                "której występują impulsy Diraca", true, mcQuestion28);
-        Answer mcQuestion28Answear2 = new Answer("Wygenerowanie kolejnej liczby pseudolosowej o dowolnym nieobciętym rozkładzie normalnym może zostać\n" +
-                "dokonane za pomocą metody eliminacji", false, mcQuestion28);
-        Answer mcQuestion28Answear3 = new Answer("Wygenerowanie kolejnej liczby pseudolosowej o rozkładzie wykładniczym może zostać dokonane za pomocą\n" +
-                "metody odwracania dystrybuanty", true, mcQuestion28);
-        questionsRepo.save(mcQuestion28);
-        anwersRepo.save(mcQuestion28Answear0);
-        anwersRepo.save(mcQuestion28Answear1);
-        anwersRepo.save(mcQuestion28Answear2);
-        anwersRepo.save(mcQuestion28Answear3);
-
-        Question mcQuestion29 = new Question("Oceń poprawność następujących stwierdzeń dotyczących funkcji ode45 środowiska Matlab:?", mc);
-        Answer mcQuestion29Answear0 = new Answer("Umożliwia rozwiązanie zagadnienia początkowego", false, mcQuestion29);
-        Answer mcQuestion29Answear1 = new Answer("Jednym z jej parametrów wejściowych jest nazwa funkcji wyznaczającej wartości pochodnych wektora stanu", true, mcQuestion29);
-        Answer mcQuestion29Answear2 = new Answer("Jest metodą całkowania numerycznego opartą na jednym ze schematów Adamsa-Bashfortha", false, mcQuestion29);
-        Answer mcQuestion29Answear3 = new Answer("Jednym z jej parametrów wejściowych jest wektor początkowych wartości składowych wektora st", true, mcQuestion29);
-        questionsRepo.save(mcQuestion29);
-        anwersRepo.save(mcQuestion29Answear0);
-        anwersRepo.save(mcQuestion29Answear1);
-        anwersRepo.save(mcQuestion29Answear2);
-        anwersRepo.save(mcQuestion29Answear3);
-
-        Question mcQuestion30 = new Question("Oceń poprawność następujących stwierdzeń dotyczących funkcji ode45 środowiska Matlab", mc);
-        Answer mcQuestion30Answear0 = new Answer("Umożliwia rozwiązanie zagadnienia początkowego\n", true, mcQuestion30);
-        Answer mcQuestion30Answear1 = new Answer("Jest metodą całkowania numerycznego opartą na schemacie Eulera Vk+1 = Vk + h * f(Vk,tk)", false, mcQuestion30);
-        Answer mcQuestion30Answear2 = new Answer("Jednym z jej parametrów wejściowych jest nazwa funkcji wyznaczającej wartości pochodnych wektora stanu", true, mcQuestion30);
-        Answer mcQuestion30Answear3 = new Answer("Jednym z jej parametrów wejściowych jest wektor początkowych wartości składowych wektora stanu", true, mcQuestion30);
-        questionsRepo.save(mcQuestion30);
-        anwersRepo.save(mcQuestion30Answear0);
-        anwersRepo.save(mcQuestion30Answear1);
-        anwersRepo.save(mcQuestion30Answear2);
-        anwersRepo.save(mcQuestion30Answear3);
-
-        Question mcQuestion31 = new Question("Oceń poprawność następujących stwierdzeń dotyczących szeregowej i równoległej metody\n" +
-                "znajdowania równań stanu:", mc);
-        Answer mcQuestion31Answear0 = new Answer("Uzyskana postać równań stanu nie musi być identyczna dla obu metod", true, mcQuestion20);
-        Answer mcQuestion31Answear1 = new Answer("Metoda równoległa wymaga znajomości pierwiastków mianownika funkcji przejścia układu", true, mcQuestion20);
-        Answer mcQuestion31Answear2 = new Answer("Przy zastosowaniu metody równoległej dla funkcji przejścia K(p) = (p+1)/(p^2-9) wartość współczynnika D wynosi 0", true, mcQuestion20);
-        Answer mcQuestion31Answear3 = new Answer("W metodzie szeregowej sygnał wymuszenia jest zadawany na wejście każdego z połączonych ze sobą\n" +
-                "szeregowo układów elementarnych", false, mcQuestion20);
-        questionsRepo.save(mcQuestion31);
-        anwersRepo.save(mcQuestion31Answear0);
-        anwersRepo.save(mcQuestion31Answear1);
-        anwersRepo.save(mcQuestion31Answear2);
-        anwersRepo.save(mcQuestion31Answear3);
-
-        Question mcQuestion32 = new Question("Koncepcja wyboru działania:\n", mc);
-        Answer mcQuestion32Answear0 = new Answer("Umożliwia modelowanie systemów masowej obsługi", true, mcQuestion32);
-        Answer mcQuestion32Answear1 = new Answer("Wymaga, aby w budowanym modelu cyfrowym przy każdym przesunięciu czasu zbadać możliwość\n" +
-                "wystąpienia wszystkich zdarzeń czasowych i warunkowych", true, mcQuestion32);
-        Answer mcQuestion32Answear2 = new Answer("Implementowana jest w programie Simnon", false, mcQuestion32);
-        Answer mcQuestion32Answear3 = new Answer("Znajduje zastosowanie przy modelowaniu dowolnych układów ciągłych", false, mcQuestion32);
-        questionsRepo.save(mcQuestion32);
-        anwersRepo.save(mcQuestion32Answear0);
-        anwersRepo.save(mcQuestion32Answear1);
-        anwersRepo.save(mcQuestion32Answear2);
-        anwersRepo.save(mcQuestion32Answear3);
-
-        /* Pytania 35 - 38 */
-
-        Question mcQuestion33 = new Question("Rozwiązaniem równań stanu o postaci x' = Ax + Bu z warunkami początkowymi x0 jest", mc);
-        Answer mcQuestion33Answear0 = new Answer("e^A", true, mcQuestion33);
-        Answer mcQuestion33Answear1 = new Answer("e^(-A)", false, mcQuestion33);
-        Answer mcQuestion33Answear2 = new Answer("e^B", false, mcQuestion33);
-        Answer mcQuestion33Answear3 = new Answer("e^(-B)", false, mcQuestion33);
-        questionsRepo.save(mcQuestion33);
-        anwersRepo.save(mcQuestion33Answear0);
-        anwersRepo.save(mcQuestion33Answear1);
-        anwersRepo.save(mcQuestion33Answear2);
-        anwersRepo.save(mcQuestion33Answear3);
-
-        Question mcQuestion34 = new Question("Oceń poprawność następujących stwierdzeń dotyczących układów i sygnałów dyskretnych:", mc);
-        Answer mcQuestion34Answear0 = new Answer("Ciąg impulsów Diraca jest sygnałem o modulowanej amplitudzie", true, mcQuestion34);
-        Answer mcQuestion34Answear1 = new Answer("Sygnał schodkowy jest sygnałem o modulowanej amplitudzie", true, mcQuestion34);
-        Answer mcQuestion34Answear2 = new Answer("W układzie dyskretnym wszystkie sygnały mają charakter dyskretny", false, mcQuestion34);
-        Answer mcQuestion34Answear3 = new Answer("Sygnał interpolacji liniowej u(t) = pojebanyWzor dla pojebanyPrzedzial jest sygnałem o modulowanej amplitudzie (??????)", false, mcQuestion34);
-        questionsRepo.save(mcQuestion34);
-        anwersRepo.save(mcQuestion34Answear0);
-        anwersRepo.save(mcQuestion34Answear1);
-        anwersRepo.save(mcQuestion34Answear2);
-        anwersRepo.save(mcQuestion34Answear3);
-
-        Question mcQuestion35 = new Question("Dany jest generator liczb losowych Xi o rozkładzie równomiernym w przedziale (-0.5, 0.5) oraz wyznaczane są liczby losowe Yi wg wzorów podanych poniżej. Wskaż, które z podanych wzorów mogą być zastosowane do generacji liczb losowych o rozkładzie normalnym N(0, 1):", mc);
-        Answer mcQuestion35Answear0 = new Answer("Yi=E^12(Xi)", true, mcQuestion35);
-        Answer mcQuestion35Answear1 = new Answer("Yi=E^18(Xi)", false, mcQuestion35);
-        Answer mcQuestion35Answear2 = new Answer("Yi=E^6(Xi)", false, mcQuestion35);
-        Answer mcQuestion35Answear3 = new Answer("Yi=E^24(Xi)", false, mcQuestion35);
-        questionsRepo.save(mcQuestion35);
-        anwersRepo.save(mcQuestion35Answear0);
-        anwersRepo.save(mcQuestion35Answear1);
-        anwersRepo.save(mcQuestion35Answear2);
-        anwersRepo.save(mcQuestion35Answear3);
-
-        Question mcQuestion36 = new Question("Oceń poprawność następujących stwierdzeń dotyczących stabilności układów liniowych ciągłych:\n", mc);
-        Answer mcQuestion36Answear0 = new Answer("Kryterium Hurwitza pozwala na wyznaczenie wartości pierwiastków "
-            + "równania charakterystycznego\n", false, mcQuestion36);
-        Answer mcQuestion36Answear1 = new Answer("Jeśli pierwiastki równania charakterystycznego układu mają części "
-            + "rzeczywiste mniejsze od zera, to układ jest stabilny asymptotycznie\n", true, mcQuestion36);
-        Answer mcQuestion36Answear2 = new Answer("Dla układu dynamicznego opisanego równaniem 7y′′ + 2y′ + 3y = 0 "
-            + "wyznacznik ∆2 z kryterium Hurwitza jest wyrażony następująco:|2 0 ; 7 3 |", true, mcQuestion36);
-        Answer mcQuestion36Answear3 = new Answer("Dla układu dynamicznego opisanego równaniem 2y′′ + 3y′ + 4y = 0 "
-            + "wyznacznik ∆2 z kryterium Hurwitza jest wyrażony następująco: | 0 3 ; 2 4|", false, mcQuestion36);
-        questionsRepo.save(mcQuestion36);
-        anwersRepo.save(mcQuestion36Answear0);
-        anwersRepo.save(mcQuestion36Answear1);
-        anwersRepo.save(mcQuestion36Answear2);
-        anwersRepo.save(mcQuestion36Answear3);
-
-        /* Ulciorek */
-        Question mcQuestion37 = new Question("Oceń poprawność następujących stwierdzeń dla dowolnego modelu układu "
-            + "zdarzeń dyskretnych\n"
-            + "zbudowanego według koncepcji planowania zdarzeń:", mc);
-        Answer mcQuestion37Answear0 = new Answer("wykrycie przez procedurę kontroli symulacji pustego zbioru "
-            + "zaplanowanych zdarzeń w trakcie\n"
-            + "realizacji eksperymentu oznacza, że aktualny stan układu jest ostateczny", true, mcQuestion37);
-        Answer mcQuestion37Answear1 = new Answer("planowanie dotyczy zarówno tego, co będzie odbywać się w przyszłości, jak i przeszłości", false, mcQuestion37);
-        Answer mcQuestion37Answear2 = new Answer("mechanizmem upływu czasu symulacyjnego steruje procedura kontroli symulacji", true, mcQuestion37);
-        Answer mcQuestion37Answear3 = new Answer("zaplanowanie zdarzenia wymaga między innymi obliczenia chwili zajścia tego zdarzenia", true, mcQuestion37);
-        questionsRepo.save(mcQuestion37);
-        anwersRepo.save(mcQuestion37Answear0);
-        anwersRepo.save(mcQuestion37Answear1);
-        anwersRepo.save(mcQuestion37Answear2);
-        anwersRepo.save(mcQuestion37Answear3);
-
-        Question mcQuestion38 = new Question(" Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych:", mc);
-        Answer mcQuestion38Answear0 = new Answer("w schematach jednokrokowych kolejne przybliżenie rozwiązania tk+1, "
-            + "vk+1 zależy od\n"
-            + "wartości vk i pochodnej f w otoczeniu tk, vk (????)", true, mcQuestion38);
-        Answer mcQuestion38Answear1 = new Answer("funkcja f występująca we wzorach schematów różnicowych jest prawą stroną równania stanu", true, mcQuestion38);
-        Answer mcQuestion38Answear2 = new Answer("schemat różnicowy o postaci vj+1 = F(vj+1, vj, … , vj-p, tj) jest "
-            + "schematem jawnym", false, mcQuestion38);
-        Answer mcQuestion38Answear3 = new Answer("metody Rungego-Kutty są przykładami metod jednokrokowych", true, mcQuestion38);
-        questionsRepo.save(mcQuestion38);
-        anwersRepo.save(mcQuestion38Answear0);
-        anwersRepo.save(mcQuestion38Answear1);
-        anwersRepo.save(mcQuestion38Answear2);
-        anwersRepo.save(mcQuestion38Answear3);
-
-        Question mcQuestion39 = new Question("W środowisku Matlab/Simulink funkcja sim umożliwia", mc);
-        Answer mcQuestion39Answear0 = new Answer("rozwiązanie zagadnienia początkowego dla układów dyskretnych", true, mcQuestion39);
-        Answer mcQuestion39Answear1 = new Answer("rozwiązanie zagadnienia optymalizacji parametrycznej", false, mcQuestion39);
-        Answer mcQuestion39Answear2 = new Answer("rozwiązanie zagadnienia początkowego dla układów ciągłych", true, mcQuestion39);
-        Answer mcQuestion39Answear3 = new Answer("wyznaczenie czasowej funkcji przejścia", false, mcQuestion39);
-        questionsRepo.save(mcQuestion39);
-        anwersRepo.save(mcQuestion39Answear0);
-        anwersRepo.save(mcQuestion39Answear1);
-        anwersRepo.save(mcQuestion39Answear2);
-        anwersRepo.save(mcQuestion39Answear3);
 
         Question mcQuestion40 = new Question("Oceń poprawność następujących stwierdzeń dotyczących zadania optymalizacji parametrycznej", mc);
         Answer mcQuestion40Answear0 = new Answer("zadanie dwugraniczne jest przykładem zadania optymalizacji parametrycznej", true, mcQuestion40);
@@ -914,7 +655,278 @@ public class QuizApiApplication {
 
     }
 
-    @Bean
+
+    private void createMCQuizPart2(CategoriesRepository categoriesRepo, ScoresRepository scoresRepo, QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository anwersRepo) {
+
+        Category MC_2 = new Category("MC2");
+        Quiz mc_2 = new Quiz("MC2", MC_2);
+
+        categoriesRepo.save(MC_2);
+        quizesRepo.save(mc_2);
+
+        Question mcQuestion20 = new Question("Zakładając warunek początkowy X0= [ 0;0 ] oraz e0 = 0 i en = 1 dla n > 0 ocenić poprawność wyliczenia wartości\n" +
+                "wektora kolumnowego Xi", mc_2);
+        Answer mcQuestion20Answear0 = new Answer("X2 = [0;1]", false, mcQuestion20);
+        Answer mcQuestion20Answear1 = new Answer("X1=[0;0]", true, mcQuestion20);
+        Answer mcQuestion20Answear2 = new Answer("X3=[-1;1]", false, mcQuestion20);
+        Answer mcQuestion20Answear3 = new Answer("X4=[0;1]", true, mcQuestion20);
+        questionsRepo.save(mcQuestion20);
+        anwersRepo.save(mcQuestion20Answear0);
+        anwersRepo.save(mcQuestion20Answear1);
+        anwersRepo.save(mcQuestion20Answear2);
+        anwersRepo.save(mcQuestion20Answear3);
+
+        Question mcQuestion21 = new Question("Zakładając warunek początkowy X0= [ 0;0 ] oraz e0 = 0 i en = 1 dla n > 0 ocenić poprawność wyliczenia wartości\n" +
+                "wektora kolumnowego Xi", mc_2);
+        Answer mcQuestion21Answear0 = new Answer("X3=[-1;1]", true, mcQuestion21);
+        Answer mcQuestion21Answear1 = new Answer("X4=[-2;0]", false, mcQuestion21);
+        Answer mcQuestion21Answear2 = new Answer("X2[0;1]", true, mcQuestion21);
+        Answer mcQuestion21Answear3 = new Answer("X1=[0;0]", true, mcQuestion21);
+        questionsRepo.save(mcQuestion21);
+        anwersRepo.save(mcQuestion21Answear0);
+        anwersRepo.save(mcQuestion21Answear1);
+        anwersRepo.save(mcQuestion21Answear2);
+        anwersRepo.save(mcQuestion21Answear3);
+
+
+        /* Pytania 25 - 34 */
+
+        Question mcQuestion22 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metod optymalizacji parametrycznej:", mc_2);
+        Answer mcQuestion22Answear0 = new Answer("Metoda Gaussa-Seidela jest gradientową metodą kierunków poprawy", false, mcQuestion22);
+        Answer mcQuestion22Answear1 = new Answer("Metoda kierunków sprzężonych Powella jest bezgradientową metodą kierunków poprawy", true, mcQuestion22);
+        Answer mcQuestion22Answear2 = new Answer("Metoda simpleksu Neldera-Meada jest gradientową metodą poszukiwań prostych", false, mcQuestion22);
+        Answer mcQuestion22Answear3 = new Answer("Metoda Hooka-Jeevesa jest bezgradientową metodą poszukiwań prostych", true, mcQuestion22);
+        questionsRepo.save(mcQuestion22);
+        anwersRepo.save(mcQuestion22Answear0);
+        anwersRepo.save(mcQuestion22Answear1);
+        anwersRepo.save(mcQuestion22Answear2);
+        anwersRepo.save(mcQuestion22Answear3);
+
+        Question mcQuestion23 = new Question("W modelu opartym na schemacie różnicowym Adamsa-Bashfortha 2 rzędu zamiast kroku\n" +
+                "całkowania o wartości h przyjęto krok całkowania o wartości h/2. Które ze zdań jest najbardziej\n" +
+                "prawdopodobne? W wyniku zmiany kroku całkowania lokalny błąd obcięcia będzie:", mc_2);
+        Answer mcQuestion23Answear0 = new Answer("Sześć razy mniejszy", false, mcQuestion23);
+        Answer mcQuestion23Answear1 = new Answer("Dwa razy mniejszy", false, mcQuestion23);
+        Answer mcQuestion23Answear2 = new Answer("Osiem razy mniejszy", true, mcQuestion23);
+        Answer mcQuestion23Answear3 = new Answer("Cztery razy mniejszy", false, mcQuestion23);
+        questionsRepo.save(mcQuestion23);
+        anwersRepo.save(mcQuestion23Answear0);
+        anwersRepo.save(mcQuestion23Answear1);
+        anwersRepo.save(mcQuestion23Answear2);
+        anwersRepo.save(mcQuestion23Answear3    );
+
+        Question mcQuestion24 = new Question("W prezentowanym na wykładzie modelu elementu inercyjnego pierwszego rzędu, zastosowano\n" +
+                "procedurę CALKA wyznaczającą nowe wartości. Które ze sformułowań są prawdziwe:", mc_2);
+        Answer mcQuestion24Answear0 = new Answer("Procedura CLKA wyznacza nowe, przybliżone wartości zmiennej wyjściowej yi oraz nową wartość zmiennej\n" +
+                "niezależnej ti", true, mcQuestion24);
+        Answer mcQuestion24Answear1 = new Answer("Procedura CALKA wyznacza nowe, przybliżone wartości zmiennych stanu xi i zmiennej wyjścia yi", true, mcQuestion24);
+        Answer mcQuestion24Answear2 = new Answer("Procedura CALKA wyznacza nowe, przybliżone wartości zmiennej wyjściowej yi", false, mcQuestion24);
+        Answer mcQuestion24Answear3 = new Answer("Procedura CALKA wyznacza nowe przybliżone wartości zmiennych stanu xi, ich pochodnych xi' oraz nową\n" +
+                "wartość zmiennej niezależnej ti", false, mcQuestion24);
+        questionsRepo.save(mcQuestion24);
+        anwersRepo.save(mcQuestion24Answear0);
+        anwersRepo.save(mcQuestion24Answear1);
+        anwersRepo.save(mcQuestion24Answear2);
+        anwersRepo.save(mcQuestion24Answear3);
+
+        Question mcQuestion25 = new Question("Oceń poprawność następujących stwierdzeń dotyczących zagadnień związanych z obliczaniem wartości początkowych zmiennych stanu i zmiennych wyjścia", mc_2);
+        Answer mcQuestion25Answear0 = new Answer("Przy zastosowaniu metody szeregowej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
+                "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych\n", false, mcQuestion25);
+        Answer mcQuestion25Answear1 = new Answer("Gdy zmienna wejściowa w chwili t = 0 nie jest impulsem Diraca, to pomiędzy wartościami zmiennych stanu\n" +
+                "zachodzi następująca relacja: x(0+) ≠ x(0-)" +
+                "−)", false, mcQuestion25);
+        Answer mcQuestion25Answear2 = new Answer("Przy zastosowaniu metody równoległej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
+                "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych\n", false, mcQuestion25);
+        Answer mcQuestion25Answear3 = new Answer("Przy zastosowaniu metody ogólnej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
+                "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych", true, mcQuestion25);
+        questionsRepo.save(mcQuestion25);
+        anwersRepo.save(mcQuestion25Answear0);
+        anwersRepo.save(mcQuestion25Answear1);
+        anwersRepo.save(mcQuestion25Answear2);
+        anwersRepo.save(mcQuestion25Answear3);
+
+        Question mcQuestion26 = new Question("W środowisku Matlab:", mc_2);
+        Answer mcQuestion26Answear0 = new Answer("Jednym z parametrów wejściowych funkcji ode45 jest nazwa funkcji wyznaczającej wartości pochodnych\n" +
+                "wektora stanu", true, mcQuestion26);
+        Answer mcQuestion26Answear1 = new Answer("Funkcja ode45 umożliwia rozwiązywanie zagadnienia początkowego", true, mcQuestion26);
+        Answer mcQuestion26Answear2 = new Answer("Funkcja ode45 jest metodą całkowania numerycznego opartą na jednym ze schematów Adamsa-Bashfortha", false, mcQuestion26);
+        Answer mcQuestion26Answear3 = new Answer("Jednym z parametrów wejściowych funkcji ode45 jest wektor początkowych wartości składowych wektora stanu", true, mcQuestion26);
+        questionsRepo.save(mcQuestion26);
+        anwersRepo.save(mcQuestion26Answear0);
+        anwersRepo.save(mcQuestion26Answear1);
+        anwersRepo.save(mcQuestion26Answear2);
+        anwersRepo.save(mcQuestion26Answear3);
+
+        Question mcQuestion27 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metod generacji liczb pseudolosowych", mc_2);
+        Answer mcQuestion27Answear0 = new Answer("Wygenerowanie kolejnej liczby za pomocą metody odwracania dystrybuanty wymaga jednokrotnego użycia\n" +
+                "pomocniczego generatora liczb o rozkładzie równomiernym", true, mcQuestion27);
+        Answer mcQuestion27Answear1 = new Answer("W ogólnym przypadku metoda eliminacji nie gwarantuje wylosowania wartości liczby pseudolosowej o\n" +
+                "zadanym rozkładzie w pierwszej próbie losowania", true, mcQuestion27);
+        Answer mcQuestion27Answear2 = new Answer("Metoda superpozycji może być przydatna w realizacji generatora zadanego funkcją gęstości rozkładu o\n" +
+                "skomplikowanym wzorze", false, mcQuestion27);
+        Answer mcQuestion27Answear3 = new Answer("Liczby o rozkładzie równomiernym na odcinku [0, 1) mogą być uzyskiwane przez zastosowanie metody\n" +
+                "odwracania dystrybuanty (????????)", false, mcQuestion27);
+        questionsRepo.save(mcQuestion27);
+        anwersRepo.save(mcQuestion27Answear0);
+        anwersRepo.save(mcQuestion27Answear1);
+        anwersRepo.save(mcQuestion27Answear2);
+        anwersRepo.save(mcQuestion27Answear3);
+
+        Question mcQuestion28 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metod generacji liczb pseudolosowych:?", mc_2);
+        Answer mcQuestion28Answear0 = new Answer("Wygenerowanie kolejnej liczby pseudolosowej o rozkładzie normalnym N(0, 1) może zostać dokonane za\n" +
+                "pomocą metody opartej na centralnym twierdzeniu granicznym (????????)", false, mcQuestion28);
+        Answer mcQuestion28Answear1 = new Answer("Metoda superpozycji może być przydatna w realizacji generatora zadanego funkcją gęstości rozkładu, w opicie\n" +
+                "której występują impulsy Diraca", true, mcQuestion28);
+        Answer mcQuestion28Answear2 = new Answer("Wygenerowanie kolejnej liczby pseudolosowej o dowolnym nieobciętym rozkładzie normalnym może zostać\n" +
+                "dokonane za pomocą metody eliminacji", false, mcQuestion28);
+        Answer mcQuestion28Answear3 = new Answer("Wygenerowanie kolejnej liczby pseudolosowej o rozkładzie wykładniczym może zostać dokonane za pomocą\n" +
+                "metody odwracania dystrybuanty", true, mcQuestion28);
+        questionsRepo.save(mcQuestion28);
+        anwersRepo.save(mcQuestion28Answear0);
+        anwersRepo.save(mcQuestion28Answear1);
+        anwersRepo.save(mcQuestion28Answear2);
+        anwersRepo.save(mcQuestion28Answear3);
+
+        Question mcQuestion29 = new Question("Oceń poprawność następujących stwierdzeń dotyczących funkcji ode45 środowiska Matlab:?", mc_2);
+        Answer mcQuestion29Answear0 = new Answer("Umożliwia rozwiązanie zagadnienia początkowego", false, mcQuestion29);
+        Answer mcQuestion29Answear1 = new Answer("Jednym z jej parametrów wejściowych jest nazwa funkcji wyznaczającej wartości pochodnych wektora stanu", true, mcQuestion29);
+        Answer mcQuestion29Answear2 = new Answer("Jest metodą całkowania numerycznego opartą na jednym ze schematów Adamsa-Bashfortha", false, mcQuestion29);
+        Answer mcQuestion29Answear3 = new Answer("Jednym z jej parametrów wejściowych jest wektor początkowych wartości składowych wektora st", true, mcQuestion29);
+        questionsRepo.save(mcQuestion29);
+        anwersRepo.save(mcQuestion29Answear0);
+        anwersRepo.save(mcQuestion29Answear1);
+        anwersRepo.save(mcQuestion29Answear2);
+        anwersRepo.save(mcQuestion29Answear3);
+
+        Question mcQuestion30 = new Question("Oceń poprawność następujących stwierdzeń dotyczących funkcji ode45 środowiska Matlab", mc_2);
+        Answer mcQuestion30Answear0 = new Answer("Umożliwia rozwiązanie zagadnienia początkowego\n", true, mcQuestion30);
+        Answer mcQuestion30Answear1 = new Answer("Jest metodą całkowania numerycznego opartą na schemacie Eulera Vk+1 = Vk + h * f(Vk,tk)", false, mcQuestion30);
+        Answer mcQuestion30Answear2 = new Answer("Jednym z jej parametrów wejściowych jest nazwa funkcji wyznaczającej wartości pochodnych wektora stanu", true, mcQuestion30);
+        Answer mcQuestion30Answear3 = new Answer("Jednym z jej parametrów wejściowych jest wektor początkowych wartości składowych wektora stanu", true, mcQuestion30);
+        questionsRepo.save(mcQuestion30);
+        anwersRepo.save(mcQuestion30Answear0);
+        anwersRepo.save(mcQuestion30Answear1);
+        anwersRepo.save(mcQuestion30Answear2);
+        anwersRepo.save(mcQuestion30Answear3);
+
+        Question mcQuestion31 = new Question("Oceń poprawność następujących stwierdzeń dotyczących szeregowej i równoległej metody\n" +
+                "znajdowania równań stanu:", mc_2);
+        Answer mcQuestion31Answear0 = new Answer("Uzyskana postać równań stanu nie musi być identyczna dla obu metod", true, mcQuestion20);
+        Answer mcQuestion31Answear1 = new Answer("Metoda równoległa wymaga znajomości pierwiastków mianownika funkcji przejścia układu", true, mcQuestion20);
+        Answer mcQuestion31Answear2 = new Answer("Przy zastosowaniu metody równoległej dla funkcji przejścia K(p) = (p+1)/(p^2-9) wartość współczynnika D wynosi 0", true, mcQuestion20);
+        Answer mcQuestion31Answear3 = new Answer("W metodzie szeregowej sygnał wymuszenia jest zadawany na wejście każdego z połączonych ze sobą\n" +
+                "szeregowo układów elementarnych", false, mcQuestion20);
+        questionsRepo.save(mcQuestion31);
+        anwersRepo.save(mcQuestion31Answear0);
+        anwersRepo.save(mcQuestion31Answear1);
+        anwersRepo.save(mcQuestion31Answear2);
+        anwersRepo.save(mcQuestion31Answear3);
+
+        Question mcQuestion32 = new Question("Koncepcja wyboru działania:\n", mc_2);
+        Answer mcQuestion32Answear0 = new Answer("Umożliwia modelowanie systemów masowej obsługi", true, mcQuestion32);
+        Answer mcQuestion32Answear1 = new Answer("Wymaga, aby w budowanym modelu cyfrowym przy każdym przesunięciu czasu zbadać możliwość\n" +
+                "wystąpienia wszystkich zdarzeń czasowych i warunkowych", true, mcQuestion32);
+        Answer mcQuestion32Answear2 = new Answer("Implementowana jest w programie Simnon", false, mcQuestion32);
+        Answer mcQuestion32Answear3 = new Answer("Znajduje zastosowanie przy modelowaniu dowolnych układów ciągłych", false, mcQuestion32);
+        questionsRepo.save(mcQuestion32);
+        anwersRepo.save(mcQuestion32Answear0);
+        anwersRepo.save(mcQuestion32Answear1);
+        anwersRepo.save(mcQuestion32Answear2);
+        anwersRepo.save(mcQuestion32Answear3);
+
+        /* Pytania 35 - 38 */
+
+        Question mcQuestion33 = new Question("Rozwiązaniem równań stanu o postaci x' = Ax + Bu z warunkami początkowymi x0 jest", mc_2);
+        Answer mcQuestion33Answear0 = new Answer("e^A", true, mcQuestion33);
+        Answer mcQuestion33Answear1 = new Answer("e^(-A)", false, mcQuestion33);
+        Answer mcQuestion33Answear2 = new Answer("e^B", false, mcQuestion33);
+        Answer mcQuestion33Answear3 = new Answer("e^(-B)", false, mcQuestion33);
+        questionsRepo.save(mcQuestion33);
+        anwersRepo.save(mcQuestion33Answear0);
+        anwersRepo.save(mcQuestion33Answear1);
+        anwersRepo.save(mcQuestion33Answear2);
+        anwersRepo.save(mcQuestion33Answear3);
+
+        Question mcQuestion34 = new Question("Oceń poprawność następujących stwierdzeń dotyczących układów i sygnałów dyskretnych:", mc_2);
+        Answer mcQuestion34Answear0 = new Answer("Ciąg impulsów Diraca jest sygnałem o modulowanej amplitudzie", true, mcQuestion34);
+        Answer mcQuestion34Answear1 = new Answer("Sygnał schodkowy jest sygnałem o modulowanej amplitudzie", true, mcQuestion34);
+        Answer mcQuestion34Answear2 = new Answer("W układzie dyskretnym wszystkie sygnały mają charakter dyskretny", false, mcQuestion34);
+        Answer mcQuestion34Answear3 = new Answer("Sygnał interpolacji liniowej u(t) = pojebanyWzor dla pojebanyPrzedzial jest sygnałem o modulowanej amplitudzie (??????)", false, mcQuestion34);
+        questionsRepo.save(mcQuestion34);
+        anwersRepo.save(mcQuestion34Answear0);
+        anwersRepo.save(mcQuestion34Answear1);
+        anwersRepo.save(mcQuestion34Answear2);
+        anwersRepo.save(mcQuestion34Answear3);
+
+        Question mcQuestion35 = new Question("Dany jest generator liczb losowych Xi o rozkładzie równomiernym w przedziale (-0.5, 0.5) oraz wyznaczane są liczby losowe Yi wg wzorów podanych poniżej. Wskaż, które z podanych wzorów mogą być zastosowane do generacji liczb losowych o rozkładzie normalnym N(0, 1):", mc_2);
+        Answer mcQuestion35Answear0 = new Answer("Yi=E^12(Xi)", true, mcQuestion35);
+        Answer mcQuestion35Answear1 = new Answer("Yi=E^18(Xi)", false, mcQuestion35);
+        Answer mcQuestion35Answear2 = new Answer("Yi=E^6(Xi)", false, mcQuestion35);
+        Answer mcQuestion35Answear3 = new Answer("Yi=E^24(Xi)", false, mcQuestion35);
+        questionsRepo.save(mcQuestion35);
+        anwersRepo.save(mcQuestion35Answear0);
+        anwersRepo.save(mcQuestion35Answear1);
+        anwersRepo.save(mcQuestion35Answear2);
+        anwersRepo.save(mcQuestion35Answear3);
+
+        Question mcQuestion36 = new Question("Oceń poprawność następujących stwierdzeń dotyczących stabilności układów liniowych ciągłych:\n", mc_2);
+        Answer mcQuestion36Answear0 = new Answer("Kryterium Hurwitza pozwala na wyznaczenie wartości pierwiastków "
+                + "równania charakterystycznego\n", false, mcQuestion36);
+        Answer mcQuestion36Answear1 = new Answer("Jeśli pierwiastki równania charakterystycznego układu mają części "
+                + "rzeczywiste mniejsze od zera, to układ jest stabilny asymptotycznie\n", true, mcQuestion36);
+        Answer mcQuestion36Answear2 = new Answer("Dla układu dynamicznego opisanego równaniem 7y′′ + 2y′ + 3y = 0 "
+                + "wyznacznik ∆2 z kryterium Hurwitza jest wyrażony następująco:|2 0 ; 7 3 |", true, mcQuestion36);
+        Answer mcQuestion36Answear3 = new Answer("Dla układu dynamicznego opisanego równaniem 2y′′ + 3y′ + 4y = 0 "
+                + "wyznacznik ∆2 z kryterium Hurwitza jest wyrażony następująco: | 0 3 ; 2 4|", false, mcQuestion36);
+        questionsRepo.save(mcQuestion36);
+        anwersRepo.save(mcQuestion36Answear0);
+        anwersRepo.save(mcQuestion36Answear1);
+        anwersRepo.save(mcQuestion36Answear2);
+        anwersRepo.save(mcQuestion36Answear3);
+
+        /* Ulciorek */
+        Question mcQuestion37 = new Question("Oceń poprawność następujących stwierdzeń dla dowolnego modelu układu "
+                + "zdarzeń dyskretnych\n"
+                + "zbudowanego według koncepcji planowania zdarzeń:", mc_2);
+        Answer mcQuestion37Answear0 = new Answer("wykrycie przez procedurę kontroli symulacji pustego zbioru "
+                + "zaplanowanych zdarzeń w trakcie\n"
+                + "realizacji eksperymentu oznacza, że aktualny stan układu jest ostateczny", true, mcQuestion37);
+        Answer mcQuestion37Answear1 = new Answer("planowanie dotyczy zarówno tego, co będzie odbywać się w przyszłości, jak i przeszłości", false, mcQuestion37);
+        Answer mcQuestion37Answear2 = new Answer("mechanizmem upływu czasu symulacyjnego steruje procedura kontroli symulacji", true, mcQuestion37);
+        Answer mcQuestion37Answear3 = new Answer("zaplanowanie zdarzenia wymaga między innymi obliczenia chwili zajścia tego zdarzenia", true, mcQuestion37);
+        questionsRepo.save(mcQuestion37);
+        anwersRepo.save(mcQuestion37Answear0);
+        anwersRepo.save(mcQuestion37Answear1);
+        anwersRepo.save(mcQuestion37Answear2);
+        anwersRepo.save(mcQuestion37Answear3);
+
+        Question mcQuestion38 = new Question(" Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych:", mc_2);
+        Answer mcQuestion38Answear0 = new Answer("w schematach jednokrokowych kolejne przybliżenie rozwiązania tk+1, "
+                + "vk+1 zależy od\n"
+                + "wartości vk i pochodnej f w otoczeniu tk, vk (????)", true, mcQuestion38);
+        Answer mcQuestion38Answear1 = new Answer("funkcja f występująca we wzorach schematów różnicowych jest prawą stroną równania stanu", true, mcQuestion38);
+        Answer mcQuestion38Answear2 = new Answer("schemat różnicowy o postaci vj+1 = F(vj+1, vj, … , vj-p, tj) jest "
+                + "schematem jawnym", false, mcQuestion38);
+        Answer mcQuestion38Answear3 = new Answer("metody Rungego-Kutty są przykładami metod jednokrokowych", true, mcQuestion38);
+        questionsRepo.save(mcQuestion38);
+        anwersRepo.save(mcQuestion38Answear0);
+        anwersRepo.save(mcQuestion38Answear1);
+        anwersRepo.save(mcQuestion38Answear2);
+        anwersRepo.save(mcQuestion38Answear3);
+
+        Question mcQuestion39 = new Question("W środowisku Matlab/Simulink funkcja sim umożliwia", mc_2);
+        Answer mcQuestion39Answear0 = new Answer("rozwiązanie zagadnienia początkowego dla układów dyskretnych", true, mcQuestion39);
+        Answer mcQuestion39Answear1 = new Answer("rozwiązanie zagadnienia optymalizacji parametrycznej", false, mcQuestion39);
+        Answer mcQuestion39Answear2 = new Answer("rozwiązanie zagadnienia początkowego dla układów ciągłych", true, mcQuestion39);
+        Answer mcQuestion39Answear3 = new Answer("wyznaczenie czasowej funkcji przejścia", false, mcQuestion39);
+        questionsRepo.save(mcQuestion39);
+        anwersRepo.save(mcQuestion39Answear0);
+        anwersRepo.save(mcQuestion39Answear1);
+        anwersRepo.save(mcQuestion39Answear2);
+        anwersRepo.save(mcQuestion39Answear3);
+
+    }
+        @Bean
     public CommandLineRunner dbInit(CategoriesRepository categoriesRepo, ScoresRepository scoresRepo, QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository anwersRepo) {
         return args -> {
 
@@ -1049,6 +1061,7 @@ public class QuizApiApplication {
 
             createDSQuiz(categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
             createMCQuiz(categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
+            createMCQuizPart2(categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
         };
     }
 }
