@@ -1058,7 +1058,7 @@ public class QuizApiApplication {
 
         Question mcQuestion51 = new Question("Oceń poprawność następujących stwierdzeń dotyczących algorytmu Ziggurat", mc_3);
         Answer mcQuestion51Answear0 = new Answer("wykorzystuje metodę odwracania dystrybuanty", false, mcQuestion51);
-        Answer mcQuestion51Answear1 = new Answer("wykorzystuje metodę superpozycji rozkładów", true, mcQuestion51);
+        Answer mcQuestion51Answear1 = new Answer("wykorzystuje metodę superpozycji rozkładów", false, mcQuestion51);
         Answer mcQuestion51Answear2 = new Answer("wykorzystuje twierdzenie graniczne", false, mcQuestion51);
         Answer mcQuestion51Answear3 = new Answer("wykorzystuje metodę eliminacji", true, mcQuestion51);
         questionsRepo.save(mcQuestion51);
