@@ -564,7 +564,7 @@ public class QuizApiApplication {
         Question mcQuestion15 = new Question("Oceń poprawność następujących stwierdzeń dotyczących zagadnień związanych z obliczaniem\n" +
                 "wartości początkowych zmiennych stanu i zmiennych wyjścia", mc);
         Answer mcQuestion15Answear0 = new Answer("Gdy zmienna wejściowa w chwili t = 0 nie jest impulsem Diraca, to pomiędzy wartościami zmiennych stanu zachodzi następująca relacja: x(0+) ≠ x(0-)", false, mcQuestion15);
-        Answer mcQuestion15Answear1 = new Answer("W metodzie predyktor-korektor celem etapu predykcji jest znalezienie początkowego przybliżenia punktu Vj+1", false, mcQuestion15);
+        Answer mcQuestion15Answear1 = new Answer("W metodzie predyktor-korektor celem etapu predykcji jest znalezienie początkowego przybliżenia punktu Vj+1", true, mcQuestion15);
         Answer mcQuestion15Answear2 = new Answer("Przy zastosowaniu metody szeregowej wartości początkowe kolejnych zmiennych stanu są równe warunkom początkowym dla zmiennej wyjścia i jej kolejnych pochodnych\n", false, mcQuestion15);
         Answer mcQuestion15Answear3 = new Answer("Przy zastosowaniu metody ogólnej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
                 "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych", true, mcQuestion15);
