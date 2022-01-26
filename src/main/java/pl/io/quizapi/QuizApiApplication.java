@@ -548,13 +548,11 @@ public class QuizApiApplication {
                 "zachodzi następująca relacja: x(0+) ≠ x(0-)" +
                 "−)", false, mcQuestion14);
         Answer mcQuestion14Answear2 = new Answer("Przy zastosowaniu metody równoległej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
-                "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych\n", false, mcQuestion14);
+                "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych", false, mcQuestion14);
         Answer mcQuestion14Answear3 = new Answer("Przy zastosowaniu metody ogólnej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
                 "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych", true, mcQuestion14);
-        Answer mcQuestion14Answear4 = new Answer("gdy zmienna wejściowa nie zawiera impulsów Diracle’a, to granice lewo- i\n" +
-                "prawostronna warunku początkowego zmiennej stanu są sobie równe", false, mcQuestion14);
-        Answer mcQuestion14Answear5 = new Answer("w metodzie kolejnych całkowań występuje jawna zależność zmiennej stanu od\n" +
-                "zmiennych: wejściowej i wyjściowej i ich pochodnych", true, mcQuestion14);
+        Answer mcQuestion14Answear4 = new Answer("gdy zmienna wejściowa nie zawiera impulsów Diracle’a, to granice lewo- i prawostronna warunku początkowego zmiennej stanu są sobie równe", true, mcQuestion14);
+        Answer mcQuestion14Answear5 = new Answer("w metodzie kolejnych całkowań występuje jawna zależność zmiennej stanu od zmiennych: wejściowej i wyjściowej i ich pochodnych", false, mcQuestion14);
         questionsRepo.save(mcQuestion14);
         anwersRepo.save(mcQuestion14Answear0);
         anwersRepo.save(mcQuestion14Answear1);
