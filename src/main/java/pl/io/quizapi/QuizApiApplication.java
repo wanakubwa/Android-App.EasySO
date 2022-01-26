@@ -775,11 +775,11 @@ public class QuizApiApplication {
 
         Question mcQuestion31 = new Question("Oceń poprawność następujących stwierdzeń dotyczących szeregowej i równoległej metody\n" +
                 "znajdowania równań stanu:", mc_2);
-        Answer mcQuestion31Answear0 = new Answer("Uzyskana postać równań stanu nie musi być identyczna dla obu metod", true, mcQuestion20);
-        Answer mcQuestion31Answear1 = new Answer("Metoda równoległa wymaga znajomości pierwiastków mianownika funkcji przejścia układu", true, mcQuestion20);
-        Answer mcQuestion31Answear2 = new Answer("Przy zastosowaniu metody równoległej dla funkcji przejścia K(p) = (p+1)/(p^2-9) wartość współczynnika D wynosi 0", true, mcQuestion20);
+        Answer mcQuestion31Answear0 = new Answer("Uzyskana postać równań stanu nie musi być identyczna dla obu metod", true, mcQuestion31);
+        Answer mcQuestion31Answear1 = new Answer("Metoda równoległa wymaga znajomości pierwiastków mianownika funkcji przejścia układu", true, mcQuestion31);
+        Answer mcQuestion31Answear2 = new Answer("Przy zastosowaniu metody równoległej dla funkcji przejścia K(p) = (p+1)/(p^2-9) wartość współczynnika D wynosi 0", true, mcQuestion31);
         Answer mcQuestion31Answear3 = new Answer("W metodzie szeregowej sygnał wymuszenia jest zadawany na wejście każdego z połączonych ze sobą\n" +
-                "szeregowo układów elementarnych", false, mcQuestion20);
+                "szeregowo układów elementarnych", false, mcQuestion31);
         questionsRepo.save(mcQuestion31);
         anwersRepo.save(mcQuestion31Answear0);
         anwersRepo.save(mcQuestion31Answear1);
