@@ -408,7 +408,7 @@ public class QuizApiApplication {
 
         Question mcQuestion2 = new Question("Oceń poprawność następujących stwierdzeń dla modelu systemu M/M/1 zbudowanego z wykorzystaniem środowiska OMNeT++", mc);
         Answer mcQuestion2Answear0 = new Answer("W celu zebrania danych dla przygotowania wykresu zmian aktualnej liczby zgłoszeń przebywających w systemie należy zastosować klasę cOutVector", true, mcQuestion2);
-        Answer mcQuestion2Answear1 = new Answer("Warunkiem zakończenia obsługi danego zgłoszenia jest obecnośc w kolejce co najmniej jednego zgłoszenia czekającego na obsługę", false, mcQuestion2);
+        Answer mcQuestion2Answear1 = new Answer("Warunkiem zakończenia obsługi danego zgłoszenia jest obecność w kolejce co najmniej jednego zgłoszenia czekającego na obsługę", false, mcQuestion2);
         Answer mcQuestion2Answear2 = new Answer("Dla wejścia zgłoszenia na stanowisko obsługi pusta kolejka przed stanowiskiem jest warunkiem koniecznym, ale niewystarczającym", false, mcQuestion2);
         Answer mcQuestion2Answear3 = new Answer("Dla zbudowania poprawnego modelu wystarczające jest posłużenie się w obrębie całego modelu jednym typem komunikatu sterującego – sygnalizującym wystąpienie zdarzenia „wygenerowanie kolejnego zgłoszenia”", false, mcQuestion2);
         questionsRepo.save(mcQuestion2);
@@ -452,7 +452,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion5Answear3);
 
         Question mcQuestion6 = new Question("Oceń, które z poniższych zdarzeń mogą wystąpić w zamkniętej sieci stanowisk obsługi typu M/M/1", mc);
-        Answer mcQuestion6Answear0 = new Answer("1 Zakończenie obsługi zgłoszenia”", true, mcQuestion6);
+        Answer mcQuestion6Answear0 = new Answer("Zakończenie obsługi zgłoszenia", true, mcQuestion6);
         Answer mcQuestion6Answear1 = new Answer("Rozpoczęcie obsługi zgłoszenia", true, mcQuestion6);
         Answer mcQuestion6Answear2 = new Answer("Opuszczenie z sieci przez zgłoszenie", false, mcQuestion6);
         Answer mcQuestion6Answear3 = new Answer("Przybycie nowego zgłoszenia do sieci", false, mcQuestion6);
@@ -509,10 +509,10 @@ public class QuizApiApplication {
         /* Pytania 14 - 24 */
 
         Question mcQuestion11 = new Question("Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych", mc);
-        Answer mcQuestion11Answear0 = new Answer("Schemat Eulera jest przykładem schematu jednokrokowego", true, mcQuestion11);
-        Answer mcQuestion11Answear1 = new Answer("W metodzie predyktor-korektor celem etapu predykcji jest znalezienie początkowego przybliżenia punktu Vj+1", true, mcQuestion11);
-        Answer mcQuestion11Answear2 = new Answer("Schemat różnicowy wielokrokowy ma postać Vj+1 = F(Vj,Tj)", false, mcQuestion11);
-        Answer mcQuestion11Answear3 = new Answer("Schemat różnicowy o postaci Vj+1= F(Vj+1, Vj, ...., Vj-p, Tj) jest schematem niejawnym", false, mcQuestion11);
+        Answer mcQuestion11Answear0 = new Answer("Schematy jednokrokowe dzielą się na schematy jawne i niejawne", false, mcQuestion11);
+        Answer mcQuestion11Answear1 = new Answer("Funkcja f występująca we wzorach schematów różnicowych jest prawą stroną równania stanu", true, mcQuestion11);
+        Answer mcQuestion11Answear2 = new Answer("Schemat różnicowy o postaci  Vj+1 = F(Vj,Vj-1,...,Vj-p,tj) jest schematem niejawnym", true, mcQuestion11);
+        Answer mcQuestion11Answear3 = new Answer("Schemat różnicowy jednokrokowy ma postać  Vj+1=F(Vj,Tj)", true, mcQuestion11);
         questionsRepo.save(mcQuestion11);
         anwersRepo.save(mcQuestion11Answear0);
         anwersRepo.save(mcQuestion11Answear1);
@@ -565,7 +565,7 @@ public class QuizApiApplication {
                 "wartości początkowych zmiennych stanu i zmiennych wyjścia", mc);
         Answer mcQuestion15Answear0 = new Answer("Gdy zmienna wejściowa w chwili t = 0 nie jest impulsem Diraca, to pomiędzy wartościami zmiennych stanu zachodzi następująca relacja: x(0+) ≠ x(0-)", false, mcQuestion15);
         Answer mcQuestion15Answear1 = new Answer("W metodzie predyktor-korektor celem etapu predykcji jest znalezienie początkowego przybliżenia punktu Vj+1", false, mcQuestion15);
-        Answer mcQuestion15Answear2 = new Answer("Przy zastosowaniu metody szeregowej wartości początkowe kolej", false, mcQuestion15);
+        Answer mcQuestion15Answear2 = new Answer("Przy zastosowaniu metody szeregowej wartości początkowe kolejnych zmiennych stanu są równe warunkom początkowym dla zmiennej wyjścia i jej kolejnych pochodnych\n", false, mcQuestion15);
         Answer mcQuestion15Answear3 = new Answer("Przy zastosowaniu metody ogólnej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
                 "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych", true, mcQuestion15);
         questionsRepo.save(mcQuestion15);
