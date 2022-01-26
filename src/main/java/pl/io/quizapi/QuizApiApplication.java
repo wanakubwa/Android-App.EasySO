@@ -576,7 +576,7 @@ public class QuizApiApplication {
 
         Question mcQuestion16 = new Question("Formuła K(p) = k/(1+pT) opisuje operatorową funkcję przejścia", mc);
         Answer mcQuestion16Answear0 = new Answer("Elementu inercyjnego 1 rzęd", true, mcQuestion16);
-        Answer mcQuestion16Answear1 = new Answer("Elementu różniczkującego z inercją", true, mcQuestion16);
+        Answer mcQuestion16Answear1 = new Answer("Elementu różniczkującego z inercją", false, mcQuestion16);
         Answer mcQuestion16Answear2 = new Answer("Elementu opóźniającego", false, mcQuestion16);
         Answer mcQuestion16Answear3 = new Answer("Elementu całkującego z inercją", false, mcQuestion16);
         questionsRepo.save(mcQuestion16);
