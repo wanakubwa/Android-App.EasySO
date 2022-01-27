@@ -1421,9 +1421,9 @@ public class QuizApiApplication {
             categoriesRepo.save(MC_Category);
             createMCQuiz(MC_Category, categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
                        
-            createMCQuizPart2(MC_Category, ategoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
+            createMCQuizPart2(MC_Category, categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
             createMCQuizPart3(MC_Category, categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
-            createMCQuizPart4(MC_Category, ategoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
+            createMCQuizPart4(MC_Category, categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
         };
     }
 }
