@@ -379,7 +379,7 @@ public class QuizApiApplication {
         Category MC = category;
         Quiz mc = new Quiz("MC", MC);
 
-        categoriesRepo.save(MC);
+        //categoriesRepo.save(MC);
         quizesRepo.save(mc);
 
         /* Pytania 2 - 12 */
@@ -625,7 +625,7 @@ public class QuizApiApplication {
         Category MC_2 = category;
         Quiz mc_2 = new Quiz("MC2", MC_2);
 
-        categoriesRepo.save(MC_2);
+        //categoriesRepo.save(MC_2);
         quizesRepo.save(mc_2);
 
         Question mcQuestion20 = new Question("Zakładając warunek początkowy X0= [ 0;0 ] oraz e0 = 0 i en = 1 dla n > 0 ocenić poprawność wyliczenia wartości\n" +
@@ -893,7 +893,7 @@ public class QuizApiApplication {
         Category MC_3 = category;
         Quiz mc_3 = new Quiz("MC3", MC_3);
 
-        categoriesRepo.save(MC_3);
+        //categoriesRepo.save(MC_3);
         quizesRepo.save(mc_3);
 
         Question mcQuestion40 = new Question("Oceń poprawność następujących stwierdzeń dotyczących zadania optymalizacji parametrycznej", mc_3);
@@ -1417,7 +1417,7 @@ public class QuizApiApplication {
 
             createDSQuiz(categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
             
-            Category MC_Category = new Category("Molestowanie Cyfrowe");
+            Category MC_Category = new Category("MC");
             categoriesRepo.save(MC_Category);
             createMCQuiz(MC_Category, categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
                        
