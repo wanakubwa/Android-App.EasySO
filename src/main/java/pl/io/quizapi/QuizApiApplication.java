@@ -1151,6 +1151,136 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion59Answear2);
         anwersRepo.save(mcQuestion59Answear3);
     }
+
+    private void createMCQuizPart4(CategoriesRepository categoriesRepo, ScoresRepository scoresRepo, QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository anwersRepo){
+        Category MC_4 = new Category("MC4");
+        Quiz mc_4 = new Quiz("MC4", MC_4);
+
+        categoriesRepo.save(MC_4);
+        quizesRepo.save(mc_4);
+
+        Question mcQuestion60 = new Question("Wskaż poprawnie dobrane pary (koncepcja modelowania - narzędzie modelowania)", mc_4);
+        Answer mcQuestion60Answear0 = new Answer("koncepcja interakcji procesów - CSL++", false, mcQuestion60);
+        Answer mcQuestion60Answear1 = new Answer("koncepcja wyboru działania - SimEvents", false, mcQuestion60);
+        Answer mcQuestion60Answear2 = new Answer("koncepcja planowania zdarzeń - OMNeT++", true, mcQuestion60);
+        Answer mcQuestion60Answear3 = new Answer("koncepcja wyboru działania - CSL++", true, mcQuestion60);
+        questionsRepo.save(mcQuestion60);
+        anwersRepo.save(mcQuestion60Answear0);
+        anwersRepo.save(mcQuestion60Answear1);
+        anwersRepo.save(mcQuestion60Answear2);
+        anwersRepo.save(mcQuestion60Answear3);
+
+        Question mcQuestion61 = new Question("Wartość zmiennej losowej Y o rozkładzie normalnym N(u,o) o średniej u i odchyleniu standardowym o uzyskiwana jest na podstawie wartości zmiennej losowej X1 o standardowym rozkładzie normalnym N(0,1) za pomocą przekształcenia (?)", mc_4);
+        Answer mcQuestion61Answear0 = new Answer("Y = u*X+o", false, mcQuestion61);
+        Answer mcQuestion61Answear1 = new Answer("Y = (u-o)*N+u", false, mcQuestion61);
+        Answer mcQuestion61Answear2 = new Answer("Y = (u-o)*N+o", true, mcQuestion61);
+        Answer mcQuestion61Answear3 = new Answer("Y = o*N+u", true, mcQuestion61);
+        questionsRepo.save(mcQuestion61);
+        anwersRepo.save(mcQuestion61Answear0);
+        anwersRepo.save(mcQuestion61Answear1);
+        anwersRepo.save(mcQuestion61Answear2);
+        anwersRepo.save(mcQuestion61Answear3);
+
+        Question mcQuestion62 = new Question("Wskaż poprawne stwierdzenia dotyczące charakterystyki metod związanych z obsługą komunikatów w środowisku OMNeT++ (?)", mc_4);
+        Answer mcQuestion62Answear0 = new Answer("w dowolnej chwili czasu symulacyjnego wywołanie o postaci scheduleAt(0,msg) spowoduje natychmiastowe nadejście komunikatu sterującego msg", false, mcQuestion62);
+        Answer mcQuestion62Answear1 = new Answer("metoda sendDelayed powoduje dotarcie wysłanego komunikatu z modułu docelowego z opóźnieniem będącym jednym z parametrów wywołania metody", true, mcQuestion62);
+        Answer mcQuestion62Answear2 = new Answer("metoda handleMessage sygnalizuje nadejście zarówno komunikatów sterujących jak i nadesłanych przez inny moduł", true, mcQuestion62);
+        Answer mcQuestion62Answear3 = new Answer("metoda cancelEvent służy do usunięcia komunikatu sterującego ze zbioru przyszłych zdarzeń (FES)", true, mcQuestion62);
+        questionsRepo.save(mcQuestion62);
+        anwersRepo.save(mcQuestion62Answear0);
+        anwersRepo.save(mcQuestion62Answear1);
+        anwersRepo.save(mcQuestion62Answear2);
+        anwersRepo.save(mcQuestion62Answear3);
+
+        Question mcQuestion63 = new Question("Wskaż sformułowania poprawnie określające operatorową funkcję przejścia (?????????)", mc_4);
+        Answer mcQuestion63Answear0 = new Answer("iloraz transformaty Laplace'a sygnału wyjściowego do transformaty Laplace'a sygnału wejściowego przy dowolnych warunkach początkowych", false, mcQuestion63);
+        Answer mcQuestion63Answear1 = new Answer("iloraz transformaty Laplace'a-Carsona sygnału wyjściowego do transformaty Laplace'a-Carsona sygnału wejściowego przy dowolnych zerowych początkowych", false, mcQuestion63);
+        Answer mcQuestion63Answear2 = new Answer("iloraz transformaty Laplace'a-Carsona sygnału wejściowego do transformaty Laplace'a-Carsona sygnału wejściowego przy dowolnych zerowych początkowych", false, mcQuestion63);
+        Answer mcQuestion63Answear3 = new Answer("iloraz transformaty Laplace'a sygnału wyjściowego do transformaty Laplace'a sygnału wejściowego przy dowolnych zerowych początkowych", false, mcQuestion63);
+        questionsRepo.save(mcQuestion63);
+        anwersRepo.save(mcQuestion63Answear0);
+        anwersRepo.save(mcQuestion63Answear1);
+        anwersRepo.save(mcQuestion63Answear2);
+        anwersRepo.save(mcQuestion63Answear3);
+
+        Question mcQuestion64 = new Question("Wskaż poprawne stwierdzenia dotyczące charakterystyki układów dynamicznych (???)", mc_4);
+        Answer mcQuestion64Answear0 = new Answer("w układzie zdarzeń dyskretnych odstęp czasowy między kolejnymi zdarzeniami jest stały", false, mcQuestion64);
+        Answer mcQuestion64Answear1 = new Answer("w układzie autonomicznym występuje oddziaływanie środowiska w postaci sygnału wejściowego", false, mcQuestion64);
+        Answer mcQuestion64Answear2 = new Answer("w układzie liniowym obowiązuje zasada superpozycji", true, mcQuestion64);
+        Answer mcQuestion64Answear3 = new Answer("w układzie dyskretnycm co najmniej jeden z sygnałów opisujących działanie układu ma charakter dyskretny", true, mcQuestion64);
+        questionsRepo.save(mcQuestion64);
+        anwersRepo.save(mcQuestion64Answear0);
+        anwersRepo.save(mcQuestion64Answear1);
+        anwersRepo.save(mcQuestion64Answear2);
+        anwersRepo.save(mcQuestion64Answear3);
+
+        Question mcQuestion65 = new Question("Wskaż poprawne stwierdzenia dotyczące zadania optymalizacji parametrycznej (???)", mc_4);
+        Answer mcQuestion65Answear0 = new Answer("metoda Hooke'a-Jevesa należy do metod bezgradientowych", true, mcQuestion65);
+        Answer mcQuestion65Answear1 = new Answer("w zadaniu dwugranicznym i w zadaniu wartości własnych konstrukcja funkcji wskaźnika jakości opiera się na iloczynie skalarnym", false, mcQuestion65);
+        Answer mcQuestion65Answear2 = new Answer("metoda współczynników wrażliwości służy do wyznaczania składowych gradientu wskaźnika jakości", true, mcQuestion65);
+        Answer mcQuestion65Answear3 = new Answer("metoda Gaussa-Seidela należy do metod gradientowych", true, mcQuestion65);
+        questionsRepo.save(mcQuestion65);
+        anwersRepo.save(mcQuestion65Answear0);
+        anwersRepo.save(mcQuestion65Answear1);
+        anwersRepo.save(mcQuestion65Answear2);
+        anwersRepo.save(mcQuestion65Answear3);
+
+        Question mcQuestion66 = new Question("Wskaż poprawne stwierdzenia dotyczące biblioteki CSL++ (???)", mc_4);
+        Answer mcQuestion66Answear0 = new Answer("dodatnia wartość (stan) zegara związanego z danym zdarzeniem oznacza, że to zdarzenie już miało miejsce i zarazem wskazuje, ile czasu upłynęło od jego zajścia", true, mcQuestion66);
+        Answer mcQuestion66Answear1 = new Answer("za aktualizację zegarów odpowiada funkcja SimTime()", false, mcQuestion66);
+        Answer mcQuestion66Answear2 = new Answer("stan zegarów związanych ze zdarzeniami są z upływam czasu zmniejszane", false, mcQuestion66);
+        Answer mcQuestion66Answear3 = new Answer("jest implementacją koncepcji interakcji procesów", false, mcQuestion66);
+        questionsRepo.save(mcQuestion66);
+        anwersRepo.save(mcQuestion66Answear0);
+        anwersRepo.save(mcQuestion66Answear1);
+        anwersRepo.save(mcQuestion66Answear2);
+        anwersRepo.save(mcQuestion66Answear3);
+
+        Question mcQuestion67 = new Question("Wartość zmiennej losowej Y o rozkładzie równomiernym na przedizale [a,b) uzyskiwana jest na podstawie wartości zmiennej losowej X o rozkładzie równomiernym na przedziale [0,1) za pomocą przekształcenia (?)", mc_4);
+        Answer mcQuestion67Answear0 = new Answer("Y = (b-a)*X+a", false, mcQuestion67);
+        Answer mcQuestion67Answear1 = new Answer("Y = b*X+a", false, mcQuestion67);
+        Answer mcQuestion67Answear2 = new Answer("Y = a*X+b", true, mcQuestion67);
+        Answer mcQuestion67Answear3 = new Answer("Y = (b-a)*X+b", true, mcQuestion67);
+        questionsRepo.save(mcQuestion67);
+        anwersRepo.save(mcQuestion67Answear0);
+        anwersRepo.save(mcQuestion67Answear1);
+        anwersRepo.save(mcQuestion67Answear2);
+        anwersRepo.save(mcQuestion67Answear3);
+
+        Question mcQuestion68 = new Question("Które z poniższych formuł opisują funkcję dodatnio określoną (??????) ?", mc_4);
+        Answer mcQuestion68Answear0 = new Answer("V(x1,x2)= (x1)^2 + (x2)^4", false, mcQuestion68);
+        Answer mcQuestion68Answear1 = new Answer("V(x1,x2)= (x1+x2)^2", false, mcQuestion68);
+        Answer mcQuestion68Answear2 = new Answer("V(x1,x2)= (x1x2)", false, mcQuestion68);
+        Answer mcQuestion68Answear3 = new Answer("V(x1,x2)= (x1)^2 - (x2)^2", false, mcQuestion68);
+        questionsRepo.save(mcQuestion68);
+        anwersRepo.save(mcQuestion68Answear0);
+        anwersRepo.save(mcQuestion68Answear1);
+        anwersRepo.save(mcQuestion68Answear2);
+        anwersRepo.save(mcQuestion68Answear3);
+
+        Question mcQuestion69 = new Question("Wskaż poprawne stwierdzenia dotyczącej metody ogólnej wyznaczania równań stanu (???????)", mc_4);
+        Answer mcQuestion69Answear0 = new Answer("może zostać użyta do wyznaczania równań stanu dla elementu inercyjnego 2.rzędu", true, mcQuestion69);
+        Answer mcQuestion69Answear1 = new Answer("wymaga wyznaczenia wartości pierwiastków funkcji przejścia układu", true, mcQuestion69);
+        Answer mcQuestion69Answear2 = new Answer("wartości początkowe kolejnych zmiennych stanu są równe warunkom początkowym dla zmiennej wyjścia i jej pochodnych", false, mcQuestion69);
+        Answer mcQuestion69Answear3 = new Answer("znajduje zastosowanie w przypadku, gdy w równaniu różniczkowym występuje pochodna zmiennej wejściowej (wymuszenia)", false, mcQuestion69);
+        questionsRepo.save(mcQuestion69);
+        anwersRepo.save(mcQuestion69Answear0);
+        anwersRepo.save(mcQuestion69Answear1);
+        anwersRepo.save(mcQuestion69Answear2);
+        anwersRepo.save(mcQuestion69Answear3);
+
+        Question mcQuestion70 = new Question("Czasowa funkcja przjeścia to czasowa odpowiedź układu na pobudzenie (??????) ?", mc_4);
+        Answer mcQuestion70Answear0 = new Answer("impulsem Diraca", false, mcQuestion70);
+        Answer mcQuestion70Answear1 = new Answer("skokiem jednostkowym", false, mcQuestion70);
+        Answer mcQuestion80Answear2 = new Answer("sygnałem u(t) = cos(t)", false, mcQuestion70);
+        Answer mcQuestion70Answear3 = new Answer("sygnałem u(t) = sin(t)", false, mcQuestion70);
+        questionsRepo.save(mcQuestion70);
+        anwersRepo.save(mcQuestion70Answear0);
+        anwersRepo.save(mcQuestion70Answear1);
+        anwersRepo.save(mcQuestion80Answear2);
+        anwersRepo.save(mcQuestion70Answear3);
+
+    }
         @Bean
     public CommandLineRunner dbInit(CategoriesRepository categoriesRepo, ScoresRepository scoresRepo, QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository anwersRepo) {
         return args -> {
