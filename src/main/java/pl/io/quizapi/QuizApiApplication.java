@@ -752,7 +752,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion28Answear3);
 
         Question mcQuestion29 = new Question("Oceń poprawność następujących stwierdzeń dotyczących funkcji ode45 środowiska Matlab:?", mc_2);
-        Answer mcQuestion29Answear0 = new Answer("Umożliwia rozwiązanie zagadnienia początkowego", false, mcQuestion29);
+        Answer mcQuestion29Answear0 = new Answer("Umożliwia rozwiązanie zagadnienia początkowego", true, mcQuestion29);
         Answer mcQuestion29Answear1 = new Answer("Jednym z jej parametrów wejściowych jest nazwa funkcji wyznaczającej wartości pochodnych wektora stanu", true, mcQuestion29);
         Answer mcQuestion29Answear2 = new Answer("Jest metodą całkowania numerycznego opartą na jednym ze schematów Adamsa-Bashfortha", false, mcQuestion29);
         Answer mcQuestion29Answear3 = new Answer("Jednym z jej parametrów wejściowych jest wektor początkowych wartości składowych wektora st", true, mcQuestion29);
