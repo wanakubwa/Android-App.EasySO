@@ -1418,6 +1418,7 @@ public class QuizApiApplication {
             createMCQuiz(categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
             createMCQuizPart2(categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
             createMCQuizPart3(categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
+            createMCQuizPart4(categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
         };
     }
 }
