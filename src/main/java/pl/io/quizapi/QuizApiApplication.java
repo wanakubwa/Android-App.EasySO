@@ -374,9 +374,9 @@ public class QuizApiApplication {
         anwersRepo.save(bq332);
     }
 
-    private void createMCQuiz(CategoriesRepository categoriesRepo, ScoresRepository scoresRepo, QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository anwersRepo) {
+    private void createMCQuiz(Category category,CategoriesRepository categoriesRepo, ScoresRepository scoresRepo, QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository anwersRepo) {
 
-        Category MC = new Category("MC");
+        Category MC = category;
         Quiz mc = new Quiz("MC", MC);
 
         categoriesRepo.save(MC);
@@ -620,9 +620,9 @@ public class QuizApiApplication {
 
     }
 
-    private void createMCQuizPart2(CategoriesRepository categoriesRepo, ScoresRepository scoresRepo, QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository anwersRepo) {
+    private void createMCQuizPart2(Category category,CategoriesRepository categoriesRepo, ScoresRepository scoresRepo, QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository anwersRepo) {
 
-        Category MC_2 = new Category("MC2");
+        Category MC_2 = category;
         Quiz mc_2 = new Quiz("MC2", MC_2);
 
         categoriesRepo.save(MC_2);
@@ -888,9 +888,9 @@ public class QuizApiApplication {
 
     }
 
-    private void createMCQuizPart3(CategoriesRepository categoriesRepo, ScoresRepository scoresRepo, QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository anwersRepo)
+    private void createMCQuizPart3(Category category, CategoriesRepository categoriesRepo, ScoresRepository scoresRepo, QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository anwersRepo)
     {
-        Category MC_3 = new Category("MC3");
+        Category MC_3 = category;
         Quiz mc_3 = new Quiz("MC3", MC_3);
 
         categoriesRepo.save(MC_3);
@@ -1152,11 +1152,12 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion59Answear3);
     }
 
-    private void createMCQuizPart4(CategoriesRepository categoriesRepo, ScoresRepository scoresRepo, QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository anwersRepo){
-        Category MC_4 = new Category("MC4");
+    private void createMCQuizPart4(Category category, CategoriesRepository categoriesRepo, ScoresRepository scoresRepo, QuizesRepository quizesRepo, QuestionsRepository questionsRepo, AnswersRepository anwersRepo){
+        //Category MC_4 = new Category("MC4");
+        Category MC_4 = category;
         Quiz mc_4 = new Quiz("MC4", MC_4);
 
-        categoriesRepo.save(MC_4);
+        //categoriesRepo.save(MC_4);
         quizesRepo.save(mc_4);
 
         Question mcQuestion60 = new Question("Wskaż poprawnie dobrane pary (koncepcja modelowania - narzędzie modelowania)", mc_4);
@@ -1415,10 +1416,14 @@ public class QuizApiApplication {
             anwersRepo.save(a34);
 
             createDSQuiz(categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
-            createMCQuiz(categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
-            createMCQuizPart2(categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
-            createMCQuizPart3(categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
-            createMCQuizPart4(categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
+            
+            Category MC_Category = new Category("Molestowanie Cyfrowe");
+            categoriesRepo.save(MC_Category);
+            createMCQuiz(MC_Category, categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
+                       
+            createMCQuizPart2(MC_Category, ategoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
+            createMCQuizPart3(MC_Category, categoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
+            createMCQuizPart4(MC_Category, ategoriesRepo, scoresRepo, quizesRepo, questionsRepo, anwersRepo);
         };
     }
 }
