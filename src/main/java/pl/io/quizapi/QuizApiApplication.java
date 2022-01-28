@@ -683,7 +683,7 @@ public class QuizApiApplication {
 
         Question mcQuestion24 = new Question("W prezentowanym na wykładzie modelu elementu inercyjnego pierwszego rzędu, zastosowano\n" +
                 "procedurę CALKA wyznaczającą nowe wartości. Które ze sformułowań są prawdziwe:", mc_2);
-        Answer mcQuestion24Answear0 = new Answer("Procedura CLKA wyznacza nowe, przybliżone wartości zmiennej wyjściowej yi oraz nową wartość zmiennej\n" +
+        Answer mcQuestion24Answear0 = new Answer("Procedura CALKA wyznacza nowe, przybliżone wartości zmiennej wyjściowej yi oraz nową wartość zmiennej\n" +
                 "niezależnej ti", true, mcQuestion24);
         Answer mcQuestion24Answear1 = new Answer("Procedura CALKA wyznacza nowe, przybliżone wartości zmiennych stanu xi i zmiennej wyjścia yi", false, mcQuestion24);
         Answer mcQuestion24Answear2 = new Answer("Procedura CALKA wyznacza nowe, przybliżone wartości zmiennej wyjściowej yi", false, mcQuestion24);
