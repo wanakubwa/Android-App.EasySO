@@ -445,11 +445,13 @@ public class QuizApiApplication {
         Answer mcQuestion5Answear1 = new Answer("Ciągłe równania stanu", false, mcQuestion5);
         Answer mcQuestion5Answear2 = new Answer("Dyskretne równania stanu", false, mcQuestion5);
         Answer mcQuestion5Answear3 = new Answer("Koncepcja planowania zdarzeń", false, mcQuestion5);
+                Answer mcQuestion5Answear4 = new Answer("koncepcja interakcji procesów", true, mcQuestion5);
         questionsRepo.save(mcQuestion5);
         anwersRepo.save(mcQuestion5Answear0);
         anwersRepo.save(mcQuestion5Answear1);
         anwersRepo.save(mcQuestion5Answear2);
         anwersRepo.save(mcQuestion5Answear3);
+                anwersRepo.save(mcQuestion5Answear4);
 
         Question mcQuestion6 = new Question("Oceń, które z poniższych zdarzeń mogą wystąpić w zamkniętej sieci stanowisk obsługi typu M/M/1", mc);
         Answer mcQuestion6Answear0 = new Answer("Zakończenie obsługi zgłoszenia", true, mcQuestion6);
