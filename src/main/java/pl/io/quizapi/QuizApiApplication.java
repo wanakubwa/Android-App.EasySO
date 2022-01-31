@@ -430,10 +430,10 @@ public class QuizApiApplication {
 
 
         Question mcQuestion5Missed = new Question("TODO  W modelu systemu M/M/1 zbudowanym z użyciem pakietu NewGASP za pomocą statystyki Timst można wyznaczyć:", mc);
-        Answer mcQuestion5Answear0Missed = new Answer("Średni czas pobytu zgłoszenia w kolejce", false, mcQuestion5Missed);
+        Answer mcQuestion5Answear0Missed = new Answer("Średni czas pobytu zgłoszenia w kolejce", true, mcQuestion5Missed);
         Answer mcQuestion5Answear1Missed = new Answer("Średnią długość kolejki", false, mcQuestion5Missed);
         Answer mcQuestion5Answear2Missed = new Answer("Średnią liczbę zgłoszeń przebywających w systemie", false, mcQuestion5Missed);
-        Answer mcQuestion5Answear3Missed = new Answer("Średnie wykorzystanie (zajętość) stanowiska obsługi", false, mcQuestion5Missed);
+        Answer mcQuestion5Answear3Missed = new Answer("Średnie wykorzystanie (zajętość) stanowiska obsługi", true, mcQuestion5Missed);
         questionsRepo.save(mcQuestion5Missed);
         anwersRepo.save(mcQuestion5Answear0Missed);
         anwersRepo.save(mcQuestion5Answear1Missed);
@@ -1195,11 +1195,11 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion62Answear2);
         anwersRepo.save(mcQuestion62Answear3);
 
-        Question mcQuestion63 = new Question("Wskaż sformułowania poprawnie określające operatorową funkcję przejścia (?????????)", mc_4);
+        Question mcQuestion63 = new Question("Wskaż sformułowania poprawnie określające operatorową funkcję przejścia", mc_4);
         Answer mcQuestion63Answear0 = new Answer("iloraz transformaty Laplace'a sygnału wyjściowego do transformaty Laplace'a sygnału wejściowego przy dowolnych warunkach początkowych", false, mcQuestion63);
-        Answer mcQuestion63Answear1 = new Answer("iloraz transformaty Laplace'a-Carsona sygnału wyjściowego do transformaty Laplace'a-Carsona sygnału wejściowego przy dowolnych zerowych początkowych", false, mcQuestion63);
+        Answer mcQuestion63Answear1 = new Answer("iloraz transformaty Laplace'a-Carsona sygnału wyjściowego do transformaty Laplace'a-Carsona sygnału wejściowego przy dowolnych zerowych początkowych", true, mcQuestion63);
         Answer mcQuestion63Answear2 = new Answer("iloraz transformaty Laplace'a-Carsona sygnału wejściowego do transformaty Laplace'a-Carsona sygnału wejściowego przy dowolnych zerowych początkowych", false, mcQuestion63);
-        Answer mcQuestion63Answear3 = new Answer("iloraz transformaty Laplace'a sygnału wyjściowego do transformaty Laplace'a sygnału wejściowego przy dowolnych zerowych początkowych", false, mcQuestion63);
+        Answer mcQuestion63Answear3 = new Answer("iloraz transformaty Laplace'a sygnału wyjściowego do transformaty Laplace'a sygnału wejściowego przy dowolnych zerowych początkowych", true, mcQuestion63);
         questionsRepo.save(mcQuestion63);
         anwersRepo.save(mcQuestion63Answear0);
         anwersRepo.save(mcQuestion63Answear1);
@@ -1242,7 +1242,7 @@ public class QuizApiApplication {
         Question mcQuestion67 = new Question("Wartość zmiennej losowej Y o rozkładzie równomiernym na przedizale [a,b) uzyskiwana jest na podstawie wartości zmiennej losowej X o rozkładzie równomiernym na przedziale [0,1) za pomocą przekształcenia (?)", mc_4);
         Answer mcQuestion67Answear0 = new Answer("Y = (b-a)*X+a", false, mcQuestion67);
         Answer mcQuestion67Answear1 = new Answer("Y = b*X+a", false, mcQuestion67);
-        Answer mcQuestion67Answear2 = new Answer("Y = a*X+b", true, mcQuestion67);
+        Answer mcQuestion67Answear2 = new Answer("Y = a*X+b", false, mcQuestion67);
         Answer mcQuestion67Answear3 = new Answer("Y = (b-a)*X+b", true, mcQuestion67);
         questionsRepo.save(mcQuestion67);
         anwersRepo.save(mcQuestion67Answear0);
@@ -1339,11 +1339,11 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion3Answear3);
 
 
-        Question mcQuestion5Missed = new Question("TODO  W modelu systemu M/M/1 zbudowanym z użyciem pakietu NewGASP za pomocą statystyki Timst można wyznaczyć:", mc);
-        Answer mcQuestion5Answear0Missed = new Answer("Średni czas pobytu zgłoszenia w kolejce", false, mcQuestion5Missed);
+        Question mcQuestion5Missed = new Question(" W modelu systemu M/M/1 zbudowanym z użyciem pakietu NewGASP za pomocą statystyki Timst można wyznaczyć:", mc);
+        Answer mcQuestion5Answear0Missed = new Answer("Średni czas pobytu zgłoszenia w kolejce", true, mcQuestion5Missed);
         Answer mcQuestion5Answear1Missed = new Answer("Średnią długość kolejki", false, mcQuestion5Missed);
         Answer mcQuestion5Answear2Missed = new Answer("Średnią liczbę zgłoszeń przebywających w systemie", false, mcQuestion5Missed);
-        Answer mcQuestion5Answear3Missed = new Answer("Średnie wykorzystanie (zajętość) stanowiska obsługi", false, mcQuestion5Missed);
+        Answer mcQuestion5Answear3Missed = new Answer("Średnie wykorzystanie (zajętość) stanowiska obsługi", true, mcQuestion5Missed);
         questionsRepo.save(mcQuestion5Missed);
         anwersRepo.save(mcQuestion5Answear0Missed);
         anwersRepo.save(mcQuestion5Answear1Missed);
@@ -1841,9 +1841,9 @@ public class QuizApiApplication {
 
         Question mcQuestion44 = new Question("Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych", mc);
         Answer mcQuestion44Answear0 = new Answer("w ramach metody predyktor-korektor najpierw wykonywana jest metoda zamknięta,potem otwarta", false, mcQuestion44);
-        Answer mcQuestion44Answear1 = new Answer("metody zamknięte wymagają rozwiązywania równania algebraicznego w każdym kroku", false, mcQuestion44);
+        Answer mcQuestion44Answear1 = new Answer("metody zamknięte wymagają rozwiązywania równania algebraicznego w każdym kroku", true, mcQuestion44);
         Answer mcQuestion44Answear2 = new Answer("w metodzie predyktor-korektor celem etapu korekcji jest znalezienie początkowego\n" +
-                "przybliżenia punktu vj+1", false, mcQuestion44);
+                "przybliżenia punktu vj+1", true, mcQuestion44);
         Answer mcQuestion44Answear3 = new Answer("metody otwarte charakteryzują się większą dokładnością od metod zamkniętych", false, mcQuestion44);
         questionsRepo.save(mcQuestion44);
         anwersRepo.save(mcQuestion44Answear0);
@@ -2076,9 +2076,9 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion62Answear2);
         anwersRepo.save(mcQuestion62Answear3);
 
-        Question mcQuestion63 = new Question("Wskaż sformułowania poprawnie określające operatorową funkcję przejścia (odp wlasne)", mc);
+        Question mcQuestion63 = new Question("Wskaż sformułowania poprawnie określające operatorową funkcję przejścia", mc);
         Answer mcQuestion63Answear0 = new Answer("iloraz transformaty Laplace'a sygnału wyjściowego do transformaty Laplace'a sygnału wejściowego przy dowolnych warunkach początkowych", false, mcQuestion63);
-        Answer mcQuestion63Answear1 = new Answer("iloraz transformaty Laplace'a-Carsona sygnału wyjściowego do transformaty Laplace'a-Carsona sygnału wejściowego przy dowolnych zerowych początkowych", false, mcQuestion63);
+        Answer mcQuestion63Answear1 = new Answer("iloraz transformaty Laplace'a-Carsona sygnału wyjściowego do transformaty Laplace'a-Carsona sygnału wejściowego przy dowolnych zerowych początkowych", true, mcQuestion63);
         Answer mcQuestion63Answear2 = new Answer("iloraz transformaty Laplace'a-Carsona sygnału wejściowego do transformaty Laplace'a-Carsona sygnału wejściowego przy zerowych początkowych", false, mcQuestion63);
         Answer mcQuestion63Answear3 = new Answer("iloraz transformaty Laplace'a sygnału wyjściowego do transformaty Laplace'a sygnału wejściowego przy zerowych początkowych", true, mcQuestion63);
         questionsRepo.save(mcQuestion63);
