@@ -1261,10 +1261,10 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion68Answear2);
         anwersRepo.save(mcQuestion68Answear3);
 
-        Question mcQuestion69 = new Question("Wskaż poprawne stwierdzenia dotyczącej metody ogólnej wyznaczania równań stanu (???????)", mc_4);
+        Question mcQuestion69 = new Question("Wskaż poprawne stwierdzenia dotyczącej metody ogólnej wyznaczania równań stanu.", mc_4);
         Answer mcQuestion69Answear0 = new Answer("może zostać użyta do wyznaczania równań stanu dla elementu inercyjnego 2.rzędu", true, mcQuestion69);
-        Answer mcQuestion69Answear1 = new Answer("wymaga wyznaczenia wartości pierwiastków funkcji przejścia układu", true, mcQuestion69);
-        Answer mcQuestion69Answear2 = new Answer("wartości początkowe kolejnych zmiennych stanu są równe warunkom początkowym dla zmiennej wyjścia i jej pochodnych", false, mcQuestion69);
+        Answer mcQuestion69Answear1 = new Answer("wymaga wyznaczenia wartości pierwiastków funkcji przejścia układu", false, mcQuestion69);
+        Answer mcQuestion69Answear2 = new Answer("wartości początkowe kolejnych zmiennych stanu są równe warunkom początkowym dla zmiennej wyjścia i jej pochodnych", true, mcQuestion69);
         Answer mcQuestion69Answear3 = new Answer("znajduje zastosowanie w przypadku, gdy w równaniu różniczkowym występuje pochodna zmiennej wejściowej (wymuszenia)", false, mcQuestion69);
         questionsRepo.save(mcQuestion69);
         anwersRepo.save(mcQuestion69Answear0);
@@ -1640,7 +1640,7 @@ public class QuizApiApplication {
 
         Question mcQuestion28 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metod generacji liczb pseudolosowych:?", mc);
         Answer mcQuestion28Answear0 = new Answer("Wygenerowanie kolejnej liczby pseudolosowej o rozkładzie normalnym N(0, 1) może zostać dokonane za\n" +
-                "pomocą metody opartej na centralnym twierdzeniu granicznym (????????)", false, mcQuestion28);
+                "pomocą metody opartej na centralnym twierdzeniu granicznym (????????)", true, mcQuestion28);
         Answer mcQuestion28Answear1 = new Answer("Metoda superpozycji może być przydatna w realizacji generatora zadanego funkcją gęstości rozkładu, w opicie\n" +
                 "której występują impulsy Diraca", true, mcQuestion28);
         Answer mcQuestion28Answear2 = new Answer("Wygenerowanie kolejnej liczby pseudolosowej o dowolnym nieobciętym rozkładzie normalnym może zostać\n" +
@@ -2133,7 +2133,7 @@ public class QuizApiApplication {
 
         Question mcQuestion68 = new Question("Które z poniższych formuł opisują funkcję dodatnio określoną (odp wlasna)", mc);
         Answer mcQuestion68Answear0 = new Answer("V(x1,x2)= (x1)^2 + (x2)^4", true, mcQuestion68);
-        Answer mcQuestion68Answear1 = new Answer("V(x1,x2)= (x1+x2)^2", true, mcQuestion68);
+        Answer mcQuestion68Answear1 = new Answer("V(x1,x2)= (x1+x2)^2", false, mcQuestion68);
         Answer mcQuestion68Answear2 = new Answer("V(x1,x2)= (x1x2)", false, mcQuestion68);
         Answer mcQuestion68Answear3 = new Answer("V(x1,x2)= (x1)^2 - (x2)^2", false, mcQuestion68);
         questionsRepo.save(mcQuestion68);
