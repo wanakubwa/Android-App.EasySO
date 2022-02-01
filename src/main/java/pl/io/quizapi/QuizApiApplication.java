@@ -1294,7 +1294,7 @@ public class QuizApiApplication {
         //categoriesRepo.save(MC_2);
         quizesRepo.save(mc);
 
-        Question mcQuestion0 = new Question("Oceń poprawność następujących stwierdzeń dla modelu M/M/1 zbudowanego z wykorzystaniem środowiska OMNeT++", mc);
+        Question mcQuestion0 = new Question("1.Oceń poprawność następujących stwierdzeń dla modelu M/M/1 zbudowanego z wykorzystaniem środowiska OMNeT++", mc);
         Answer mcQuestion0Answear0 = new Answer("Dla zbudowania poprawnego modelu wystarczające jest posłużenie się w obrębie całego modelu dwoma typami komunikatów sterujących, sygnalizującymi wystąpienie zdarzeń „wygenerowanie kolejnego zgłoszenia” i „zakończenie obsługi”", true, mcQuestion0);
         Answer mcQuestion0Answear1 = new Answer("Warunkiem rozpoczęcia obsługi danego zgłoszenia jest nadejście komunikatu informującego o przybyciu kolejnego zgłoszenia", false, mcQuestion0);
         Answer mcQuestion0Answear2 = new Answer("Warunkiem zakończenia obsługi danego zgłoszenia jest niepusta kolejka przed tym stanowiskiem", false, mcQuestion0);
@@ -1305,7 +1305,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion0Answear2);
         anwersRepo.save(mcQuestion0Answear3);
 
-        Question mcQuestion1 = new Question("Oceń poprawność następujących stwierdzeń dotyczących modelu utworzonego w pakiecie OMNeT++", mc);
+        Question mcQuestion1 = new Question("2.Oceń poprawność następujących stwierdzeń dotyczących modelu utworzonego w pakiecie OMNeT++", mc);
         Answer mcQuestion1Answear0 = new Answer("Sposób wyznaczania wartości parametrów poszczególnych modułów zapisany jest w pliku konfiguracyjnym ”omnetpp.ini”", true, mcQuestion1);
         Answer mcQuestion1Answear1 = new Answer("W kontekście określenia czasu przyszłego zdarzenia struktura FES pełni funkcję analogiczną do planu zdarzeń w pakiecie NewGASP\n", false, mcQuestion1);
         Answer mcQuestion1Answear2 = new Answer("Wywołanie metody par() o postaci par(“x”) zwraca aktualną wartość parametru o nazwie “x” modułu, w którym wywołano tę metodę", true, mcQuestion1);
@@ -1316,7 +1316,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion1Answear2);
         anwersRepo.save(mcQuestion1Answear3);
 
-        Question mcQuestion2 = new Question("Oceń poprawność następujących stwierdzeń dla modelu systemu M/M/1 zbudowanego z wykorzystaniem środowiska OMNeT++", mc);
+        Question mcQuestion2 = new Question("3.Oceń poprawność następujących stwierdzeń dla modelu systemu M/M/1 zbudowanego z wykorzystaniem środowiska OMNeT++", mc);
         Answer mcQuestion2Answear0 = new Answer("W celu zebrania danych dla przygotowania wykresu zmian aktualnej liczby zgłoszeń przebywających w systemie należy zastosować klasę cOutVector", true, mcQuestion2);
         Answer mcQuestion2Answear1 = new Answer("Warunkiem zakończenia obsługi danego zgłoszenia jest obecność w kolejce co najmniej jednego zgłoszenia czekającego na obsługę", false, mcQuestion2);
         Answer mcQuestion2Answear2 = new Answer("Dla wejścia zgłoszenia na stanowisko obsługi pusta kolejka przed stanowiskiem jest warunkiem koniecznym, ale niewystarczającym", false, mcQuestion2);
@@ -1327,7 +1327,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion2Answear2);
         anwersRepo.save(mcQuestion2Answear3);
 
-        Question mcQuestion3 = new Question("Oceń poprawność następujących stwierdzeń dotyczących mechanizmów pakietu OMNeT++:", mc);
+        Question mcQuestion3 = new Question("4.Oceń poprawność następujących stwierdzeń dotyczących mechanizmów pakietu OMNeT++:", mc);
         Answer mcQuestion3Answear0 = new Answer("W dowolnej chwili czasu symulacyjnego wywołanie o postaci scheduleAt(simTime(), msg) powoduje natychmiastowe nadejście komunikatu sterującego", true, mcQuestion3);
         Answer mcQuestion3Answear1 = new Answer("Metoda par() zwraca aktualną wartość parametru modułu podanego jako argument metody", false, mcQuestion3);
         Answer mcQuestion3Answear2 = new Answer("Metoda send umieszcza komunikat sterujący w liście przyszłych zdarzeń (FES)", false, mcQuestion3);
@@ -1339,7 +1339,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion3Answear3);
 
 
-        Question mcQuestion5Missed = new Question(" W modelu systemu M/M/1 zbudowanym z użyciem pakietu NewGASP za pomocą statystyki Timst można wyznaczyć:", mc);
+        Question mcQuestion5Missed = new Question("5. W modelu systemu M/M/1 zbudowanym z użyciem pakietu NewGASP za pomocą statystyki Timst można wyznaczyć:", mc);
         Answer mcQuestion5Answear0Missed = new Answer("Średni czas pobytu zgłoszenia w kolejce", true, mcQuestion5Missed);
         Answer mcQuestion5Answear1Missed = new Answer("Średnią długość kolejki", false, mcQuestion5Missed);
         Answer mcQuestion5Answear2Missed = new Answer("Średnią liczbę zgłoszeń przebywających w systemie", false, mcQuestion5Missed);
@@ -1350,7 +1350,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion5Answear2Missed);
         anwersRepo.save(mcQuestion5Answear3Missed);
 
-        Question mcQuestion5 = new Question("W pakiecie SimEvents do budowy modelu wykorzystywane są:", mc);
+        Question mcQuestion5 = new Question("6.W pakiecie SimEvents do budowy modelu wykorzystywane są:", mc);
         Answer mcQuestion5Answear0 = new Answer("Koncepcje wyboru działania”", false, mcQuestion5);
         Answer mcQuestion5Answear1 = new Answer("Ciągłe równania stanu", false, mcQuestion5);
         Answer mcQuestion5Answear2 = new Answer("Dyskretne równania stanu", false, mcQuestion5);
@@ -1363,7 +1363,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion5Answear3);
         anwersRepo.save(mcQuestion5Answear4);
 
-        Question mcQuestion6 = new Question("Oceń, które z poniższych zdarzeń mogą wystąpić w zamkniętej sieci stanowisk obsługi typu M/M/1", mc);
+        Question mcQuestion6 = new Question("7.Oceń, które z poniższych zdarzeń mogą wystąpić w zamkniętej sieci stanowisk obsługi typu M/M/1", mc);
         Answer mcQuestion6Answear0 = new Answer("Zakończenie obsługi zgłoszenia", true, mcQuestion6);
         Answer mcQuestion6Answear1 = new Answer("Rozpoczęcie obsługi zgłoszenia", true, mcQuestion6);
         Answer mcQuestion6Answear2 = new Answer("Opuszczenie z sieci przez zgłoszenie", false, mcQuestion6);
@@ -1374,7 +1374,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion6Answear2);
         anwersRepo.save(mcQuestion6Answear3);
 
-        Question mcQuestion7 = new Question("Ocen, które z poniższych zdarzeń mogą wystąpić w otwartej sieci stanowisk obsługi typu M/M/1", mc);
+        Question mcQuestion7 = new Question("8.Ocen, które z poniższych zdarzeń mogą wystąpić w otwartej sieci stanowisk obsługi typu M/M/1", mc);
         Answer mcQuestion7Answear0 = new Answer("Rozpoczęcie obsługi zgłoszenia", true, mcQuestion7);
         Answer mcQuestion7Answear1 = new Answer("Przybycie nowego zgłoszenia do sieci", true, mcQuestion7);
         Answer mcQuestion7Answear2 = new Answer("Opuszczenie sieci przez zgłoszenie", true, mcQuestion7);
@@ -1385,7 +1385,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion7Answear2);
         anwersRepo.save(mcQuestion7Answear3);
 
-        Question mcQuestion8 = new Question("W pakiecie SimEvents bloki kolejek udostępniają statystyki prezentujące", mc);
+        Question mcQuestion8 = new Question("9.W pakiecie SimEvents bloki kolejek udostępniają statystyki prezentujące", mc);
         Answer mcQuestion8Answear0 = new Answer("Średnią liczbę obiektów w kolejce", true, mcQuestion8);
         Answer mcQuestion8Answear1 = new Answer("Maksymalną liczbę obiektów w kolejce", false, mcQuestion8);
         Answer mcQuestion8Answear2 = new Answer("Histogram czasu pobytu obiektu w kolejce", false, mcQuestion8);
@@ -1396,7 +1396,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion8Answear2);
         anwersRepo.save(mcQuestion8Answear3);
 
-        Question mcQuestion9 = new Question(" W pakiecie SimEvents bloki kolejek udostępniają statystyki prezentujące:", mc);
+        Question mcQuestion9 = new Question("10. W pakiecie SimEvents bloki kolejek udostępniają statystyki prezentujące:", mc);
         Answer mcQuestion9Answear0 = new Answer("Aktualną liczbę obiektów w kolejce", true, mcQuestion9);
         Answer mcQuestion9Answear1 = new Answer("Średnią liczbę obiektów w kolejce", true, mcQuestion9);
         Answer mcQuestion9Answear2 = new Answer("Histogram czasu pobytu obiektu w kolejce", false, mcQuestion9);
@@ -1407,7 +1407,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion9Answear2);
         anwersRepo.save(mcQuestion9Answear3);
 
-        Question mcQuestion10 = new Question("Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych", mc);
+        Question mcQuestion10 = new Question("11.Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych", mc);
         Answer mcQuestion10Answear0 = new Answer("Schemat Eulera jest przykładem schematu jednokrokowego", true, mcQuestion10);
         Answer mcQuestion10Answear1 = new Answer("W metodzie predyktor-korektor celem etapu predykcji jest znalezienie początkowego przybliżenia punktu Vj+1", true, mcQuestion10);
         Answer mcQuestion10Answear2 = new Answer("Schemat różnicowy wielokrokowy ma postać Vj+1 = F(Vj,Tj)", false, mcQuestion10);
@@ -1420,7 +1420,7 @@ public class QuizApiApplication {
 
         /* Pytania 14 - 24 */
 
-        Question mcQuestion11 = new Question("Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych", mc);
+        Question mcQuestion11 = new Question("12.Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych", mc);
         Answer mcQuestion11Answear0 = new Answer("Schematy jednokrokowe dzielą się na schematy jawne i niejawne", false, mcQuestion11);
         Answer mcQuestion11Answear1 = new Answer("Funkcja f występująca we wzorach schematów różnicowych jest prawą stroną równania stanu", true, mcQuestion11);
         Answer mcQuestion11Answear2 = new Answer("Schemat różnicowy o postaci  Vj+1 = F(Vj,Vj-1,...,Vj-p,tj) jest schematem niejawnym", true, mcQuestion11);
@@ -1431,7 +1431,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion11Answear2);
         anwersRepo.save(mcQuestion11Answear3);
 
-        Question mcQuestion12 = new Question("Zmienne stanu w modelu przepływu cieczy opisującym sieć AQM, to:", mc);
+        Question mcQuestion12 = new Question("13.Zmienne stanu w modelu przepływu cieczy opisującym sieć AQM, to:", mc);
         Answer mcQuestion12Answear0 = new Answer("Intensywność pakietów przychodzących i wychodzących", false, mcQuestion12);
         Answer mcQuestion12Answear1 = new Answer("Rozmiar okna w ruterze nadawcy i średnia zajętość bufora w ruterze odbiorcy", false, mcQuestion12);
         Answer mcQuestion12Answear2 = new Answer("Liczba aktywnych sesji TCP i średnia zajętość bufora w ruterze nadawcy", false, mcQuestion12);
@@ -1442,7 +1442,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion12Answear2);
         anwersRepo.save(mcQuestion12Answear3);
 
-        Question mcQuestion13 = new Question("Zmienne stanu w modelu przepływu cieczy opisującym sieć AQM, to:", mc);
+        Question mcQuestion13 = new Question("14.Zmienne stanu w modelu przepływu cieczy opisującym sieć AQM, to:", mc);
         Answer mcQuestion13Answear0 = new Answer("Średni rozmiar okna w routerze nadawcy i średnia zajętość bufora w routerze odbiorcy", true, mcQuestion13);
         Answer mcQuestion13Answear1 = new Answer("Czas obiegu i prawdopodobieństwo wysłania negatywnego potwierdzenia", true, mcQuestion13);
         Answer mcQuestion13Answear2 = new Answer("Średni rozmiar okna w routerze odbiorcy i średnia zajętość bufora w routerze nadawcy", false, mcQuestion13);
@@ -1453,7 +1453,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion13Answear2);
         anwersRepo.save(mcQuestion13Answear3);
 
-        Question mcQuestion14 = new Question("Oceń poprawność następujących stwierdzeń dotyczących zagadnień związanych z obliczaniem wartości początkowych zmiennych stanu i zmiennych wyjścia", mc);
+        Question mcQuestion14 = new Question("15.Oceń poprawność następujących stwierdzeń dotyczących zagadnień związanych z obliczaniem wartości początkowych zmiennych stanu i zmiennych wyjścia", mc);
         Answer mcQuestion14Answear0 = new Answer("Przy zastosowaniu metody szeregowej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
                 "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych\n", false, mcQuestion14);
         Answer mcQuestion14Answear1 = new Answer("Gdy zmienna wejściowa w chwili t = 0 nie jest impulsem Diraca, to pomiędzy wartościami zmiennych stanu\n" +
@@ -1473,7 +1473,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion14Answear4);
         anwersRepo.save(mcQuestion14Answear5);
 
-        Question mcQuestion15 = new Question("Oceń poprawność następujących stwierdzeń dotyczących zagadnień związanych z obliczaniem\n" +
+        Question mcQuestion15 = new Question("16.Oceń poprawność następujących stwierdzeń dotyczących zagadnień związanych z obliczaniem\n" +
                 "wartości początkowych zmiennych stanu i zmiennych wyjścia", mc);
         Answer mcQuestion15Answear0 = new Answer("Gdy zmienna wejściowa w chwili t = 0 nie jest impulsem Diraca, to pomiędzy wartościami zmiennych stanu zachodzi następująca relacja: x(0+) ≠ x(0-)", false, mcQuestion15);
         Answer mcQuestion15Answear1 = new Answer("W metodzie predyktor-korektor celem etapu predykcji jest znalezienie początkowego przybliżenia punktu Vj+1", true, mcQuestion15);
@@ -1486,7 +1486,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion15Answear2);
         anwersRepo.save(mcQuestion15Answear3);
 
-        Question mcQuestion16 = new Question("Formuła K(p) = k/(1+pT) opisuje operatorową funkcję przejścia", mc);
+        Question mcQuestion16 = new Question("17.Formuła K(p) = k/(1+pT) opisuje operatorową funkcję przejścia", mc);
         Answer mcQuestion16Answear0 = new Answer("Elementu inercyjnego 1 rzęd", true, mcQuestion16);
         Answer mcQuestion16Answear1 = new Answer("Elementu różniczkującego z inercją", false, mcQuestion16);
         Answer mcQuestion16Answear2 = new Answer("Elementu opóźniającego", false, mcQuestion16);
@@ -1497,7 +1497,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion16Answear2);
         anwersRepo.save(mcQuestion16Answear3);
 
-        Question mcQuestion17 = new Question("Które z poniższych formuł opisują funkcję dodatnio określoną?", mc);
+        Question mcQuestion17 = new Question("18.Które z poniższych formuł opisują funkcję dodatnio określoną?", mc);
         Answer mcQuestion17Answear0 = new Answer("V(x1,x2)= 2(x1)^2 - 2(x1x2) + 2(x2)^2", true, mcQuestion17);
         Answer mcQuestion17Answear1 = new Answer("V(x1,x2)= (x1)^2 - 3(x1x2) + 3(x2)^2", true, mcQuestion17);
         Answer mcQuestion17Answear2 = new Answer("V(x1,x2)= (x1)^2 - 3(x1x2) + 2(x2)^2", false, mcQuestion17);
@@ -1508,7 +1508,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion17Answear2);
         anwersRepo.save(mcQuestion17Answear3);
 
-        Question mcQuestion18 = new Question("Które z poniższych formuł opisują funkcję dodatnio określoną?", mc);
+        Question mcQuestion18 = new Question("19.Które z poniższych formuł opisują funkcję dodatnio określoną?", mc);
         Answer mcQuestion18Answear0 = new Answer("V(x1,x2)= (x1)^2 - 4(x1x2) + 3(x2)^2", false, mcQuestion18);
         Answer mcQuestion18Answear1 = new Answer("V(x1,x2)= (x1)^2 - 3(x1x2) + 3(x2)^2", true, mcQuestion18);
         Answer mcQuestion18Answear2 = new Answer("V(x1,x2)= 1.01(x1)^2 - 2(x1x2) + (x2)^2", true, mcQuestion18);
@@ -1519,7 +1519,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion18Answear2);
         anwersRepo.save(mcQuestion18Answear3);
 
-        Question mcQuestion19 = new Question("Które z poniższych formuł opisują funkcję dodatnio określoną?", mc);
+        Question mcQuestion19 = new Question("20.Które z poniższych formuł opisują funkcję dodatnio określoną?", mc);
         Answer mcQuestion19Answear0 = new Answer("V(x1,x2)= 2(x1)^2 - 2(x1x2) + 2(x2)^2", true, mcQuestion19);
         Answer mcQuestion19Answear1 = new Answer("V(x1,x2)= (x1)^2 - 4(x1x2) + (x2)^2", false, mcQuestion19);
         Answer mcQuestion19Answear2 = new Answer("V(x1,x2)= 9(x1)^2 - 6(x1x2) + (x2)^2", false, mcQuestion19);
@@ -1530,7 +1530,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion19Answear2);
         anwersRepo.save(mcQuestion19Answear3);
 
-        Question mcQuestion20 = new Question("Zakładając warunek początkowy X0= [ 0;0 ] oraz e0 = 0 i en = 1 dla n > 0 ocenić poprawność wyliczenia wartości\n" +
+        Question mcQuestion20 = new Question("21.Zakładając warunek początkowy X0= [ 0;0 ] oraz e0 = 0 i en = 1 dla n > 0 ocenić poprawność wyliczenia wartości\n" +
                 "wektora kolumnowego Xi", mc);
         Answer mcQuestion20Answear0 = new Answer("X2 = [0;1]", false, mcQuestion20);
         Answer mcQuestion20Answear1 = new Answer("X1=[0;0]", true, mcQuestion20);
@@ -1542,7 +1542,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion20Answear2);
         anwersRepo.save(mcQuestion20Answear3);
 
-        Question mcQuestion21 = new Question("Zakładając warunek początkowy X0= [ 0;0 ] oraz e0 = 0 i en = 1 dla n > 0 ocenić poprawność wyliczenia wartości\n" +
+        Question mcQuestion21 = new Question("22.Zakładając warunek początkowy X0= [ 0;0 ] oraz e0 = 0 i en = 1 dla n > 0 ocenić poprawność wyliczenia wartości\n" +
                 "wektora kolumnowego Xi", mc);
         Answer mcQuestion21Answear0 = new Answer("X3=[-1;1]", true, mcQuestion21);
         Answer mcQuestion21Answear1 = new Answer("X4=[-2;0]", false, mcQuestion21);
@@ -1557,7 +1557,7 @@ public class QuizApiApplication {
 
         /* Pytania 25 - 34 */
 
-        Question mcQuestion22 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metod optymalizacji parametrycznej:", mc);
+        Question mcQuestion22 = new Question("23.Oceń poprawność następujących stwierdzeń dotyczących metod optymalizacji parametrycznej:", mc);
         Answer mcQuestion22Answear0 = new Answer("Metoda Gaussa-Seidela jest gradientową metodą kierunków poprawy", false, mcQuestion22);
         Answer mcQuestion22Answear1 = new Answer("Metoda kierunków sprzężonych Powella jest bezgradientową metodą kierunków poprawy", true, mcQuestion22);
         Answer mcQuestion22Answear2 = new Answer("Metoda simpleksu Neldera-Meada jest gradientową metodą poszukiwań prostych", false, mcQuestion22);
@@ -1568,7 +1568,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion22Answear2);
         anwersRepo.save(mcQuestion22Answear3);
 
-        Question mcQuestion23 = new Question("W modelu opartym na schemacie różnicowym Adamsa-Bashfortha 2 rzędu zamiast kroku\n" +
+        Question mcQuestion23 = new Question("24.W modelu opartym na schemacie różnicowym Adamsa-Bashfortha 2 rzędu zamiast kroku\n" +
                 "całkowania o wartości h przyjęto krok całkowania o wartości h/2. Które ze zdań jest najbardziej\n" +
                 "prawdopodobne? W wyniku zmiany kroku całkowania lokalny błąd obcięcia będzie:", mc);
         Answer mcQuestion23Answear0 = new Answer("Sześć razy mniejszy", false, mcQuestion23);
@@ -1581,7 +1581,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion23Answear2);
         anwersRepo.save(mcQuestion23Answear3    );
 
-        Question mcQuestion24 = new Question("W prezentowanym na wykładzie modelu elementu inercyjnego pierwszego rzędu, zastosowano\n" +
+        Question mcQuestion24 = new Question("25.W prezentowanym na wykładzie modelu elementu inercyjnego pierwszego rzędu, zastosowano\n" +
                 "procedurę CALKA wyznaczającą nowe wartości. Które ze sformułowań są prawdziwe:", mc);
         Answer mcQuestion24Answear0 = new Answer("Procedura CALKA wyznacza nowe, przybliżone wartości zmiennej wyjściowej yi oraz nową wartość zmiennej\n" +
                 "niezależnej ti", true, mcQuestion24);
@@ -1595,7 +1595,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion24Answear2);
         anwersRepo.save(mcQuestion24Answear3);
 
-        Question mcQuestion25 = new Question("Oceń poprawność następujących stwierdzeń dotyczących zagadnień związanych z obliczaniem wartości początkowych zmiennych stanu i zmiennych wyjścia", mc);
+        Question mcQuestion25 = new Question("26.Oceń poprawność następujących stwierdzeń dotyczących zagadnień związanych z obliczaniem wartości początkowych zmiennych stanu i zmiennych wyjścia", mc);
         Answer mcQuestion25Answear0 = new Answer("Przy zastosowaniu metody szeregowej wartości początkowe kolejnych zmiennych stanu są równe warunkom\n" +
                 "początkowym dla zmiennej wyjścia i jej kolejnych pochodnych\n", false, mcQuestion25);
         Answer mcQuestion25Answear1 = new Answer("Gdy zmienna wejściowa w chwili t = 0 nie jest impulsem Diraca, to pomiędzy wartościami zmiennych stanu\n" +
@@ -1611,7 +1611,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion25Answear2);
         anwersRepo.save(mcQuestion25Answear3);
 
-        Question mcQuestion26 = new Question("W środowisku Matlab:", mc);
+        Question mcQuestion26 = new Question("27.W środowisku Matlab:", mc);
         Answer mcQuestion26Answear0 = new Answer("Jednym z parametrów wejściowych funkcji ode45 jest nazwa funkcji wyznaczającej wartości pochodnych\n" +
                 "wektora stanu", true, mcQuestion26);
         Answer mcQuestion26Answear1 = new Answer("Funkcja ode45 umożliwia rozwiązywanie zagadnienia początkowego", true, mcQuestion26);
@@ -1623,7 +1623,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion26Answear2);
         anwersRepo.save(mcQuestion26Answear3);
 
-        Question mcQuestion27 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metod generacji liczb pseudolosowych", mc);
+        Question mcQuestion27 = new Question("28.Oceń poprawność następujących stwierdzeń dotyczących metod generacji liczb pseudolosowych", mc);
         Answer mcQuestion27Answear0 = new Answer("Wygenerowanie kolejnej liczby za pomocą metody odwracania dystrybuanty wymaga jednokrotnego użycia\n" +
                 "pomocniczego generatora liczb o rozkładzie równomiernym", true, mcQuestion27);
         Answer mcQuestion27Answear1 = new Answer("W ogólnym przypadku metoda eliminacji nie gwarantuje wylosowania wartości liczby pseudolosowej o\n" +
@@ -1638,7 +1638,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion27Answear2);
         anwersRepo.save(mcQuestion27Answear3);
 
-        Question mcQuestion28 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metod generacji liczb pseudolosowych:?", mc);
+        Question mcQuestion28 = new Question("29.Oceń poprawność następujących stwierdzeń dotyczących metod generacji liczb pseudolosowych:?", mc);
         Answer mcQuestion28Answear0 = new Answer("Wygenerowanie kolejnej liczby pseudolosowej o rozkładzie normalnym N(0, 1) może zostać dokonane za\n" +
                 "pomocą metody opartej na centralnym twierdzeniu granicznym (????????)", true, mcQuestion28);
         Answer mcQuestion28Answear1 = new Answer("Metoda superpozycji może być przydatna w realizacji generatora zadanego funkcją gęstości rozkładu, w opicie\n" +
@@ -1653,7 +1653,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion28Answear2);
         anwersRepo.save(mcQuestion28Answear3);
 
-        Question mcQuestion29 = new Question("Oceń poprawność następujących stwierdzeń dotyczących funkcji ode45 środowiska Matlab:?", mc);
+        Question mcQuestion29 = new Question("30.Oceń poprawność następujących stwierdzeń dotyczących funkcji ode45 środowiska Matlab:?", mc);
         Answer mcQuestion29Answear0 = new Answer("Umożliwia rozwiązanie zagadnienia początkowego", true, mcQuestion29);
         Answer mcQuestion29Answear1 = new Answer("Jednym z jej parametrów wejściowych jest nazwa funkcji wyznaczającej wartości pochodnych wektora stanu", true, mcQuestion29);
         Answer mcQuestion29Answear2 = new Answer("Jest metodą całkowania numerycznego opartą na jednym ze schematów Adamsa-Bashfortha", false, mcQuestion29);
@@ -1664,7 +1664,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion29Answear2);
         anwersRepo.save(mcQuestion29Answear3);
 
-        Question mcQuestion30 = new Question("Oceń poprawność następujących stwierdzeń dotyczących funkcji ode45 środowiska Matlab", mc);
+        Question mcQuestion30 = new Question("31.Oceń poprawność następujących stwierdzeń dotyczących funkcji ode45 środowiska Matlab", mc);
         Answer mcQuestion30Answear0 = new Answer("Umożliwia rozwiązanie zagadnienia początkowego\n", true, mcQuestion30);
         Answer mcQuestion30Answear1 = new Answer("Jest metodą całkowania numerycznego opartą na schemacie Eulera Vk+1 = Vk + h * f(Vk,tk)", false, mcQuestion30);
         Answer mcQuestion30Answear2 = new Answer("Jednym z jej parametrów wejściowych jest nazwa funkcji wyznaczającej wartości pochodnych wektora stanu", true, mcQuestion30);
@@ -1675,7 +1675,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion30Answear2);
         anwersRepo.save(mcQuestion30Answear3);
 
-        Question mcQuestion31 = new Question("Oceń poprawność następujących stwierdzeń dotyczących szeregowej i równoległej metody\n" +
+        Question mcQuestion31 = new Question("32.Oceń poprawność następujących stwierdzeń dotyczących szeregowej i równoległej metody\n" +
                 "znajdowania równań stanu:", mc);
         Answer mcQuestion31Answear0 = new Answer("Uzyskana postać równań stanu nie musi być identyczna dla obu metod", true, mcQuestion31);
         Answer mcQuestion31Answear1 = new Answer("Metoda równoległa wymaga znajomości pierwiastków mianownika funkcji przejścia układu", true, mcQuestion31);
@@ -1688,7 +1688,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion31Answear2);
         anwersRepo.save(mcQuestion31Answear3);
 
-        Question mcQuestion32 = new Question("Koncepcja wyboru działania:\n", mc);
+        Question mcQuestion32 = new Question("33.Koncepcja wyboru działania:\n", mc);
         Answer mcQuestion32Answear0 = new Answer("Umożliwia modelowanie systemów masowej obsługi", true, mcQuestion32);
         Answer mcQuestion32Answear1 = new Answer("Wymaga, aby w budowanym modelu cyfrowym przy każdym przesunięciu czasu zbadać możliwość\n" +
                 "wystąpienia wszystkich zdarzeń czasowych i warunkowych", true, mcQuestion32);
@@ -1702,7 +1702,7 @@ public class QuizApiApplication {
 
         /* Pytania 35 - 38 */
 
-        Question mcQuestion33 = new Question("Rozwiązaniem równań stanu o postaci x' = Ax + Bu z warunkami początkowymi x0 jest", mc);
+        Question mcQuestion33 = new Question("34.Rozwiązaniem równań stanu o postaci x' = Ax + Bu z warunkami początkowymi x0 jest", mc);
         Answer mcQuestion33Answear0 = new Answer("e^A", true, mcQuestion33);
         Answer mcQuestion33Answear1 = new Answer("e^(-A)", false, mcQuestion33);
         Answer mcQuestion33Answear2 = new Answer("e^B", false, mcQuestion33);
@@ -1713,7 +1713,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion33Answear2);
         anwersRepo.save(mcQuestion33Answear3);
 
-        Question mcQuestion34 = new Question("Oceń poprawność następujących stwierdzeń dotyczących układów i sygnałów dyskretnych:", mc);
+        Question mcQuestion34 = new Question("35.Oceń poprawność następujących stwierdzeń dotyczących układów i sygnałów dyskretnych:", mc);
         Answer mcQuestion34Answear0 = new Answer("Ciąg impulsów Diraca jest sygnałem o modulowanej amplitudzie", true, mcQuestion34);
         Answer mcQuestion34Answear1 = new Answer("Sygnał schodkowy jest sygnałem o modulowanej amplitudzie", true, mcQuestion34);
         Answer mcQuestion34Answear2 = new Answer("W układzie dyskretnym wszystkie sygnały mają charakter dyskretny", false, mcQuestion34);
@@ -1724,7 +1724,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion34Answear2);
         anwersRepo.save(mcQuestion34Answear3);
 
-        Question mcQuestion35 = new Question("Dany jest generator liczb losowych Xi o rozkładzie równomiernym w przedziale (-0.5, 0.5) oraz wyznaczane są liczby losowe Yi wg wzorów podanych poniżej. Wskaż, które z podanych wzorów mogą być zastosowane do generacji liczb losowych o rozkładzie normalnym N(0, 1):", mc);
+        Question mcQuestion35 = new Question("36.Dany jest generator liczb losowych Xi o rozkładzie równomiernym w przedziale (-0.5, 0.5) oraz wyznaczane są liczby losowe Yi wg wzorów podanych poniżej. Wskaż, które z podanych wzorów mogą być zastosowane do generacji liczb losowych o rozkładzie normalnym N(0, 1):", mc);
         Answer mcQuestion35Answear0 = new Answer("Yi=E^12(Xi)", true, mcQuestion35);
         Answer mcQuestion35Answear1 = new Answer("Yi=E^18(Xi)", false, mcQuestion35);
         Answer mcQuestion35Answear2 = new Answer("Yi=E^6(Xi)", false, mcQuestion35);
@@ -1735,7 +1735,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion35Answear2);
         anwersRepo.save(mcQuestion35Answear3);
 
-        Question mcQuestion36 = new Question("Oceń poprawność następujących stwierdzeń dotyczących stabilności układów liniowych ciągłych:\n", mc);
+        Question mcQuestion36 = new Question("37.Oceń poprawność następujących stwierdzeń dotyczących stabilności układów liniowych ciągłych:\n", mc);
         Answer mcQuestion36Answear0 = new Answer("Kryterium Hurwitza pozwala na wyznaczenie wartości pierwiastków "
                 + "równania charakterystycznego\n", false, mcQuestion36);
         Answer mcQuestion36Answear1 = new Answer("Jeśli pierwiastki równania charakterystycznego układu mają części "
@@ -1751,7 +1751,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion36Answear3);
 
         /* Ulciorek */
-        Question mcQuestion37 = new Question("Oceń poprawność następujących stwierdzeń dla dowolnego modelu układu "
+        Question mcQuestion37 = new Question("38.Oceń poprawność następujących stwierdzeń dla dowolnego modelu układu "
                 + "zdarzeń dyskretnych zbudowanego według koncepcji planowania zdarzeń:", mc);
         Answer mcQuestion37Answear0 = new Answer("wykrycie przez procedurę kontroli symulacji pustego zbioru "
                 + "zaplanowanych zdarzeń w trakcie realizacji eksperymentu oznacza, że aktualny stan układu jest ostateczny", true, mcQuestion37);
@@ -1764,7 +1764,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion37Answear2);
         anwersRepo.save(mcQuestion37Answear3);
 
-        Question mcQuestion38 = new Question("Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych:", mc);
+        Question mcQuestion38 = new Question("39.Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych:", mc);
         Answer mcQuestion38Answear0 = new Answer("w schematach jednokrokowych kolejne przybliżenie rozwiązania tk+1, "
                 + "vk+1 zależy od wartości vk i pochodnej f w otoczeniu tk, vk (????)", true, mcQuestion38);
         Answer mcQuestion38Answear1 = new Answer("funkcja f występująca we wzorach schematów różnicowych jest prawą stroną równania stanu", true, mcQuestion38);
@@ -1777,7 +1777,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion38Answear2);
         anwersRepo.save(mcQuestion38Answear3);
 
-        Question mcQuestion39 = new Question("W środowisku Matlab/Simulink funkcja sim umożliwia", mc);
+        Question mcQuestion39 = new Question("40.W środowisku Matlab/Simulink funkcja sim umożliwia", mc);
         Answer mcQuestion39Answear0 = new Answer("rozwiązanie zagadnienia początkowego dla układów dyskretnych", true, mcQuestion39);
         Answer mcQuestion39Answear1 = new Answer("rozwiązanie zagadnienia optymalizacji parametrycznej", false, mcQuestion39);
         Answer mcQuestion39Answear2 = new Answer("rozwiązanie zagadnienia początkowego dla układów ciągłych", true, mcQuestion39);
@@ -1788,7 +1788,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion39Answear2);
         anwersRepo.save(mcQuestion39Answear3);
 
-        Question mcQuestion40 = new Question("Oceń poprawność następujących stwierdzeń dotyczących zadania optymalizacji parametrycznej", mc);
+        Question mcQuestion40 = new Question("41.Oceń poprawność następujących stwierdzeń dotyczących zadania optymalizacji parametrycznej", mc);
         Answer mcQuestion40Answear0 = new Answer("zadanie dwugraniczne jest przykładem zadania optymalizacji parametrycznej", true, mcQuestion40);
         Answer mcQuestion40Answear1 = new Answer("parametrami optymalizacji nie mogą być warunki początkowe zmiennych stanu", false, mcQuestion40);
         Answer mcQuestion40Answear2 = new Answer("w zadaniach optymalizacji parametrycznej szukamy takich optymalnych"
@@ -1801,7 +1801,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion40Answear2);
         anwersRepo.save(mcQuestion40Answear3);
 
-        Question mcQuestion41 = new Question("Oceń poprawność następujących stwierdzeń dla dowolnego modelu układu "
+        Question mcQuestion41 = new Question("42.Oceń poprawność następujących stwierdzeń dla dowolnego modelu układu "
                 + "zdarzeń dyskretnych zbudowanego według koncepcji planowania zdarzeń", mc);
         Answer mcQuestion41Answear0 = new Answer("można planować zdarzenia odbywające się w przeszłości", false, mcQuestion41);
         Answer mcQuestion41Answear1 = new Answer("zaplanowanie zdarzenia wymaga między innymi obliczenia chwili zajścia tego zdarzenia", true, mcQuestion41);
@@ -1814,7 +1814,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion41Answear2);
         anwersRepo.save(mcQuestion41Answear3);
 
-        Question mcQuestion42 = new Question("Oceń poprawność poniższych stwierdzeń związanych z opisem w postaci równań stanu", mc);
+        Question mcQuestion42 = new Question("43.Oceń poprawność poniższych stwierdzeń związanych z opisem w postaci równań stanu", mc);
         Answer mcQuestion42Answear0 = new Answer("dla danego układu istnieje tylko jeden opis za pomocą równań stanu", false, mcQuestion42);
         Answer mcQuestion42Answear1 = new Answer("równania stanu można stosować zarówno do opisu układów liniowych, jak i nieliniowych", true, mcQuestion42);
         Answer mcQuestion42Answear2 = new Answer("w równaniu stanu nie występuje zależność od pochodnych sygnału wejściowego", true, mcQuestion42);
@@ -1827,7 +1827,7 @@ public class QuizApiApplication {
 
         /* */
 
-        Question mcQuestion43 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metody eliminacji:", mc);
+        Question mcQuestion43 = new Question("44.Oceń poprawność następujących stwierdzeń dotyczących metody eliminacji:", mc);
         Answer mcQuestion43Answear0 = new Answer("nie może być wykorzystywana do generacji liczb o dowolnym nieobciętym rozkładzie\n" +
                 "normalnym", true, mcQuestion43);
         Answer mcQuestion43Answear1 = new Answer("jest zawsze bardziej efektywna od metody odwracania dystrybuanty", false, mcQuestion43);
@@ -1839,7 +1839,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion43Answear2);
         anwersRepo.save(mcQuestion43Answear3);
 
-        Question mcQuestion44 = new Question("Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych", mc);
+        Question mcQuestion44 = new Question("45.Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych", mc);
         Answer mcQuestion44Answear0 = new Answer("w ramach metody predyktor-korektor najpierw wykonywana jest metoda zamknięta,potem otwarta", false, mcQuestion44);
         Answer mcQuestion44Answear1 = new Answer("metody zamknięte wymagają rozwiązywania równania algebraicznego w każdym kroku", true, mcQuestion44);
         Answer mcQuestion44Answear2 = new Answer("w metodzie predyktor-korektor celem etapu korekcji jest znalezienie początkowego\n" +
@@ -1851,7 +1851,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion44Answear2);
         anwersRepo.save(mcQuestion44Answear3);
 
-        Question mcQuestion45 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metody kolejnych całkowań", mc);
+        Question mcQuestion45 = new Question("46.Oceń poprawność następujących stwierdzeń dotyczących metody kolejnych całkowań", mc);
         Answer mcQuestion45Answear0 = new Answer("może być stosowana do wyznaczania równań stanu zarówno układów liniowych jak i nieliniowych", true, mcQuestion45);
         Answer mcQuestion45Answear1 = new Answer("wartości początkowe kolejnych zmiennych stanu są równe warunkiem początkowym dla zmiennej wyjścia i jej kolejnych pochodnych", false, mcQuestion45);
         Answer mcQuestion45Answear2 = new Answer("jest jedną z metod wchodzących w skład metody mieszanej", true, mcQuestion45);
@@ -1862,7 +1862,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion45Answear2);
         anwersRepo.save(mcQuestion45Answear3);
 
-        Question mcQuestion46 = new Question("Oceń poprawność następujących stwierdzeń dotyczących metod badania stabilności układów liniowych", mc);
+        Question mcQuestion46 = new Question("47.Oceń poprawność następujących stwierdzeń dotyczących metod badania stabilności układów liniowych", mc);
         Answer mcQuestion46Answear0 = new Answer("warunkiem stabilności asymptotycznej układu dyskretnego jest by pierwiastek równania charakterystycznego układu leżały na płaszczyźnie zespolonej we wnętrzu koła o środku w środku układu współrzędnych i o promieniu 1", true, mcQuestion46);
         Answer mcQuestion46Answear1 = new Answer("warunkiem stabilności asymptotycznej układu ciągłego jest by pierwiastek równania charakterystycznego układu posiadały części rzeczywiste mniejsze od jedności\n", false, mcQuestion46);
         Answer mcQuestion46Answear2 = new Answer("kryterium Hurwitza pozwala na określenie stabilności układu ciągłego bez konieczności wyznaczania dokładnych wartości pierwiastków równania charakterystycznego układu", true, mcQuestion46);
@@ -1875,7 +1875,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion46Answear3);
         anwersRepo.save(mcQuestion46Answear4);
 
-        Question mcQuestion47 = new Question("Oceń poprawność następujących stwierdzeń dotyczących środowiska R", mc);
+        Question mcQuestion47 = new Question("48.Oceń poprawność następujących stwierdzeń dotyczących środowiska R", mc);
         Answer mcQuestion47Answear0 = new Answer("polecenie a[-5] utworzy wektor zawierający elementy wektora a z wyjątkiem elementu piątego", false, mcQuestion47);
         Answer mcQuestion47Answear1 = new Answer("dwa wektory można dodać do siebie tylko wtedy, kiedy oba mają identyczną długość", true, mcQuestion47);
         Answer mcQuestion47Answear2 = new Answer("jeśli funkcja ma zwrócić kilka różnych wartości, to należy z nich utworzyć listę", true, mcQuestion47);
@@ -1886,7 +1886,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion47Answear2);
         anwersRepo.save(mcQuestion47Answear3);
 
-        Question mcQuestion48 = new Question("Oceń poprawność poniższych stwierdzeń związanych z opisem w postaci równań stanu", mc);
+        Question mcQuestion48 = new Question("49.Oceń poprawność poniższych stwierdzeń związanych z opisem w postaci równań stanu", mc);
         Answer mcQuestion48Answear0 = new Answer("układ autonomiczny to układ, w których nie występuje oddziaływanie środowiska w\n" +
                 "postaci sygnału wejściowego", true, mcQuestion48);
         Answer mcQuestion48Answear1 = new Answer("w układzie zdarzeń dyskretnych zmiany stanu zachodzą w dyskretnych\n" +
@@ -1900,7 +1900,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion48Answear2);
         anwersRepo.save(mcQuestion48Answear3);
 
-        Question mcQuestion49 = new Question("Koncepcja planowania zdarzeń", mc);
+        Question mcQuestion49 = new Question("50.Koncepcja planowania zdarzeń", mc);
         Answer mcQuestion49Answear0 = new Answer("pozwala na planowanie zdarzeń, które stanowią ingerencję w przeszłość układu", false, mcQuestion49);
         Answer mcQuestion49Answear1 = new Answer("dopuszcza możliwość wystąpienia kilku zdarzeń w tej samej chwili czasu\n" +
                 "symulacyjnego", true, mcQuestion49);
