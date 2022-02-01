@@ -2055,7 +2055,7 @@ public class QuizApiApplication {
         anwersRepo.save(mcQuestion60Answear3);
 
         Question mcQuestion61 = new Question("Wartość zmiennej losowej Y o rozkładzie normalnym N(u,o) o średniej u i odchyleniu standardowym o uzyskiwana jest na podstawie wartości zmiennej losowej X1 o standardowym rozkładzie normalnym N(0,1) za pomocą przekształcenia (odp wlasna)", mc);
-        Answer mcQuestion61Answear0 = new Answer("Y = u*X+o", true, mcQuestion61);
+        Answer mcQuestion61Answear0 = new Answer("Y = u*X+o", false, mcQuestion61);
         Answer mcQuestion61Answear1 = new Answer("Y = (u-o)*N+u", false, mcQuestion61);
         Answer mcQuestion61Answear2 = new Answer("Y = (u-o)*N+o", false, mcQuestion61);
         Answer mcQuestion61Answear3 = new Answer("Y = o*N+u", true, mcQuestion61);
@@ -2123,7 +2123,7 @@ public class QuizApiApplication {
         Question mcQuestion67 = new Question("Wartość zmiennej losowej Y o rozkładzie równomiernym na przedziale [a,b) uzyskiwana jest na podstawie wartości zmiennej losowej X o rozkładzie równomiernym na przedziale [0,1) za pomocą przekształcenia (odp wlasna)", mc);
         Answer mcQuestion67Answear0 = new Answer("Y = (b-a)*X+a", true, mcQuestion67);
         Answer mcQuestion67Answear1 = new Answer("Y = b*X+a", false, mcQuestion67);
-        Answer mcQuestion67Answear2 = new Answer("Y = a*X+b", true, mcQuestion67);
+        Answer mcQuestion67Answear2 = new Answer("Y = a*X+b", false, mcQuestion67);
         Answer mcQuestion67Answear3 = new Answer("Y = (b-a)*X+b", false, mcQuestion67);
         questionsRepo.save(mcQuestion67);
         anwersRepo.save(mcQuestion67Answear0);
