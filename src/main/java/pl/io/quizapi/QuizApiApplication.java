@@ -951,9 +951,9 @@ public class QuizApiApplication {
 
         Question mcQuestion44 = new Question("Oceń poprawność następujących stwierdzeń dotyczących schematów różnicowych", mc_3);
         Answer mcQuestion44Answear0 = new Answer("w ramach metody predyktor-korektor najpierw wykonywana jest metoda zamknięta,potem otwarta", false, mcQuestion44);
-        Answer mcQuestion44Answear1 = new Answer("metody zamknięte wymagają rozwiązywania równania algebraicznego w każdym kroku", false, mcQuestion44);
+        Answer mcQuestion44Answear1 = new Answer("metody zamknięte wymagają rozwiązywania równania algebraicznego w każdym kroku", true, mcQuestion44);
         Answer mcQuestion44Answear2 = new Answer("w metodzie predyktor-korektor celem etapu korekcji jest znalezienie początkowego\n" +
-                "przybliżenia punktu vj+1", false, mcQuestion44);
+                "przybliżenia punktu vj+1", true, mcQuestion44);
         Answer mcQuestion44Answear3 = new Answer("metody otwarte charakteryzują się większą dokładnością od metod zamkniętych", false, mcQuestion44);
         questionsRepo.save(mcQuestion44);
         anwersRepo.save(mcQuestion44Answear0);
